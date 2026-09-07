@@ -9,3 +9,8 @@ build
 .vercel
 next-env.d.ts
 *.tsbuildinfo
+
+# métadonnées macOS sur disque exFAT
+._*
+.Spotlight-V100
+.Trashes
