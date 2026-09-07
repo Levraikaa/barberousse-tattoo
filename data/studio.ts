@@ -140,11 +140,6 @@ export const studio = {
       style: "Fine line",
     },
     {
-      src: "/images/gallery/bracelet-floral-avant-bras.jpg",
-      alt: "Bracelet floral en ligne fine, pivoine et petites fleurs sur l'avant-bras",
-      style: "Fine line",
-    },
-    {
       src: "/images/gallery/creation-adam.jpg",
       alt: "La Création d'Adam revisitée en ligne fine, mains et étoile tatouées sur le bras",
       style: "Fine line",
