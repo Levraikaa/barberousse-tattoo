@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500&display=swap');
+@import 'tailwindcss';
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-gold: var(--gold);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-serif: 'Bebas Neue', sans-serif;
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+}
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --gold: #b8432c;
+  --muted: #181818;
+  --muted-foreground: #a1a1aa;
+  --accent: #1f1f1f;
+  --accent-foreground: #ededed;
+  --border: #ffffff14;
+  --radius: 0.5rem;
+}
+
+@layer base {
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  body,
+  p,
+  span,
+  a,
+  button,
+  input,
+  textarea,
+  label {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.05em;
+  }
+
+  h1 span,
+  h2 span,
+  h3 span,
+  h4 span {
+    font-family: inherit;
+    font-weight: inherit;
+    letter-spacing: inherit;
+  }
+
+  ::selection {
+    background-color: var(--gold);
+    color: #0a0a0a;
+  }
+
+  /* Halo cuivré permanent en haut de page */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 9997;
+    pointer-events: none;
+    background: radial-gradient(at 50% 0, #b8432c08 0%, #b8432c03 45%, transparent 80%);
+  }
+
+  /* Grain animé sur toute la page */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    pointer-events: none;
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+    background-size: 180px 180px;
+    animation: grainShift 0.8s step-end infinite;
+  }
+}
+
+/* Grain local, posé sur une section (hero) */
+.grain {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.14;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 160px 160px;
+}
+
+/* Lent zoom avant/arrière de l'image du hero */
+.ken-burns {
+  transform-origin: 50%;
+  will-change: transform;
+  animation: kenBurns 8s ease-in-out infinite alternate;
+}
+
+@keyframes kenBurns {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes grainShift {
+  0% { background-position: 0 0; }
+  10% { background-position: -24px -18px; }
+  20% { background-position: 36px -12px; }
+  30% { background-position: -18px 30px; }
+  40% { background-position: 30px 24px; }
+  50% { background-position: -36px 6px; }
+  60% { background-position: 18px -30px; }
+  70% { background-position: -12px 18px; }
+  80% { background-position: 24px 30px; }
+  90% { background-position: -30px -6px; }
+  100% { background-position: 0 0; }
+}
