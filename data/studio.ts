@@ -39,6 +39,8 @@ export const studio = {
     "/images/about/03-comptoir.jpg",
     "/images/about/04-terrasse-port.jpg",
     "/images/about/05-facade.jpg",
+    "/images/about/06-victor-en-seance.jpg",
+    "/images/about/07-victor-client.jpg",
   ],
   artistsIntro:
     "Un tatoueur passionné, à l'écoute et exigeant sur chaque réalisation. Je prends le temps de comprendre votre projet, de vous conseiller et de l'adapter pour obtenir le meilleur résultat possible. Après des années d'étude et de pratique, ma polyvalence me permet aujourd'hui de travailler des styles très différents, avec toujours la même exigence de précision et de finesse.",
@@ -127,6 +129,31 @@ export const studio = {
     "Traditionnel",
   ],
   gallery: [
+    {
+      src: "/images/gallery/joker-harley-quinn.jpg",
+      alt: "Joker et Harley Quinn en noir et gris avec lettering « Why so serious ? », tatoués sur le mollet",
+      style: "Réalisme",
+    },
+    {
+      src: "/images/gallery/bracelet-pivoines.jpg",
+      alt: "Pivoines en ligne fine au-dessus d'un bracelet, tatouées sur l'avant-bras",
+      style: "Fine line",
+    },
+    {
+      src: "/images/gallery/bracelet-floral-avant-bras.jpg",
+      alt: "Bracelet floral en ligne fine, pivoine et petites fleurs sur l'avant-bras",
+      style: "Fine line",
+    },
+    {
+      src: "/images/gallery/creation-adam.jpg",
+      alt: "La Création d'Adam revisitée en ligne fine, mains et étoile tatouées sur le bras",
+      style: "Fine line",
+    },
+    {
+      src: "/images/gallery/mandala-coude.jpg",
+      alt: "Mandala ornemental en noir et gris tatoué autour du coude",
+      style: "Noir & gris",
+    },
     {
       src: "/images/gallery/cerisier-rose.jpg",
       alt: "Branche de cerisier en fleurs roses tatouée en ligne fine sur la hanche",
