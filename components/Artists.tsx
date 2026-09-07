@@ -69,7 +69,7 @@ export default function Artists() {
           </h2>
           <p className="mt-5 max-w-xl text-white" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 300 }}>
             {SOLO
-              ? 'Un seul tatoueur, une seule main sur la machine : je dessine votre projet et je le tatoue.'
+              ? studio.artistsIntro
               : 'Des mains singulières, une même exigence. Chacun de nos tatoueurs cultive un style qui lui est propre — choisissez celui qui dessinera votre prochaine pièce.'}
           </p>
         </motion.div>

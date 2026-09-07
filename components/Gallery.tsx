@@ -41,8 +41,7 @@ export default function Gallery() {
             className="mt-5 text-base leading-relaxed text-white"
             style={{ fontFamily: "'Inter', sans-serif", fontWeight: 300 }}
           >
-            Une sélection de pièces réalisées au salon, de la ligne la plus fine aux grandes compositions japonaises et
-            manga. Filtrez par style pour explorer mon travail.
+            {studio.galleryIntro}
           </p>
         </motion.div>
 

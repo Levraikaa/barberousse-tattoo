@@ -46,12 +46,17 @@ export default function About() {
               {studio.aboutTitle}
             </h2>
 
-            <p
-              className="mt-6 max-w-prose leading-relaxed text-white"
-              style={{ fontFamily: "'Inter', sans-serif", fontWeight: 300 }}
-            >
-              {studio.aboutStory}
-            </p>
+            <div className="mt-6 flex max-w-prose flex-col gap-4">
+              {studio.aboutStory.split('\n\n').map((paragraph) => (
+                <p
+                  key={paragraph.slice(0, 40)}
+                  className="leading-relaxed text-white"
+                  style={{ fontFamily: "'Inter', sans-serif", fontWeight: 300 }}
+                >
+                  {paragraph}
+                </p>
+              ))}
+            </div>
 
             <motion.div
               variants={listVariants}

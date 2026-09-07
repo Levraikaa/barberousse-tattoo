@@ -6,7 +6,7 @@ export const studio = {
     "Sur le port de Gruissan, rive droite, Barberousse Tattoo est mon salon et je suis le seul à y tatouer. Ma signature, c'est la ligne fine : un trait délicat, régulier, sans tremblement — le geste le moins pardonnable du métier, celui qui ne se rattrape pas. Autour de cette exigence, je travaille le japonais, le polynésien et le manga avec la même précision. Ici, vous ne piochez pas dans un catalogue : on discute, j'esquisse, on ajuste, puis je tatoue. Premier tatouage discret ou manchette entière, c'est la même main et la même rigueur du premier trait au dernier.",
   aboutTitle: "La ligne fine, poussée jusqu'au bout.",
   aboutStory:
-    "Barberousse, c'est d'abord un nom de Gruissan : celui de la tour qui veille sur le village depuis le Moyen Âge. J'en ai gardé l'esprit — sabres croisés au mur, sur le quai du Ponant, ouvert été comme hiver quand la plupart ferment dès septembre. Je tatoue seul, à mon rythme, avec un carnet de projets dessinés à la main plutôt qu'un mur de flashs recyclés. Ma signature, c'est la ligne fine : un trait continu, d'une régularité constante, posé une seule fois — pas de repasse, pas de rattrapage. C'est la discipline la plus exigeante du métier et c'est sur elle que j'ai bâti ma réputation, du petit motif discret aux compositions florales et ornementales les plus étendues. Le japonais, le polynésien et le manga viennent ensuite, que je travaille avec la même précision. Le reste, c'est du soin : matériel à usage unique, hygiène irréprochable, et le temps qu'il faut pour que vous repartiez avec la bonne pièce, pas la première.",
+    "Je tatoue seul. Ma signature, c'est la ligne fine : un trait continu, d'une régularité constante, posé une seule fois — pas de repasse, pas de rattrapage. C'est une des disciplines les plus exigeantes du métier et c'est notamment sur cette maîtrise que j'ai bâti ma réputation, du petit motif discret aux compositions florales et ornementales les plus étendues.\n\nMa réputation repose aussi sur ma polyvalence, acquise au fil de nombreuses années d'étude, de pratique et de travail du métier. Passionné par mon travail et exigeant sur le résultat final, j'accorde une grande importance à l'écoute et aux attentes de chaque client. Je prends autant de plaisir à conseiller et accompagner qu'à réaliser le tatouage lui-même, et c'est une approche que mes clients apprécient, comme en témoignent leurs nombreux avis. Cette expérience me permet aujourd'hui de m'adapter à des projets et des styles très différents. Ma spécialité reste avant tout le travail des détails fins et précis, une signature que j'intègre quel que soit le style demandé.\n\nLe reste, c'est du soin : matériel à usage unique, hygiène irréprochable, et le temps qu'il faut pour que vous repartiez avec la bonne pièce.",
   stats: [
     { value: "5,0★", label: "Note moyenne" },
     { value: "400+", label: "Avis positifs" },
@@ -40,6 +40,10 @@ export const studio = {
     "/images/about/04-terrasse-port.jpg",
     "/images/about/05-facade.jpg",
   ],
+  artistsIntro:
+    "Un tatoueur passionné, à l'écoute et exigeant sur chaque réalisation. Je prends le temps de comprendre votre projet, de vous conseiller et de l'adapter pour obtenir le meilleur résultat possible. Après des années d'étude et de pratique, ma polyvalence me permet aujourd'hui de travailler des styles très différents, avec toujours la même exigence de précision et de finesse.",
+  galleryIntro:
+    "Une sélection de tatouages réalisés au salon, reflet de ma polyvalence et de plusieurs années de travail et d'expérience. Du petit motif fin aux compositions les plus importantes, je m'adapte à chaque projet et à chaque style, avec toujours la même exigence de précision, de finesse et de qualité.",
   nav: [
     { label: "Le salon", href: "#about" },
     { label: "L'artiste", href: "#artists" },
@@ -91,25 +95,25 @@ export const studio = {
     {
       name: "Fine line — la signature du salon",
       description:
-        "Le savoir-faire sur lequel je me suis fait un nom. Un trait fin posé une seule fois, d'une régularité constante — botanique, floral, ornemental, lettrage, motifs célestes. Je le réalise avec les aiguilles et l'encre qu'il faut pour que la ligne reste nette dans dix ans au lieu de baver.",
+        "La finesse et la précision sont au cœur de mon travail. La ligne fine est l'une des disciplines sur lesquelles j'ai bâti ma réputation : un trait fin, régulier et maîtrisé, du petit motif discret aux compositions florales et ornementales les plus élaborées.\n\nPassionné et exigeant sur le résultat final, j'adapte cette précision à chaque projet et à chaque style. Mon objectif : un tatouage fin, propre et pensé pour bien évoluer dans le temps.",
       priceRange: "Sur devis",
     },
     {
       name: "Japonais, manga & anime",
       description:
-        "Personnages d'anime, carpes koï, dragons, hannya : du portrait fidèle à la grande composition japonaise, en noir et gris comme en couleur. C'est le terrain sur lequel je pousse les pièces le plus loin.",
+        "L'univers japonais occupe une place particulière dans mon travail. Passionné par cette culture et son esthétique, je réalise également des peintures japonaises à l'aquarelle, une pratique qui nourrit directement ma façon de composer mes tatouages. Du traditionnel japonais au manga, j'aime créer des pièces travaillées et personnelles. Je propose également des projets manga uniques, pensés et composés spécialement pour chaque tatouage.",
       priceRange: "Sur devis",
     },
     {
       name: "Réalisme",
       description:
-        "Portraits, visages, scènes figuratives : je travaille au point et au noir & gris, en dégradés plutôt qu'en aplats. Un rendu doux, qui garde sa profondeur et ses détails en vieillissant.",
+        "Portraits, visages et scènes figuratives : je travaille principalement en noir et gris, avec une attention particulière portée aux dégradés, aux contrastes et aux détails. J'ai également suivi un séminaire et obtenu un certificat de formation en réalisme noir et gris auprès de Laura Ink, me permettant d'approfondir les techniques utilisées par les grands tatoueurs réalistes. Un savoir-faire que je continue de perfectionner pour proposer des réalisations toujours plus précises et abouties.",
       priceRange: "Sur devis",
     },
     {
       name: "Projet sur-mesure",
       description:
-        "On part de votre idée, je la mets au crayon, on l'ajuste ensemble jusqu'au dessin définitif. Je ne tatoue rien avant que vous ayez validé chaque trait.",
+        "Chaque projet est travaillé sur iPad et adapté à votre idée, votre morphologie et l'emplacement choisi. Je n'hésite pas à vous guider, à vous donner mon avis et à vous conseiller sur ce qui fonctionnera le mieux. Taille, niveau de détail, lisibilité et vieillissement du tatouage sont pris en compte pour éviter un motif trop petit ou, au contraire, inutilement trop grand. L'objectif est de trouver ensemble le meilleur équilibre pour un tatouage esthétique et durable.",
       priceRange: "Devis gratuit en DM",
     },
   ],

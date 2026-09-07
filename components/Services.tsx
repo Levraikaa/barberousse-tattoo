@@ -62,12 +62,17 @@ export default function Services() {
                   {service.name}
                 </h3>
 
-                <p
-                  className="mt-3 flex-1 text-base leading-relaxed text-white/80"
-                  style={{ fontFamily: "'Inter', sans-serif", fontWeight: 300 }}
-                >
-                  {service.description}
-                </p>
+                <div className="mt-3 flex flex-1 flex-col gap-3">
+                  {service.description.split('\n\n').map((paragraph) => (
+                    <p
+                      key={paragraph.slice(0, 40)}
+                      className="text-base leading-relaxed text-white/80"
+                      style={{ fontFamily: "'Inter', sans-serif", fontWeight: 300 }}
+                    >
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
               </motion.div>
             );
           })}
