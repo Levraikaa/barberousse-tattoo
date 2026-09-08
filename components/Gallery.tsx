@@ -44,7 +44,7 @@ export default function Gallery() {
           <div className="mb-5 flex items-center gap-3">
             <span className="h-px w-10 bg-gold/60" />
             <span className="text-xs uppercase tracking-[0.25em] text-gold">
-              Galerie
+              Galerie de tatouages
             </span>
           </div>
           <h2
@@ -54,7 +54,7 @@ export default function Gallery() {
               letterSpacing: "0.05em",
             }}
           >
-            Mes réalisations
+            Mes réalisations à Gruissan
           </h2>
           <p
             className="mt-5 text-base leading-relaxed text-white"
@@ -93,36 +93,43 @@ export default function Gallery() {
 
         <div className="mt-12 columns-2 gap-4 md:columns-3">
           {visibles.map((piece, index) => (
-            <motion.div
+            // L'enfant direct d'une colonne CSS reste sans transform : une vignette
+            // animée directement ici disparaît une fois sur deux à la fragmentation.
+            <div
               key={piece.src}
-              initial={{ opacity: 0, scale: 0.92, y: 24 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              whileHover={{
-                boxShadow: "0 0 50px 10px rgba(255, 150, 80, 0.2)",
-                transition: { duration: 0.3 },
-              }}
-              transition={{
-                duration: 0.6,
-                ease: EASE,
-                delay: Math.min(index, 11) * 0.04,
-              }}
-              className={`group relative mb-4 break-inside-avoid overflow-hidden rounded-lg border border-white/10 transition-colors duration-300 hover:border-gold/40 ${
-                RATIOS[index % RATIOS.length]
-              }`}
+              className={`mb-4 break-inside-avoid ${RATIOS[index % RATIOS.length]}`}
             >
-              <Image
-                src={piece.src}
-                alt={piece.alt}
-                fill
-                sizes="(max-width:768px) 50vw, 33vw"
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-                <span className="p-4 text-xs font-medium uppercase tracking-[0.2em] text-gold">
-                  {piece.style}
-                </span>
-              </div>
-            </motion.div>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.92, y: 24 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                whileHover={{
+                  boxShadow: "0 0 50px 10px rgba(255, 150, 80, 0.2)",
+                  transition: { duration: 0.3 },
+                }}
+                transition={{
+                  duration: 0.6,
+                  ease: EASE,
+                  delay: Math.min(index, 11) * 0.04,
+                }}
+                className="group relative h-full w-full overflow-hidden rounded-lg border border-white/10 transition-colors duration-300 hover:border-gold/40"
+              >
+                <Image
+                  src={piece.src}
+                  alt={piece.alt}
+                  fill
+                  // Les premières vignettes sont visibles d'emblée sur grand écran :
+                  // le lazy loading les laissait vides tant que le scroll ne bougeait pas.
+                  loading={index < 6 ? "eager" : "lazy"}
+                  sizes="(max-width:768px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                  <span className="p-4 text-xs font-medium uppercase tracking-[0.2em] text-gold">
+                    {piece.style}
+                  </span>
+                </div>
+              </motion.div>
+            </div>
           ))}
         </div>
 
