@@ -3,7 +3,7 @@ export const studio = {
   logo: "/images/brand/logo-mark.png",
   tagline: "La ligne fine a son port d'attache.",
   description:
-    "Sur le port de Gruissan, rive droite, Barberousse Tattoo est mon salon et je suis le seul à y tatouer. Ma signature, c'est la ligne fine : un trait délicat, régulier, sans tremblement — le geste le moins pardonnable du métier, celui qui ne se rattrape pas. Autour de cette exigence, je travaille le japonais, le polynésien et le manga avec la même précision. Ici, vous ne piochez pas dans un catalogue : on discute, j'esquisse, on ajuste, puis je tatoue. Premier tatouage discret ou manchette entière, c'est la même main et la même rigueur du premier trait au dernier.",
+    "Sur le port de Gruissan, rive droite, Barberousse Tattoo est mon salon et je suis le seul à y tatouer. Ma signature, c'est la ligne fine : un trait délicat, régulier, sans tremblement. C'est le geste le moins pardonnable du métier, celui qui ne se rattrape pas. Autour de cette exigence, je travaille le japonais, le polynésien et le manga avec la même précision. Ici, vous ne piochez pas dans un catalogue : on discute, j'esquisse, on ajuste, puis je tatoue. Premier tatouage discret ou manchette entière, c'est la même main et la même rigueur du premier trait au dernier.",
   aboutTitle: "La ligne fine, poussée jusqu'au bout.",
   aboutStory:
     "Je tatoue seul. Ma signature, c'est la ligne fine : un trait continu, d'une régularité constante, posé une seule fois, sans repasse ni rattrapage. C'est une des disciplines les plus exigeantes du métier et c'est notamment sur cette maîtrise que j'ai bâti ma réputation, du petit motif discret aux compositions florales et ornementales les plus étendues.\n\nMa réputation repose aussi sur ma polyvalence, acquise au fil de nombreuses années d'étude, de pratique et de travail du métier. Passionné par mon travail et exigeant sur le résultat final, j'accorde une grande importance à l'écoute et aux attentes de chaque client. Je prends autant de plaisir à conseiller et accompagner qu'à réaliser le tatouage lui-même, et c'est une approche que mes clients apprécient, comme en témoignent leurs nombreux avis. Cette expérience me permet aujourd'hui de m'adapter à des projets et des styles très différents. Ma spécialité reste avant tout le travail des détails fins et précis, une signature que j'intègre quel que soit le style demandé.\n\nLe reste, c'est du soin : matériel à usage unique, hygiène irréprochable, et le temps qu'il faut pour que vous repartiez avec la bonne pièce.",
@@ -58,7 +58,7 @@ export const studio = {
     {
       name: "Victor",
       specialty: "Spécialiste fine line",
-      bio: "Seul maître à bord depuis l'ouverture, je me suis fait un nom sur un seul geste : la ligne fine. Un trait posé d'un coup, net, régulier, qui tient dans le temps sans s'épaissir — botanique, ornemental, lettrage, célestes. Le japonais, le manga et le polynésien complètent mon répertoire, avec la même précision. Je travaille chaque projet en amont, au crayon, jusqu'à ce que le dessin tienne debout tout seul. Puis je tatoue.",
+      bio: "Seul maître à bord depuis l'ouverture, je me suis fait un nom sur un seul geste : la ligne fine. Un trait posé d'un coup, net, régulier, qui tient dans le temps sans s'épaissir : botanique, ornemental, lettrage, célestes. Le japonais, le manga et le polynésien complètent mon répertoire, avec la même précision. Je travaille chaque projet en amont, au crayon, jusqu'à ce que le dessin tienne debout tout seul. Puis je tatoue.",
       instagram: "https://instagram.com/barberousse_tattoo_gruissan",
       photo: "/images/artists/victor-v2.jpg",
     },
@@ -105,7 +105,7 @@ export const studio = {
   ],
   services: [
     {
-      name: "Fine line — la signature du salon",
+      name: "Fine line, la signature du salon",
       description:
         "La finesse et la précision sont au cœur de mon travail. La ligne fine est l'une des disciplines sur lesquelles j'ai bâti ma réputation : un trait fin, régulier et maîtrisé, du petit motif discret aux compositions florales et ornementales les plus élaborées.\n\nPassionné et exigeant sur le résultat final, j'adapte cette précision à chaque projet et à chaque style. Mon objectif : un tatouage fin, propre et pensé pour bien évoluer dans le temps.",
       priceRange: "Sur devis",
