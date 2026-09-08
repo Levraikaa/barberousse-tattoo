@@ -33,7 +33,7 @@ export default function SplashScreen() {
         >
           <motion.span
             className="px-6 text-center text-6xl text-white md:text-8xl"
-            style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.15em' }}
+            style={{ fontFamily: "var(--font-display), sans-serif", letterSpacing: '0.15em' }}
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8, ease: EASE }}

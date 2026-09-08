@@ -34,7 +34,7 @@ export default function Services() {
           </div>
           <h2
             className="font-sans text-4xl font-light tracking-tight text-foreground md:text-6xl"
-            style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.05em' }}
+            style={{ fontFamily: "var(--font-display), sans-serif", letterSpacing: '0.05em' }}
           >
             Mes prestations de tatouage
           </h2>
@@ -76,7 +76,7 @@ export default function Services() {
 
                 <h3
                   className="mt-6 font-sans text-xl font-normal tracking-tight text-white md:text-2xl"
-                  style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.05em' }}
+                  style={{ fontFamily: "var(--font-display), sans-serif", letterSpacing: '0.05em' }}
                 >
                   {service.name}
                 </h3>
@@ -86,7 +86,7 @@ export default function Services() {
                     <p
                       key={paragraph.slice(0, 40)}
                       className="text-base leading-relaxed text-white/80"
-                      style={{ fontFamily: "'Inter', sans-serif", fontWeight: 300 }}
+                      style={{ fontFamily: "var(--font-body), sans-serif", fontWeight: 300 }}
                     >
                       {paragraph}
                     </p>

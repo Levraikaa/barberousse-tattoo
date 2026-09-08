@@ -40,15 +40,19 @@ export const studio = {
   establishedYear: 2019,
   heroImage: "/images/hero/victor-tatouage-nb-v2.jpg",
   aboutImage: "/images/about/01-salle-attente.jpg",
+  // Chaque photo du salon porte sa description : Google Images lit ces textes
   aboutImages: [
-    "/images/about/01-salle-attente.jpg",
-    "/images/about/02-cabine.jpg",
-    "/images/about/03-comptoir.jpg",
-    "/images/about/04-terrasse-port.jpg",
-    "/images/about/05-facade.jpg",
-    "/images/about/06-victor-en-seance.jpg",
-    "/images/about/07-victor-client.jpg",
+    { src: "/images/about/01-salle-attente.jpg", alt: "Salle d'attente du salon de tatouage Barberousse, à Gruissan" },
+    { src: "/images/about/02-cabine.jpg", alt: "Cabine de tatouage équipée du salon Barberousse, à Gruissan" },
+    { src: "/images/about/03-comptoir.jpg", alt: "Comptoir d'accueil du salon Barberousse Tattoo, quai du Ponant" },
+    { src: "/images/about/04-terrasse-port.jpg", alt: "Terrasse du salon face au port de Gruissan" },
+    { src: "/images/about/05-facade.jpg", alt: "Façade du salon de tatouage Barberousse, rive droite du port de Gruissan" },
+    { src: "/images/about/06-victor-en-seance.jpg", alt: "Victor en séance de tatouage dans son salon de Gruissan" },
+    { src: "/images/about/07-victor-client.jpg", alt: "Victor échangeant avec un client sur son projet de tatouage" },
   ],
+  heroImageAlt:
+    "Victor, tatoueur à Gruissan, en train de tatouer une ligne fine sur un avant-bras",
+  ogImage: "/og-barberousse-tattoo.jpg",
   artistsIntro:
     "Tatoueur passionné et à l'écoute, je prends le temps de comprendre votre projet, de vous conseiller et de l'adapter pour obtenir le meilleur résultat possible. Après des années d'étude et de pratique, je travaille aujourd'hui des styles très différents : fine line, japonais, manga, réalisme noir et gris, polynésien, ornemental, dotwork et lettering.",
   galleryIntro:

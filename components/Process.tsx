@@ -82,7 +82,7 @@ export default function Process() {
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.8, ease: EASE }}
           className="mb-16 text-center font-sans text-5xl uppercase leading-[0.9] md:mb-24 md:text-6xl"
-          style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.03em' }}
+          style={{ fontFamily: "var(--font-display), sans-serif", letterSpacing: '0.03em' }}
         >
           <span className="block text-white">Votre tatouage</span>
           <span className="block" style={{ color: ACCENT }}>
@@ -127,13 +127,13 @@ export default function Process() {
                   </span>
                   <h3
                     className="mt-2 font-sans text-2xl uppercase text-white"
-                    style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.04em' }}
+                    style={{ fontFamily: "var(--font-display), sans-serif", letterSpacing: '0.04em' }}
                   >
                     {title}
                   </h3>
                   <p
                     className="mt-2 text-sm leading-relaxed text-white/70"
-                    style={{ fontFamily: "'Inter', sans-serif", fontWeight: 300 }}
+                    style={{ fontFamily: "var(--font-body), sans-serif", fontWeight: 300 }}
                   >
                     {description}
                   </p>

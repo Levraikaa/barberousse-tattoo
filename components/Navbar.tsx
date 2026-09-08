@@ -49,7 +49,7 @@ export default function Navbar() {
           )}
           <span
             className="font-sans text-2xl tracking-wide text-foreground"
-            style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.05em' }}
+            style={{ fontFamily: "var(--font-display), sans-serif", letterSpacing: '0.05em' }}
           >
             {studio.name}
           </span>

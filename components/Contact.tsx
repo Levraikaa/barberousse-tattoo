@@ -30,7 +30,7 @@ const SIZES = [
 const INPUT =
   'w-full appearance-none rounded-lg border border-white/10 bg-[#1a1a1a] px-4 py-3 text-white outline-none transition-colors duration-300 placeholder:text-white/30 focus:border-[#b8432c]';
 const LABEL = 'mb-2 block text-xs uppercase tracking-[0.2em] text-white/50';
-const BODY_FONT = { fontFamily: "'Inter', sans-serif", fontWeight: 300 } as const;
+const BODY_FONT = { fontFamily: "var(--font-body), sans-serif", fontWeight: 300 } as const;
 
 const formVariants = {
   hidden: {},
@@ -75,7 +75,7 @@ export default function Contact() {
           <div>
             <h2
               className="font-sans text-5xl uppercase leading-[0.9] text-white md:text-6xl"
-              style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.03em' }}
+              style={{ fontFamily: "var(--font-display), sans-serif", letterSpacing: '0.03em' }}
             >
               <span className="block">Parlons de</span>
               <span className="block">votre tatouage</span>
@@ -189,7 +189,7 @@ export default function Contact() {
               <CircleCheckBig className="h-14 w-14 text-gold" aria-hidden="true" />
               <h3
                 className="text-3xl uppercase text-white"
-                style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.04em' }}
+                style={{ fontFamily: "var(--font-display), sans-serif", letterSpacing: '0.04em' }}
               >
                 Demande envoyée
               </h3>
@@ -356,7 +356,7 @@ export default function Contact() {
                 variants={fieldVariants}
                 type="submit"
                 className="group inline-flex w-full items-center justify-center gap-3 rounded-lg py-5 text-xl uppercase tracking-[0.05em] text-white transition-all duration-300 hover:brightness-110 hover:shadow-[0_0_25px_5px_rgba(184,67,44,0.5)]"
-                style={{ backgroundColor: ACCENT, fontFamily: "'Bebas Neue', sans-serif" }}
+                style={{ backgroundColor: ACCENT, fontFamily: "var(--font-display), sans-serif" }}
               >
                 Envoyer ma demande
                 <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />

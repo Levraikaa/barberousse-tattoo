@@ -50,7 +50,7 @@ export default function Gallery() {
           <h2
             className="font-sans text-4xl font-light tracking-tight text-foreground md:text-6xl"
             style={{
-              fontFamily: "'Bebas Neue', sans-serif",
+              fontFamily: "var(--font-display), sans-serif",
               letterSpacing: "0.05em",
             }}
           >
@@ -58,7 +58,7 @@ export default function Gallery() {
           </h2>
           <p
             className="mt-5 text-base leading-relaxed text-white"
-            style={{ fontFamily: "'Inter', sans-serif", fontWeight: 300 }}
+            style={{ fontFamily: "var(--font-body), sans-serif", fontWeight: 300 }}
           >
             {studio.galleryIntro}
           </p>

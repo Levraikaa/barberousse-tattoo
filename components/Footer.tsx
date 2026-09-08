@@ -13,8 +13,8 @@ const REVEAL = {
 } as const;
 
 const HEADING = 'font-sans text-xs uppercase tracking-wider text-white/80';
-const HEADING_STYLE = { fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.05em' } as const;
-const BODY_FONT = { fontFamily: "'Inter', sans-serif", fontWeight: 300 } as const;
+const HEADING_STYLE = { fontFamily: "var(--font-display), sans-serif", letterSpacing: '0.05em' } as const;
+const BODY_FONT = { fontFamily: "var(--font-body), sans-serif", fontWeight: 300 } as const;
 const SOCIAL_LINK =
   'inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-white transition-all duration-300 hover:scale-110 hover:border-gold/40 hover:text-gold hover:shadow-[0_0_15px_3px_rgba(184,67,44,0.5)]';
 

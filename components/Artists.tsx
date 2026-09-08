@@ -65,11 +65,11 @@ export default function Artists() {
           </div>
           <h2
             className="font-sans text-4xl font-light tracking-tight text-foreground md:text-6xl"
-            style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.05em' }}
+            style={{ fontFamily: "var(--font-display), sans-serif", letterSpacing: '0.05em' }}
           >
             {SOLO ? 'Victor, tatoueur à Gruissan' : 'Nos artistes'}
           </h2>
-          <p className="mt-5 max-w-xl text-white" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 300 }}>
+          <p className="mt-5 max-w-xl text-white" style={{ fontFamily: "var(--font-body), sans-serif", fontWeight: 300 }}>
             {SOLO
               ? studio.artistsIntro
               : 'Des mains singulières, une même exigence. Chacun de nos tatoueurs cultive un style qui lui est propre : choisissez celui qui dessinera votre prochaine pièce.'}
@@ -134,13 +134,13 @@ export default function Artists() {
                 >
                   <h3
                     className="font-sans text-xl text-foreground"
-                    style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.05em' }}
+                    style={{ fontFamily: "var(--font-display), sans-serif", letterSpacing: '0.05em' }}
                   >
                     {artist.name}
                   </h3>
                   <p
                     className="mt-1 text-xs uppercase tracking-wider text-gold"
-                    style={{ fontFamily: "'Inter', sans-serif", fontWeight: 300 }}
+                    style={{ fontFamily: "var(--font-body), sans-serif", fontWeight: 300 }}
                   >
                     {artist.specialty}
                   </p>
@@ -154,13 +154,13 @@ export default function Artists() {
                   <div>
                     <h3
                       className="font-sans text-2xl text-foreground"
-                      style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.05em' }}
+                      style={{ fontFamily: "var(--font-display), sans-serif", letterSpacing: '0.05em' }}
                     >
                       {artist.name}
                     </h3>
                     <p
                       className="mt-1 text-xs uppercase tracking-wider text-gold"
-                      style={{ fontFamily: "'Inter', sans-serif", fontWeight: 300 }}
+                      style={{ fontFamily: "var(--font-body), sans-serif", fontWeight: 300 }}
                     >
                       {artist.specialty}
                     </p>
@@ -168,7 +168,7 @@ export default function Artists() {
 
                   <p
                     className="text-sm leading-relaxed text-white"
-                    style={{ fontFamily: "'Inter', sans-serif", fontWeight: 300 }}
+                    style={{ fontFamily: "var(--font-body), sans-serif", fontWeight: 300 }}
                   >
                     {artist.bio}
                   </p>
@@ -241,7 +241,7 @@ export default function Artists() {
                   </div>
                   <h3
                     className="font-sans text-3xl text-foreground"
-                    style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.05em' }}
+                    style={{ fontFamily: "var(--font-display), sans-serif", letterSpacing: '0.05em' }}
                   >
                     {AWARDS.length} titres en convention
                   </h3>
@@ -271,14 +271,14 @@ export default function Artists() {
                       </div>
                       <p
                         className="mt-4 font-sans text-2xl leading-none text-gold"
-                        style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.05em' }}
+                        style={{ fontFamily: "var(--font-display), sans-serif", letterSpacing: '0.05em' }}
                       >
                         {award.rank}
                       </p>
-                      <p className="mt-2 text-base text-white" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 300 }}>
+                      <p className="mt-2 text-base text-white" style={{ fontFamily: "var(--font-body), sans-serif", fontWeight: 300 }}>
                         {award.category}
                       </p>
-                      <p className="mt-1 text-sm text-white/60" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 300 }}>
+                      <p className="mt-1 text-sm text-white/60" style={{ fontFamily: "var(--font-body), sans-serif", fontWeight: 300 }}>
                         {award.event}
                         {award.year && ` · ${award.year}`}
                       </p>
@@ -306,19 +306,19 @@ export default function Artists() {
                           </div>
                           <p
                             className="mt-4 font-sans text-2xl leading-none text-gold"
-                            style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.05em' }}
+                            style={{ fontFamily: "var(--font-display), sans-serif", letterSpacing: '0.05em' }}
                           >
                             {certification.title}
                           </p>
                           <p
                             className="mt-2 text-base text-white"
-                            style={{ fontFamily: "'Inter', sans-serif", fontWeight: 300 }}
+                            style={{ fontFamily: "var(--font-body), sans-serif", fontWeight: 300 }}
                           >
                             {certification.detail}
                           </p>
                           <p
                             className="mt-1 text-sm text-white/60"
-                            style={{ fontFamily: "'Inter', sans-serif", fontWeight: 300 }}
+                            style={{ fontFamily: "var(--font-body), sans-serif", fontWeight: 300 }}
                           >
                             {certification.issuer}
                             {certification.year && ` · ${certification.year}`}

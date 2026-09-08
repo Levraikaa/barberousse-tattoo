@@ -1,8 +1,24 @@
 import type { Metadata } from 'next';
+import { Bebas_Neue, Inter } from 'next/font/google';
 import { SITE_URL, studio } from '@/data/studio';
 import CustomCursor from '@/components/CustomCursor';
 import SplashScreen from '@/components/SplashScreen';
 import './globals.css';
+
+// Polices auto-hébergées par Next : plus d'appel bloquant à fonts.googleapis.com,
+// et le texte s'affiche tout de suite au lieu d'attendre le téléchargement.
+const bebas = Bebas_Neue({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-display',
+});
+const inter = Inter({
+  weight: ['300', '400', '500'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-body',
+});
 
 const TITLE = 'Tatoueur à Gruissan, fine line | Barberousse Tattoo';
 
@@ -18,11 +34,24 @@ export const metadata: Metadata = {
     siteName: studio.name,
     locale: 'fr_FR',
     type: 'website',
+    images: [
+      {
+        url: studio.ogImage,
+        width: 1200,
+        height: 630,
+        alt: 'Barberousse Tattoo, tatoueur à Gruissan, spécialiste de la ligne fine',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: TITLE,
     description: studio.description,
+    images: [studio.ogImage],
+  },
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
   },
 };
 
@@ -37,7 +66,7 @@ const jsonLd = {
     "Salon de tatouage à Gruissan, face au port, rive droite. Victor tatoue seul, sur rendez-vous, toute l'année : fine line, japonais, manga, réalisme noir et gris, polynésien, ornemental.",
   slogan: studio.tagline,
   url: `${SITE_URL}/`,
-  image: `${SITE_URL}${studio.heroImage}`,
+  image: `${SITE_URL}${studio.ogImage}`,
   logo: `${SITE_URL}${studio.logo}`,
   telephone: studio.phone.replace(/\s+/g, ''),
   email: studio.email,
@@ -183,7 +212,7 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fr" className="dark antialiased cursor-none">
+    <html lang="fr" className={`${bebas.variable} ${inter.variable} dark antialiased cursor-none`}>
       <head>
         <script
           type="application/ld+json"

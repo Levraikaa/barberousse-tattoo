@@ -8,8 +8,10 @@ import { studio } from '@/data/studio';
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
-const IMAGES: readonly string[] =
-  studio.aboutImages && studio.aboutImages.length > 0 ? studio.aboutImages : [studio.aboutImage];
+const IMAGES: readonly { src: string; alt: string }[] =
+  studio.aboutImages && studio.aboutImages.length > 0
+    ? studio.aboutImages
+    : [{ src: studio.aboutImage, alt: `Salon de tatouage ${studio.name}, à ${studio.address.city}` }];
 const HAS_CAROUSEL = IMAGES.length > 1;
 
 const listVariants = {
@@ -41,7 +43,7 @@ export default function About() {
 
             <h2
               className="font-sans text-4xl font-light tracking-tight text-foreground md:text-6xl"
-              style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.05em' }}
+              style={{ fontFamily: "var(--font-display), sans-serif", letterSpacing: '0.05em' }}
             >
               {studio.aboutTitle}
             </h2>
@@ -51,7 +53,7 @@ export default function About() {
                 <p
                   key={paragraph.slice(0, 40)}
                   className="leading-relaxed text-white"
-                  style={{ fontFamily: "'Inter', sans-serif", fontWeight: 300 }}
+                  style={{ fontFamily: "var(--font-body), sans-serif", fontWeight: 300 }}
                 >
                   {paragraph}
                 </p>
@@ -101,7 +103,7 @@ export default function About() {
             <div className="group relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/10 shadow-[0_0_60px_-20px_var(--gold)]">
               <AnimatePresence initial={false} mode="popLayout">
                 <motion.div
-                  key={IMAGES[index]}
+                  key={IMAGES[index].src}
                   initial={{ opacity: 0, scale: 1.04 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0 }}
@@ -109,8 +111,8 @@ export default function About() {
                   className="absolute inset-0"
                 >
                   <Image
-                    src={IMAGES[index]}
-                    alt=""
+                    src={IMAGES[index].src}
+                    alt={IMAGES[index].alt}
                     fill
                     priority={index === 0}
                     sizes="(max-width: 1024px) 100vw, 50vw"
@@ -145,9 +147,9 @@ export default function About() {
                   </button>
 
                   <div className="absolute inset-x-0 bottom-5 z-10 flex items-center justify-center gap-2">
-                    {IMAGES.map((src, i) => (
+                    {IMAGES.map((image, i) => (
                       <button
-                        key={src}
+                        key={image.src}
                         type="button"
                         onClick={() => setIndex(i)}
                         aria-label={`Voir la photo ${i + 1} du salon`}

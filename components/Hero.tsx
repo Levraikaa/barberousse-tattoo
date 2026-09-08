@@ -25,7 +25,14 @@ export default function Hero() {
     <>
       <section id="hero" className="relative isolate flex h-screen min-h-screen w-full flex-col overflow-hidden">
         <div className="ken-burns absolute inset-0 -z-10">
-          <Image src={studio.heroImage} alt="" fill priority sizes="100vw" className="object-cover" />
+          <Image
+            src={studio.heroImage}
+            alt={studio.heroImageAlt}
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
         </div>
         <div className="absolute inset-0 -z-10 bg-black/50" />
         <div
@@ -39,7 +46,7 @@ export default function Hero() {
             aria-label={studio.name}
             className="font-serif uppercase leading-[0.82] text-white"
             style={{
-              fontFamily: "'Bebas Neue', sans-serif",
+              fontFamily: "var(--font-display), sans-serif",
               fontSize: `clamp(${MIN_REM.toFixed(2)}rem, 18vw, 22rem)`,
               letterSpacing: '0.01em',
             }}
@@ -63,7 +70,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: EASE, delay: 0.25 + 0.12 * WORDS.length }}
             className="mt-6 max-w-xl text-sm uppercase tracking-[0.22em] text-white/85 md:text-base"
-            style={{ fontFamily: "'Inter', sans-serif", fontWeight: 300 }}
+            style={{ fontFamily: "var(--font-body), sans-serif", fontWeight: 300 }}
           >
             {studio.heroSubtitle}
           </motion.p>
@@ -75,7 +82,7 @@ export default function Hero() {
         <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-4 md:px-10">
           <span
             className="text-lg uppercase tracking-[0.2em] text-white"
-            style={{ fontFamily: "'Bebas Neue', sans-serif" }}
+            style={{ fontFamily: "var(--font-display), sans-serif" }}
           >
             {studio.name}
           </span>
