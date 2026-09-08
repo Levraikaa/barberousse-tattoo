@@ -50,6 +50,10 @@ export default function Contact() {
   const [message, setMessage] = useState('');
   const [consent, setConsent] = useState(false);
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState('');
+  // Champ leurre, invisible : rempli, c'est un robot.
+  const [website, setWebsite] = useState('');
 
   const reset = () => {
     setName('');
@@ -60,6 +64,51 @@ export default function Contact() {
     setMessage('');
     setConsent(false);
     setSent(false);
+    setError('');
+  };
+
+  // Repli tant que le service d'envoi n'a pas de clé : on ouvre le mail
+  // du visiteur, déjà rempli. Aucune demande ne se perd en silence.
+  const ouvrirMail = () => {
+    const corps = [
+      `Nom : ${name}`,
+      `Email : ${email}`,
+      `Téléphone : ${phone || 'non renseigné'}`,
+      `Styles : ${styles.join(', ') || 'non précisé'}`,
+      `Taille : ${size || 'non précisée'}`,
+      '',
+      message,
+    ].join('\n');
+    window.location.href = `mailto:${studio.email}?subject=${encodeURIComponent(
+      `Demande de tatouage — ${name}`,
+    )}&body=${encodeURIComponent(corps)}`;
+  };
+
+  const envoyer = async () => {
+    setSending(true);
+    setError('');
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, phone, styles, size, message, website }),
+      });
+      if (res.ok) {
+        setSent(true);
+        return;
+      }
+      const data = (await res.json()) as { error?: string; configured?: boolean };
+      if (data.configured === false) {
+        ouvrirMail();
+        setSent(true);
+        return;
+      }
+      setError(data.error ?? "L'envoi a échoué. Réessayez ou écrivez-moi directement.");
+    } catch {
+      setError("L'envoi a échoué. Vérifiez votre connexion ou écrivez-moi directement.");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -208,7 +257,7 @@ export default function Contact() {
             <motion.form
               onSubmit={(e) => {
                 e.preventDefault();
-                setSent(true);
+                void envoyer();
               }}
               variants={formVariants}
               initial="hidden"
@@ -352,13 +401,34 @@ export default function Contact() {
                 J&apos;accepte d&apos;être contacté par téléphone ou email pour ce projet
               </motion.label>
 
+              <input
+                type="text"
+                name="website"
+                value={website}
+                onChange={(e) => setWebsite(e.target.value)}
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                className="pointer-events-none absolute left-[-9999px] h-0 w-0 opacity-0"
+              />
+
+              {error && (
+                <p className="rounded-lg border border-[#b8432c]/40 bg-[#b8432c]/10 px-4 py-3 text-sm text-white" role="alert">
+                  {error}{' '}
+                  <a href={`mailto:${studio.email}`} className="underline hover:text-gold">
+                    {studio.email}
+                  </a>
+                </p>
+              )}
+
               <motion.button
                 variants={fieldVariants}
                 type="submit"
-                className="group inline-flex w-full items-center justify-center gap-3 rounded-lg py-5 text-xl uppercase tracking-[0.05em] text-white transition-all duration-300 hover:brightness-110 hover:shadow-[0_0_25px_5px_rgba(184,67,44,0.5)]"
+                disabled={sending}
+                className="group inline-flex w-full items-center justify-center gap-3 rounded-lg py-5 text-xl uppercase tracking-[0.05em] text-white transition-all duration-300 hover:brightness-110 hover:shadow-[0_0_25px_5px_rgba(184,67,44,0.5)] disabled:cursor-not-allowed disabled:opacity-60"
                 style={{ backgroundColor: ACCENT, fontFamily: "var(--font-display), sans-serif" }}
               >
-                Envoyer ma demande
+                {sending ? 'Envoi en cours…' : 'Envoyer ma demande'}
                 <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
               </motion.button>
             </motion.form>

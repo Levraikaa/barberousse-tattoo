@@ -32,6 +32,10 @@ export const studio = {
     instagram: "https://instagram.com/barberousse_tattoo_gruissan",
     tiktok: "",
   },
+  // Fiche Google Business : le signal le plus fort du référencement local.
+  // URL canonique par identifiant de lieu, insensible aux renommages.
+  googleBusinessUrl: "https://maps.google.com/?cid=2973647338177337317",
+  googleBusinessShortUrl: "https://maps.app.goo.gl/NnPZ6c85gzTEYJbW8",
   accentColor: "#b8432c",
   quote: {
     text: "Une ligne fine ne pardonne rien. On la pose une fois, elle reste trente ans.",

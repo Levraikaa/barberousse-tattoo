@@ -69,3 +69,20 @@ faire partie de `galleryStyles` pour apparaître dans les filtres.
   `whileInView` qui neutralise leur animation de sortie. Retirer le `whileInView`
   des vignettes (ou le remplacer par `animate`) corrige le comportement.
 - Les liens « Mentions légales » et « Confidentialité » du footer pointent sur `#`.
+
+## Formulaire de contact
+
+Les demandes partent par [Resend](https://resend.com). Sans clé d'API, le
+formulaire bascule automatiquement sur le mail pré-rempli du visiteur : rien
+n'est perdu, mais le visiteur doit appuyer lui-même sur « envoyer ».
+
+Pour activer l'envoi silencieux :
+
+1. Créer un compte sur resend.com, générer une clé d'API.
+2. Sur Vercel, projet `barberousse-tattoo` → Settings → Environment Variables :
+   `RESEND_API_KEY` = la clé.
+3. Redéployer.
+
+Variables facultatives : `CONTACT_TO_EMAIL` (destinataire, par défaut l'email
+du salon) et `CONTACT_FROM_EMAIL` (expéditeur, nécessite un domaine vérifié
+chez Resend).

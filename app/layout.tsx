@@ -85,7 +85,7 @@ const jsonLd = {
     latitude: studio.address.coordinates.lat,
     longitude: studio.address.coordinates.lng,
   },
-  hasMap: studio.address.googleMapsUrl,
+  hasMap: studio.googleBusinessUrl,
   // Fourchette générique : le salon ne communique aucun tarif chiffré sur le site.
   priceRange: '€€',
   openingHoursSpecification: [
@@ -96,7 +96,7 @@ const jsonLd = {
       closes: '16:45',
     },
   ],
-  sameAs: [studio.socials.instagram],
+  sameAs: [studio.socials.instagram, studio.googleBusinessUrl],
   publicAccess: false,
   availableLanguage: { '@type': 'Language', name: 'Français', alternateName: 'fr' },
   areaServed: [
