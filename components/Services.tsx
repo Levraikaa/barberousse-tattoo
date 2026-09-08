@@ -65,7 +65,7 @@ export default function Services() {
               >
                 <span
                   aria-hidden="true"
-                  className="pointer-events-none absolute right-6 top-6 select-none text-9xl font-light leading-none text-white/15"
+                  className="pointer-events-none absolute right-6 top-6 select-none text-6xl font-light md:text-7xl leading-none text-white/15"
                 >
                   {number}
                 </span>
@@ -75,7 +75,9 @@ export default function Services() {
                 </span>
 
                 <h3
-                  className="mt-6 font-sans text-xl font-normal tracking-tight text-white md:text-2xl"
+                  // Le chiffre décoratif occupe le coin haut droit : le titre garde
+                  // sa place à gauche au lieu de passer dessous.
+                  className="mt-6 max-w-[calc(100%-5rem)] font-sans text-base font-normal tracking-tight text-white md:max-w-[calc(100%-5.5rem)] md:text-lg"
                   style={{ fontFamily: "var(--font-display), sans-serif", letterSpacing: '0.05em' }}
                 >
                   {service.name}
