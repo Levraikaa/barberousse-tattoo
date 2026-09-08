@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Trophy, X } from 'lucide-react';
+import { GraduationCap, Trophy, X } from 'lucide-react';
 import { Instagram } from './SocialIcons';
 import { studio } from '@/data/studio';
 
@@ -22,6 +22,8 @@ const cardVariants = {
 const SOLO = studio.artists.length === 1;
 const AWARDS = studio.awards ?? [];
 const HAS_AWARDS = AWARDS.length > 0;
+// Formations suivies : listées sous les prix, sans entrer dans leur décompte
+const CERTIFICATIONS = studio.certifications ?? [];
 
 const PILL =
   'inline-flex w-fit items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-2 text-xs font-medium tracking-wide text-gold transition-all duration-300 hover:border-gold/60 hover:bg-gold/20';
@@ -283,6 +285,49 @@ export default function Artists() {
                     </li>
                   ))}
                 </ul>
+
+                {CERTIFICATIONS.length > 0 && (
+                  <div className="mt-10 border-t border-white/10 pt-8">
+                    <div className="mb-5 flex items-center gap-3">
+                      <GraduationCap className="h-4 w-4 text-gold" aria-hidden="true" />
+                      <span className="text-xs uppercase tracking-[0.25em] text-gold">Formation</span>
+                    </div>
+                    <ul className="flex flex-col gap-8">
+                      {CERTIFICATIONS.map((certification) => (
+                        <li key={certification.image}>
+                          <div className="relative aspect-[4/3] overflow-hidden rounded-xl border border-white/10 bg-black">
+                            <Image
+                              src={certification.image}
+                              alt={`${certification.title} — ${certification.issuer}`}
+                              fill
+                              sizes="(max-width:1024px) 100vw, 32rem"
+                              className="object-contain p-4"
+                            />
+                          </div>
+                          <p
+                            className="mt-4 font-sans text-2xl leading-none text-gold"
+                            style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.05em' }}
+                          >
+                            {certification.title}
+                          </p>
+                          <p
+                            className="mt-2 text-base text-white"
+                            style={{ fontFamily: "'Inter', sans-serif", fontWeight: 300 }}
+                          >
+                            {certification.detail}
+                          </p>
+                          <p
+                            className="mt-1 text-sm text-white/60"
+                            style={{ fontFamily: "'Inter', sans-serif", fontWeight: 300 }}
+                          >
+                            {certification.issuer}
+                            {certification.year && ` · ${certification.year}`}
+                          </p>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </div>
             </motion.aside>
           </>

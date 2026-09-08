@@ -93,6 +93,16 @@ export const studio = {
       image: "/images/awards/beziers-graphique.jpg",
     },
   ],
+  certifications: [
+    {
+      title: "Réalisme noir et gris",
+      detail:
+        "Techniques et apprentissage du tatouage réaliste et photo réaliste noir et gris",
+      issuer: "Séminaire Laura Ink",
+      year: "2021",
+      image: "/images/certifications/seminaire-laura-ink.jpg",
+    },
+  ],
   services: [
     {
       name: "Fine line — la signature du salon",
