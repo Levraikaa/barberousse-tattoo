@@ -58,7 +58,7 @@ export const studio = {
     {
       name: "Victor",
       specialty: "Spécialiste fine line",
-      bio: "Ma signature, c'est la ligne fine : un trait continu, d'une régularité constante, posé une seule fois, sans repasse ni rattrapage. C'est une des disciplines les plus exigeantes du métier et c'est notamment sur cette maîtrise que j'ai bâti ma réputation, du petit motif discret aux compositions florales et ornementales les plus étendues. Ma spécialité reste avant tout le travail des détails fins et précis, une signature que j'intègre quel que soit le style demandé.",
+      bio: "Je tatoue seul. Ma signature, c'est la ligne fine : un trait continu, d'une régularité constante, posé une seule fois, sans repasse ni rattrapage. C'est une des disciplines les plus exigeantes du métier et c'est notamment sur cette maîtrise que j'ai bâti ma réputation, du petit motif discret aux compositions florales et ornementales les plus étendues.",
       instagram: "https://instagram.com/barberousse_tattoo_gruissan",
       photo: "/images/artists/victor-v2.jpg",
     },
@@ -213,11 +213,6 @@ export const studio = {
       src: "/images/gallery/cerfs-mains.jpg",
       alt: "Cerfs en forêt tatoués en dotwork sur le dos des mains",
       style: "Noir & gris",
-    },
-    {
-      src: "/images/gallery/manga-rieuse.jpg",
-      alt: "Personnage manga au rire éclatant, noir et rouge, sur la cuisse",
-      style: "Manga",
     },
     {
       src: "/images/gallery/crane-cowboy.jpg",

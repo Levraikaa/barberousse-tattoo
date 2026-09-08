@@ -147,7 +147,7 @@ export default function Artists() {
                 </div>
 
                 <div
-                  className={`absolute inset-0 z-20 flex flex-col justify-end gap-4 bg-black/70 p-6 opacity-0 backdrop-blur-sm transition-opacity duration-500 ease-out group-hover:opacity-100 ${
+                  className={`absolute inset-0 z-20 flex flex-col justify-end gap-4 overflow-y-auto bg-black/70 p-6 opacity-0 backdrop-blur-sm transition-opacity duration-500 ease-out group-hover:opacity-100 ${
                     open ? 'opacity-100' : 'pointer-events-none group-hover:pointer-events-auto'
                   }`}
                 >
@@ -167,7 +167,7 @@ export default function Artists() {
                   </div>
 
                   <p
-                    className="line-clamp-5 text-sm leading-relaxed text-white"
+                    className="text-sm leading-relaxed text-white"
                     style={{ fontFamily: "'Inter', sans-serif", fontWeight: 300 }}
                   >
                     {artist.bio}
