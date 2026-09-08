@@ -78,10 +78,10 @@ export default function Contact() {
               style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.03em' }}
             >
               <span className="block">Parlons de</span>
-              <span className="block">votre projet</span>
+              <span className="block">votre tatouage</span>
             </h2>
             <p className="mt-6 max-w-md text-white/70" style={BODY_FONT}>
-              Chaque tatouage commence par une conversation. Décrivez-moi votre idée, je vous réponds sous 48h.
+              Chaque tatouage commence par une conversation. Décrivez-moi votre idée : je vous réponds sous 48h, et on se retrouve au salon, face au port de Gruissan.
             </p>
           </div>
 
@@ -135,7 +135,7 @@ export default function Contact() {
                   rel="noopener noreferrer"
                   className="mt-2 inline-flex w-fit items-center gap-1 text-sm font-medium text-gold transition-colors duration-300 hover:text-gold/80"
                 >
-                  Itinéraire
+                  Itinéraire vers le salon
                   <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
                 </a>
               </div>
@@ -144,7 +144,7 @@ export default function Contact() {
 
           <div className="flex flex-col gap-4 border-t border-white/10 pt-6">
             <p className="text-sm text-white/70" style={BODY_FONT}>
-              Sur rendez-vous uniquement
+              Sur rendez-vous uniquement, toute l'année
             </p>
             <div className="flex items-center gap-3">
               <a

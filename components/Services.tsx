@@ -22,6 +22,25 @@ export default function Services() {
     <section id="services" className="relative py-24 md:py-32">
       <div className="mx-auto w-full max-w-6xl px-6 md:px-8">
         <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.8, ease: EASE }}
+          className="mb-14 max-w-2xl md:mb-20"
+        >
+          <div className="mb-5 flex items-center gap-3">
+            <span className="h-px w-10 bg-gold/60" aria-hidden="true" />
+            <span className="text-xs uppercase tracking-[0.25em] text-gold">Prestations, à Gruissan</span>
+          </div>
+          <h2
+            className="font-sans text-4xl font-light tracking-tight text-foreground md:text-6xl"
+            style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.05em' }}
+          >
+            Mes prestations de tatouage
+          </h2>
+        </motion.div>
+
+        <motion.div
           variants={listVariants}
           initial="hidden"
           whileInView="show"

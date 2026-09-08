@@ -1,16 +1,23 @@
+// Domaine de production. Un nom de domaine définitif est prévu : le changer ICI
+// suffit, metadata, canonical, robots.txt, sitemap.xml et JSON-LD le lisent tous.
+export const SITE_URL = "https://barberousse-tattoo.vercel.app";
+
 export const studio = {
   name: "Barberousse Tattoo",
   logo: "/images/brand/logo-mark.png",
-  tagline: "La ligne fine a son port d'attache.",
+  tagline: "La ligne fine a son port d'attache, à Gruissan.",
   description:
-    "Sur le port de Gruissan, rive droite, Barberousse Tattoo est mon salon et je suis le seul à y tatouer. Ma signature, c'est la ligne fine : un trait délicat, régulier, sans tremblement. C'est le geste le moins pardonnable du métier, celui qui ne se rattrape pas. Autour de cette exigence, je travaille le japonais, le polynésien et le manga avec la même précision. Ici, vous ne piochez pas dans un catalogue : on discute, j'esquisse, on ajuste, puis je tatoue. Premier tatouage discret ou manchette entière, c'est la même main et la même rigueur du premier trait au dernier.",
-  aboutTitle: "La ligne fine, poussée jusqu'au bout.",
+    "Salon de tatouage face au port de Gruissan, à 15 km de Narbonne. Victor tatoue seul : fine line, japonais, réalisme. Sur RDV, ouvert toute l'année.",
+  // Sous-titre du hero, en texte réel sous le nom du salon
+  heroSubtitle:
+    "Tatoueur à Gruissan, spécialiste de la ligne fine. Sur rendez-vous.",
+  aboutTitle: "Tatouage à Gruissan, face au port",
   aboutStory:
-    "Barberousse, c'est d'abord un nom de Gruissan : celui de la tour qui veille sur le village depuis le Moyen Âge. J'en ai gardé l'esprit : sabres croisés au mur, ambiance soignée et paisible. J'ai choisi de m'installer face au port, sur le quai du Ponant, pour offrir à chacun une expérience agréable et inoubliable, dans un salon ouvert toute l'année.\n\nJe tatoue seul. Je prends autant de plaisir à conseiller et accompagner qu'à réaliser le tatouage lui-même, et c'est une approche que mes clients apprécient, comme en témoignent leurs nombreux avis.\n\nLe reste, c'est du soin : matériel à usage unique, hygiène irréprochable, et le temps qu'il faut pour que vous repartiez avec la bonne pièce.",
+    "Barberousse, c'est d'abord un nom de Gruissan : celui de la tour qui veille sur le village depuis le Moyen Âge. J'en ai gardé l'esprit : sabres croisés au mur, ambiance soignée et paisible. J'ai choisi d'installer mon salon de tatouage face au port, quai du Ponant, rive droite, pour offrir à chacun une expérience agréable et inoubliable. Il est ouvert toute l'année, saison comme hors saison.\n\nJe tatoue seul, sur rendez-vous, depuis l'ouverture en 2019. Je prends autant de plaisir à conseiller et accompagner qu'à réaliser le tatouage lui-même, et c'est une approche que mes clients apprécient : 5,0 étoiles et plus de 400 avis positifs.\n\nLe reste, c'est du soin : matériel à usage unique, hygiène irréprochable, et le temps qu'il faut pour que vous repartiez avec la bonne pièce.",
   stats: [
     { value: "5,0★", label: "Note moyenne" },
     { value: "400+", label: "Avis positifs" },
-    { value: "4", label: "Prix en convention" },
+    { value: "4", label: "Prix en conventions tattoo" },
   ],
   phone: "+33 6 77 39 79 78",
   email: "v.contrepois@gmail.com",
@@ -43,22 +50,24 @@ export const studio = {
     "/images/about/07-victor-client.jpg",
   ],
   artistsIntro:
-    "Un tatoueur passionné, à l'écoute et exigeant sur chaque réalisation. Je prends le temps de comprendre votre projet, de vous conseiller et de l'adapter pour obtenir le meilleur résultat possible. Après des années d'étude et de pratique, ma polyvalence me permet aujourd'hui de travailler des styles très différents, avec toujours la même exigence de précision et de finesse.",
+    "Tatoueur passionné et à l'écoute, je prends le temps de comprendre votre projet, de vous conseiller et de l'adapter pour obtenir le meilleur résultat possible. Après des années d'étude et de pratique, je travaille aujourd'hui des styles très différents : fine line, japonais, manga, réalisme noir et gris, polynésien, ornemental, dotwork et lettering.",
   galleryIntro:
-    "Une sélection de tatouages réalisés au salon, reflet de ma polyvalence et de plusieurs années de travail et d'expérience. Du petit motif fin aux compositions les plus importantes, je m'adapte à chaque projet et à chaque style, avec toujours la même exigence de précision, de finesse et de qualité.",
+    "Une sélection de tatouages réalisés au salon, à Gruissan : fine line, japonais, réalisme noir et gris, polynésien, manga, traditionnel. Du petit motif fin aux compositions les plus importantes, je m'adapte à chaque projet et à chaque style, avec la même exigence de précision et de finesse.",
   nav: [
     { label: "Le salon", href: "#about" },
-    { label: "L'artiste", href: "#artists" },
+    { label: "Le tatoueur", href: "#artists" },
     { label: "Galerie", href: "#gallery" },
     { label: "Prestations", href: "#services" },
     { label: "Contact", href: "#contact" },
   ],
-  ctaLabel: "Prendre RDV",
+  ctaLabel: "Prendre rendez-vous",
+  // Repli pour la barre fixe mobile, trop étroite pour le libellé complet
+  ctaLabelShort: "Prendre RDV",
   artists: [
     {
       name: "Victor",
-      specialty: "Spécialiste fine line",
-      bio: "Je tatoue seul. Ma signature, c'est la ligne fine : un trait continu, d'une régularité constante, posé une seule fois, sans repasse ni rattrapage. C'est une des disciplines les plus exigeantes du métier et c'est notamment sur cette maîtrise que j'ai bâti ma réputation, du petit motif discret aux compositions florales et ornementales les plus étendues.",
+      specialty: "Spécialiste fine line · Gruissan",
+      bio: "Ma signature, c'est la ligne fine : un trait continu, d'une régularité constante, posé une seule fois, sans repasse ni rattrapage. C'est une des disciplines les plus exigeantes du métier, et c'est sur cette maîtrise que j'ai bâti ma réputation à Gruissan, du petit motif discret aux compositions florales et ornementales les plus étendues.",
       instagram: "https://instagram.com/barberousse_tattoo_gruissan",
       photo: "/images/artists/victor-v2.jpg",
     },
@@ -97,7 +106,7 @@ export const studio = {
     {
       title: "Réalisme noir et gris",
       detail:
-        "Techniques et apprentissage du tatouage réaliste et photo réaliste noir et gris",
+        "Techniques du tatouage réaliste et photoréaliste",
       issuer: "Séminaire Laura Ink",
       year: "2021",
       image: "/images/certifications/seminaire-laura-ink.jpg",
@@ -105,33 +114,33 @@ export const studio = {
   ],
   services: [
     {
-      name: "Fine line, la signature du salon",
+      name: "Tatouage fine line, la signature du salon",
       description:
-        "La finesse et la précision sont au cœur de mon travail. La ligne fine est l'une des disciplines sur lesquelles j'ai bâti ma réputation : un trait fin, régulier et maîtrisé, du petit motif discret aux compositions florales et ornementales les plus élaborées.\n\nPassionné et exigeant sur le résultat final, j'adapte cette précision à chaque projet et à chaque style. Mon objectif : un tatouage fin, propre et pensé pour bien évoluer dans le temps.",
+        "Le tatouage en ligne fine est la discipline sur laquelle j'ai bâti ma réputation : un trait fin, régulier et maîtrisé, du petit motif discret aux compositions florales et ornementales les plus élaborées.\n\nJ'adapte cette précision à chaque projet, à chaque style et à chaque emplacement. L'objectif : un tatouage fin, propre et pensé pour bien évoluer dans le temps.",
       priceRange: "Sur devis",
     },
     {
-      name: "Japonais, manga & anime",
+      name: "Tatouage japonais, manga et anime",
       description:
-        "L'univers japonais occupe une place particulière dans mon travail. Passionné par cette culture et son esthétique, je réalise également des peintures japonaises à l'aquarelle, une pratique qui nourrit directement ma façon de composer mes tatouages. Du traditionnel japonais au manga, j'aime créer des pièces travaillées et personnelles. Je propose également des projets manga uniques, pensés et composés spécialement pour chaque tatouage.",
+        "L'univers japonais occupe une place particulière dans mon travail : je réalise aussi des peintures japonaises à l'aquarelle, une pratique qui nourrit directement ma façon de composer mes tatouages. Du japonais traditionnel (carpe koï, dragon, masque hannya, chrysanthèmes) au manga et à l'anime, chaque pièce est composée spécialement pour vous. Un style qui m'a valu un 1er prix Asiatique au Béziers Tattoo Show.",
       priceRange: "Sur devis",
     },
     {
-      name: "Réalisme",
+      name: "Réalisme noir et gris",
       description:
-        "Portraits, visages et scènes figuratives : je travaille principalement en noir et gris, avec une attention particulière portée aux dégradés, aux contrastes et aux détails. J'ai également suivi un séminaire et obtenu un certificat de formation en réalisme noir et gris auprès de Laura Ink, me permettant d'approfondir les techniques utilisées par les grands tatoueurs réalistes. Un savoir-faire que je continue de perfectionner pour proposer des réalisations toujours plus précises et abouties.",
+        "Portraits, visages et scènes figuratives : je travaille le réalisme principalement en noir et gris, avec une attention particulière portée aux dégradés, aux contrastes et aux détails. J'ai suivi un séminaire et obtenu un certificat de formation en réalisme noir et gris auprès de Laura Ink, pour approfondir les techniques utilisées par les grands tatoueurs réalistes. Un savoir-faire que je continue de perfectionner.",
       priceRange: "Sur devis",
     },
     {
-      name: "Projet sur-mesure",
+      name: "Tatouage sur-mesure, dessiné pour vous",
       description:
-        "Chaque projet est travaillé sur iPad et adapté à votre idée, votre morphologie et l'emplacement choisi. Je n'hésite pas à vous guider, à vous donner mon avis et à vous conseiller sur ce qui fonctionnera le mieux. Taille, niveau de détail, lisibilité et vieillissement du tatouage sont pris en compte pour éviter un motif trop petit ou, au contraire, inutilement trop grand. L'objectif est de trouver ensemble le meilleur équilibre pour un tatouage esthétique et durable.",
+        "Chaque projet est travaillé sur iPad et adapté à votre idée, votre morphologie et l'emplacement choisi. Je n'hésite pas à vous guider et à vous donner mon avis : taille, niveau de détail, lisibilité et vieillissement sont pris en compte pour éviter un motif trop petit ou, au contraire, inutilement trop grand. Premier tatouage discret ou manchette entière, c'est la même main et la même rigueur du premier trait au dernier.",
       priceRange: "Devis gratuit en DM",
     },
   ],
   galleryStyles: [
     "Fine line",
-    "Noir & gris",
+    "Noir et gris",
     "Réalisme",
     "Japonais",
     "Polynésien",
@@ -141,12 +150,12 @@ export const studio = {
   gallery: [
     {
       src: "/images/gallery/joker-harley-quinn.jpg",
-      alt: "Joker et Harley Quinn en noir et gris avec lettering « Why so serious ? », tatoués sur le mollet",
+      alt: "Joker et Harley Quinn en réalisme noir et gris, lettering « Why so serious ? », tatoués sur le mollet",
       style: "Réalisme",
     },
     {
       src: "/images/gallery/bracelet-pivoines.jpg",
-      alt: "Pivoines en ligne fine au-dessus d'un bracelet, tatouées sur l'avant-bras",
+      alt: "Pivoines tatouées en ligne fine au-dessus d'un bracelet, sur l'avant-bras, à Gruissan",
       style: "Fine line",
     },
     {
@@ -156,8 +165,8 @@ export const studio = {
     },
     {
       src: "/images/gallery/mandala-coude.jpg",
-      alt: "Mandala ornemental en noir et gris tatoué autour du coude",
-      style: "Noir & gris",
+      alt: "Mandala ornemental en noir et gris tatoué autour du coude, travail en dotwork",
+      style: "Noir et gris",
     },
     {
       src: "/images/gallery/cerisier-rose.jpg",
@@ -166,32 +175,32 @@ export const studio = {
     },
     {
       src: "/images/gallery/dragon-hannya.jpg",
-      alt: "Dragon japonais et masque hannya tatoués sur la cuisse",
+      alt: "Tatouage japonais dragon et masque hannya réalisé sur la cuisse, à Gruissan",
       style: "Japonais",
     },
     {
       src: "/images/gallery/mere-et-enfants.jpg",
-      alt: "Mère et ses deux enfants entourés de pivoines, réalisme dotwork sur le bras",
+      alt: "Mère et ses deux enfants entourés de pivoines, réalisme dotwork tatoué sur le bras",
       style: "Réalisme",
     },
     {
       src: "/images/gallery/tortue-maori.jpg",
-      alt: "Tortue maori et soleil marquisien tatoués sur l'épaule",
+      alt: "Tatouage polynésien maori, tortue et soleil marquisien sur l'épaule",
       style: "Polynésien",
     },
     {
       src: "/images/gallery/saint-michel.jpg",
-      alt: "Saint Michel en armure, réalisme noir et gris sur le bras",
+      alt: "Saint Michel en armure tatoué en réalisme noir et gris sur le bras",
       style: "Réalisme",
     },
     {
       src: "/images/gallery/manga-chaines.jpg",
-      alt: "Visages manga et chaînes, encre noire et rouge, tatoués sur la cuisse",
+      alt: "Tatouage manga, visages et chaînes en encre noire et rouge, sur la cuisse",
       style: "Manga",
     },
     {
       src: "/images/gallery/rose-ancre.jpg",
-      alt: "Ancre et rose tatouées sur le mollet, style traditionnel",
+      alt: "Ancre et rose tatouées sur le mollet, tatouage de style traditionnel",
       style: "Traditionnel",
     },
     {
@@ -201,22 +210,22 @@ export const studio = {
     },
     {
       src: "/images/gallery/carpe-koi.jpg",
-      alt: "Carpe koï japonaise noir et rouge tatouée sur les côtes",
+      alt: "Carpe koï tatouée en noir et rouge sur les côtes, style japonais traditionnel",
       style: "Japonais",
     },
     {
       src: "/images/gallery/raie-polynesienne.jpg",
-      alt: "Raie manta polynésienne tatouée sur le haut du dos",
+      alt: "Raie manta aux motifs polynésiens tatouée sur le haut du dos",
       style: "Polynésien",
     },
     {
       src: "/images/gallery/cerfs-mains.jpg",
-      alt: "Cerfs en forêt tatoués en dotwork sur le dos des mains",
-      style: "Noir & gris",
+      alt: "Cerfs en forêt tatoués en dotwork noir et gris sur le dos des mains",
+      style: "Noir et gris",
     },
     {
       src: "/images/gallery/crane-cowboy.jpg",
-      alt: "Crâne au chapeau et fer à cheval, tatouage traditionnel en couleur",
+      alt: "Crâne au chapeau et fer à cheval, tatouage traditionnel en couleur réalisé au salon",
       style: "Traditionnel",
     },
     {
@@ -226,7 +235,7 @@ export const studio = {
     },
     {
       src: "/images/gallery/chrysanthemes-dotwork.jpg",
-      alt: "Chrysanthèmes japonais en dotwork tatoués sur le bras",
+      alt: "Chrysanthèmes japonais tatoués en dotwork sur le bras, au salon de Gruissan",
       style: "Japonais",
     },
     {
@@ -236,17 +245,17 @@ export const studio = {
     },
     {
       src: "/images/gallery/pharaon-egyptien.jpg",
-      alt: "Divinité égyptienne à tête de faucon tatouée en noir et gris sur le bras",
+      alt: "Divinité égyptienne à tête de faucon tatouée en réalisme noir et gris sur le bras",
       style: "Réalisme",
     },
     {
       src: "/images/gallery/ancre-corde.jpg",
-      alt: "Ancre et cordage marins tatoués sur la cuisse",
+      alt: "Ancre et cordage marins tatoués sur la cuisse, tatouage traditionnel à Gruissan",
       style: "Traditionnel",
     },
     {
       src: "/images/gallery/papillon-fine-line.jpg",
-      alt: "Papillon en ligne fine tatoué sur la cuisse",
+      alt: "Papillon tatoué en ligne fine sur la cuisse, spécialité fine line du salon",
       style: "Fine line",
     },
     {
@@ -257,57 +266,57 @@ export const studio = {
     {
       src: "/images/gallery/horloge-oiseaux.jpg",
       alt: "Horloge et envol d'oiseaux tatoués en noir et gris sur la cuisse",
-      style: "Noir & gris",
+      style: "Noir et gris",
     },
     {
       src: "/images/gallery/cerisier-fine-line.jpg",
-      alt: "Fleurs de cerisier en ligne fine tatouées sur les côtes",
+      alt: "Fleurs de cerisier tatouées en ligne fine sur les côtes",
       style: "Fine line",
     },
     {
       src: "/images/gallery/mandala-epaule.jpg",
-      alt: "Mandala ornemental tatoué sur l'épaule",
-      style: "Noir & gris",
+      alt: "Mandala ornemental tatoué sur l'épaule en noir et gris",
+      style: "Noir et gris",
     },
     {
       src: "/images/gallery/loup-triskel.jpg",
-      alt: "Loup hurlant et triskèle celtique tatoués sur le mollet",
-      style: "Noir & gris",
+      alt: "Loup hurlant et triskèle celtique tatoués en noir et gris sur le mollet",
+      style: "Noir et gris",
     },
     {
       src: "/images/gallery/branches-fine-line.jpg",
-      alt: "Rameaux en ligne fine tatoués sur la cuisse",
+      alt: "Rameaux tatoués en ligne fine sur la cuisse, tatouage floral discret",
       style: "Fine line",
     },
     {
       src: "/images/gallery/rose-des-vents.jpg",
       alt: "Rose des vents et flèches tatouées en ligne fine sur le bras",
-      style: "Noir & gris",
+      style: "Noir et gris",
     },
     {
       src: "/images/gallery/portrait-couronne.jpg",
-      alt: "Portrait de femme couronnée tatoué en noir et gris sur le bras",
+      alt: "Portrait de femme couronnée tatoué en réalisme noir et gris sur le bras",
       style: "Réalisme",
     },
     {
       src: "/images/gallery/hirondelle-fine-line.jpg",
-      alt: "Hirondelle en vol tatouée en ligne fine sur l'omoplate",
+      alt: "Hirondelle en vol tatouée en ligne fine sur l'omoplate, à Gruissan",
       style: "Fine line",
     },
     {
       src: "/images/gallery/rose-banderole.jpg",
-      alt: "Rose et banderole en dotwork tatouées sur l'avant-bras",
-      style: "Noir & gris",
+      alt: "Rose et banderole tatouées en dotwork sur l'avant-bras",
+      style: "Noir et gris",
     },
     {
       src: "/images/gallery/oeil-horus.jpg",
-      alt: "Œil d'Horus et croix ankh tatoués sur le haut du dos",
-      style: "Noir & gris",
+      alt: "Œil d'Horus et croix ankh tatoués en noir et gris sur le haut du dos",
+      style: "Noir et gris",
     },
     {
       src: "/images/gallery/rose-cou.jpg",
-      alt: "Rose en noir et gris tatouée dans le cou",
-      style: "Noir & gris",
+      alt: "Rose tatouée en noir et gris dans le cou, réalisée au salon de Gruissan",
+      style: "Noir et gris",
     },
     {
       src: "/images/gallery/lettering-ancree.jpg",

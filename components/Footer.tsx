@@ -47,7 +47,7 @@ export default function Footer() {
               {studio.tagline}
             </p>
             <p className="mt-3 text-xs text-white/80" style={BODY_FONT}>
-              Studio de tatouage · {studio.address.city}
+              Salon de tatouage · Quai du Ponant, {studio.address.city} ({studio.address.zip}), Aude
             </p>
           </div>
 

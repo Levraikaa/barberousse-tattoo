@@ -58,6 +58,15 @@ export default function Hero() {
               </span>
             ))}
           </h1>
+          <motion.p
+            initial={{ opacity: 0, y: '0.4em' }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: EASE, delay: 0.25 + 0.12 * WORDS.length }}
+            className="mt-6 max-w-xl text-sm uppercase tracking-[0.22em] text-white/85 md:text-base"
+            style={{ fontFamily: "'Inter', sans-serif", fontWeight: 300 }}
+          >
+            {studio.heroSubtitle}
+          </motion.p>
         </div>
       </section>
 
@@ -75,7 +84,9 @@ export default function Hero() {
             className="inline-flex items-center justify-center rounded-full px-6 py-2.5 text-sm font-medium tracking-wide text-white transition-all duration-300 hover:brightness-110 hover:shadow-[0_0_25px_5px_rgba(184,67,44,0.5)]"
             style={{ backgroundColor: studio.accentColor }}
           >
-            {studio.ctaLabel}
+            {/* La barre fixe est étroite en 375px : libellé court sur mobile uniquement */}
+            <span className="sm:hidden">{studio.ctaLabelShort}</span>
+            <span className="hidden sm:inline">{studio.ctaLabel}</span>
           </a>
         </div>
       </div>

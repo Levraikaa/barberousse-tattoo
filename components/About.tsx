@@ -36,7 +36,7 @@ export default function About() {
           >
             <div className="mb-5 flex items-center gap-3">
               <span className="h-px w-10 bg-gold/50" aria-hidden="true" />
-              <span className="text-xs uppercase tracking-[0.25em] text-gold">Le studio</span>
+              <span className="text-xs uppercase tracking-[0.25em] text-gold">Le salon, à Gruissan</span>
             </div>
 
             <h2
@@ -80,7 +80,7 @@ export default function About() {
                 href="#services"
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 px-7 py-3 text-sm font-medium tracking-wide text-foreground transition-all duration-300 hover:border-gold/50 hover:text-gold"
               >
-                Mes prestations
+                Mes prestations de tatouage
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </a>
             </div>

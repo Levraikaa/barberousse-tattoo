@@ -60,14 +60,14 @@ export default function Artists() {
           <div className="mb-4 flex items-center gap-3">
             <span className="h-px w-10 bg-gold/60" />
             <span className="text-xs uppercase tracking-[0.25em] text-gold">
-              {SOLO ? "L'artiste" : "L'équipe"}
+              {SOLO ? 'Derrière la machine' : "L'équipe"}
             </span>
           </div>
           <h2
             className="font-sans text-4xl font-light tracking-tight text-foreground md:text-6xl"
             style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.05em' }}
           >
-            {SOLO ? 'Derrière la machine' : 'Nos artistes'}
+            {SOLO ? 'Victor, tatoueur à Gruissan' : 'Nos artistes'}
           </h2>
           <p className="mt-5 max-w-xl text-white" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 300 }}>
             {SOLO

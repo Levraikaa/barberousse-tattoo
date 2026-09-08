@@ -13,37 +13,37 @@ const STEPS = [
     Icon: MessageCircle,
     title: 'PRISE DE CONTACT',
     description:
-      "Remplis le formulaire ci-dessous avec ton projet : emplacement, taille, style, et toute référence visuelle qui t'inspire. Plus tu me donnes de détails, mieux je peux te conseiller.",
+      "Remplissez le formulaire ci-dessous avec votre projet : emplacement, taille, style, et toute référence visuelle qui vous inspire. Plus vous me donnez de détails, mieux je peux vous conseiller.",
   },
   {
     Icon: Clock,
     title: 'RÉPONSE SOUS 48H',
     description:
-      "J'étudie ta demande et je te recontacte par email ou téléphone pour échanger sur ta vision et évaluer la faisabilité du projet.",
+      "J'étudie votre demande et je vous recontacte par email ou téléphone pour échanger sur votre vision et évaluer la faisabilité du projet.",
   },
   {
     Icon: Palette,
     title: 'ESTIMATION & DEVIS',
     description:
-      "Selon la complexité, la taille et le style choisi, je t'envoie une estimation personnalisée. Pas de tarif fixe : chaque pièce est unique.",
+      "Selon la complexité, la taille et le style choisi, je vous envoie une estimation personnalisée. Pas de tarif fixe : chaque pièce est unique.",
   },
   {
     Icon: CalendarCheck,
     title: 'RENDEZ-VOUS AU SALON',
     description:
-      'On se retrouve au salon pour valider ensemble le design, affiner les détails et fixer la date de ta séance. Un acompte est demandé pour confirmer ta réservation.',
+      "On se retrouve au salon, quai du Ponant à Gruissan, pour valider ensemble le design, affiner les détails et fixer la date de votre séance. Un acompte est demandé pour confirmer votre réservation.",
   },
   {
     Icon: Zap,
     title: 'LA SÉANCE DE TATOUAGE',
     description:
-      "Le grand jour. Je prends le temps qu'il faut pour réaliser une pièce à la hauteur de tes attentes, dans un cadre soigné et une ambiance détendue.",
+      "Le grand jour. Je prends le temps qu'il faut pour réaliser une pièce à la hauteur de vos attentes, dans un cadre soigné et une ambiance détendue.",
   },
   {
     Icon: Heart,
     title: 'LES SOINS & LE SUIVI',
     description:
-      'Je te remets un guide de cicatrisation complet. En cas de question ou pour une retouche gratuite si nécessaire, je reste disponible. Ton tatouage mérite un suivi impeccable.',
+      "Je vous remets un guide de cicatrisation complet. Je reste disponible pour vos questions et pour une retouche gratuite si nécessaire. Votre tatouage mérite un suivi impeccable.",
   },
 ];
 
@@ -84,7 +84,7 @@ export default function Process() {
           className="mb-16 text-center font-sans text-5xl uppercase leading-[0.9] md:mb-24 md:text-6xl"
           style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.03em' }}
         >
-          <span className="block text-white">Votre projet</span>
+          <span className="block text-white">Votre tatouage</span>
           <span className="block" style={{ color: ACCENT }}>
             Étape par étape
           </span>
