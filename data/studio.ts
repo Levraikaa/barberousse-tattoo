@@ -154,6 +154,9 @@ export const studio = {
     "Polynésien",
     "Manga",
     "Traditionnel",
+    // Fourre-tout pour les pièces qui ne rentrent dans aucune case : le filtre
+    // n'apparaît que si au moins une réalisation porte ce style.
+    "Autre",
   ],
   gallery: [
     {

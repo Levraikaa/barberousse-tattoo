@@ -16,7 +16,14 @@ export default function Gallery() {
   const [activeStyle, setActiveStyle] = useState<string>(ALL);
   const [toutAfficher, setToutAfficher] = useState(false);
 
-  const filters = [ALL, ...studio.galleryStyles];
+  // On n'affiche que les styles qui ont au moins une réalisation : un filtre
+  // qui ouvre sur une grille vide est pire que pas de filtre du tout.
+  const filters = [
+    ALL,
+    ...studio.galleryStyles.filter((style) =>
+      studio.gallery.some((piece) => piece.style === style),
+    ),
+  ];
   const pieces =
     activeStyle === ALL
       ? studio.gallery
