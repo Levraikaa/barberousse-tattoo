@@ -43,13 +43,16 @@ export default function Hero() {
 
         {/* Le bloc est posé dans le bas de l'image : centré, il tombait en travers
             du visage du tatoueur. */}
-        <div className="relative z-10 flex flex-1 flex-col items-center justify-end px-6 pb-[16vh] text-center md:px-10">
+        <div className="relative z-10 flex flex-1 flex-col items-center justify-end px-6 pb-[max(6.5rem,9vh)] text-center md:px-10">
           <h1
             aria-label={studio.name}
             className="font-serif uppercase leading-[0.82] text-white"
             style={{
               fontFamily: "var(--font-display), sans-serif",
-              fontSize: `clamp(${MIN_REM.toFixed(2)}rem, 18vw, 22rem)`,
+              // La largeur seule donnait un titre géant sur les écrans larges et
+              // courts, où il recouvrait entièrement le visage : la hauteur
+              // disponible entre aussi dans le calcul.
+              fontSize: `clamp(${MIN_REM.toFixed(2)}rem, min(18vw, 16vh), 22rem)`,
               letterSpacing: '0.01em',
             }}
           >
