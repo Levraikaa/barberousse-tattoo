@@ -63,6 +63,14 @@ export default function Footer() {
                   </a>
                 </li>
               ))}
+              <li>
+                <a
+                  href="/tatoueur-fine-line-narbonne"
+                  className="text-sm text-white transition-colors duration-300 hover:text-gold"
+                >
+                  Tatoueur fine line à Narbonne
+                </a>
+              </li>
             </ul>
           </nav>
 
@@ -134,7 +142,7 @@ export default function Footer() {
               )}
             </div>
             <a
-              href="#contact"
+              href="/#contact"
               className="mt-6 inline-flex items-center justify-center gap-2 rounded-full border border-white/15 px-7 py-3 text-sm font-medium tracking-wide text-foreground transition-all duration-300 hover:border-gold/50 hover:text-gold"
             >
               {studio.ctaLabel}

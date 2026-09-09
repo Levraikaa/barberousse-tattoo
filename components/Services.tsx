@@ -93,6 +93,17 @@ export default function Services() {
                       {paragraph}
                     </p>
                   ))}
+
+                  {/* Lien contextuel vers la page dédiée : c'est celui qui compte */}
+                  {index === 0 && (
+                    <a
+                      href="/tatoueur-fine-line-narbonne"
+                      className="mt-1 inline-flex w-fit items-center gap-2 text-sm text-gold underline decoration-gold/30 underline-offset-4 transition-colors duration-300 hover:decoration-gold"
+                      style={{ fontFamily: "var(--font-body), sans-serif", fontWeight: 300 }}
+                    >
+                      La ligne fine, si vous venez de Narbonne
+                    </a>
+                  )}
                 </div>
               </motion.div>
             );

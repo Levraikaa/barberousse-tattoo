@@ -62,11 +62,11 @@ export const studio = {
   galleryIntro:
     "Une sélection de tatouages réalisés au salon, à Gruissan, pour des clients venus de Narbonne et de tout le littoral audois : fine line, japonais, réalisme noir et gris, polynésien, manga, traditionnel. Du petit motif fin aux compositions les plus importantes, je m'adapte à chaque projet et à chaque style, avec la même exigence de précision et de finesse.",
   nav: [
-    { label: "Le salon", href: "#about" },
-    { label: "Le tatoueur", href: "#artists" },
-    { label: "Galerie", href: "#gallery" },
-    { label: "Prestations", href: "#services" },
-    { label: "Contact", href: "#contact" },
+    { label: "Le salon", href: "/#about" },
+    { label: "Le tatoueur", href: "/#artists" },
+    { label: "Galerie", href: "/#gallery" },
+    { label: "Prestations", href: "/#services" },
+    { label: "Contact", href: "/#contact" },
   ],
   ctaLabel: "Prendre rendez-vous",
   // Repli pour la barre fixe mobile, trop étroite pour le libellé complet

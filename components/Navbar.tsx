@@ -71,7 +71,7 @@ export default function Navbar() {
 
         <div className="flex items-center gap-3">
           <a
-            href="#contact"
+            href="/#contact"
             className="hidden items-center justify-center gap-2 rounded-full bg-gold px-6 py-2.5 text-sm font-medium tracking-wide text-[#0a0a0a] transition-all duration-300 hover:shadow-[0_0_25px_5px_rgba(184,67,44,0.5)] hover:brightness-110 md:inline-flex"
           >
             {studio.ctaLabel}
@@ -129,7 +129,7 @@ export default function Navbar() {
                 className="pt-4"
               >
                 <a
-                  href="#contact"
+                  href="/#contact"
                   onClick={closeMenu}
                   className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gold px-7 py-3 text-sm font-medium tracking-wide text-[#0a0a0a] transition-all duration-300 hover:shadow-[0_0_25px_5px_rgba(184,67,44,0.5)] hover:brightness-110"
                 >

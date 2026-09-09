@@ -15,5 +15,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
         ...studio.gallery.map((piece) => `${SITE_URL}${piece.src}`),
       ],
     },
+    {
+      url: `${SITE_URL}/tatoueur-fine-line-narbonne`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+      images: studio.gallery
+        .filter((piece) => piece.style === 'Fine line')
+        .map((piece) => `${SITE_URL}${piece.src}`),
+    },
   ];
 }
