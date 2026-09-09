@@ -41,7 +41,9 @@ export default function Hero() {
         />
         <div className="grain" />
 
-        <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 text-center md:px-10">
+        {/* Le bloc est posé dans le bas de l'image : centré, il tombait en travers
+            du visage du tatoueur. */}
+        <div className="relative z-10 flex flex-1 flex-col items-center justify-end px-6 pb-[16vh] text-center md:px-10">
           <h1
             aria-label={studio.name}
             className="font-serif uppercase leading-[0.82] text-white"
