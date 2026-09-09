@@ -20,7 +20,7 @@ const inter = Inter({
   variable: '--font-body',
 });
 
-const TITLE = 'Tatoueur à Gruissan, fine line | Barberousse Tattoo';
+const TITLE = 'Tatoueur fine line, Narbonne et Gruissan | Barberousse Tattoo';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

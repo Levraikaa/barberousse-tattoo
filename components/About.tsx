@@ -77,6 +77,17 @@ export default function About() {
               ))}
             </motion.div>
 
+            <a
+              href={studio.googleBusinessUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-flex items-center gap-2 text-sm text-white/70 underline decoration-white/25 underline-offset-4 transition-colors duration-300 hover:text-gold hover:decoration-gold/50"
+              style={{ fontFamily: 'var(--font-body), sans-serif', fontWeight: 300 }}
+            >
+              Lire les avis sur Google
+              <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+            </a>
+
             <div className="mt-10">
               <a
                 href="#services"

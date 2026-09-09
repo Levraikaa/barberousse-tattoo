@@ -7,10 +7,10 @@ export const studio = {
   logo: "/images/brand/logo-mark.png",
   tagline: "La ligne fine a son port d'attache, à Gruissan.",
   description:
-    "Salon de tatouage face au port de Gruissan, à 15 km de Narbonne. Victor tatoue seul : fine line, japonais, réalisme. Sur RDV, ouvert toute l'année.",
+    "Tatoueur spécialiste de la ligne fine à 15 minutes de Narbonne, à Gruissan. Victor tatoue seul, sur rendez-vous : fine line, japonais, réalisme. 5,0 sur plus de 400 avis.",
   // Sous-titre du hero, en texte réel sous le nom du salon
   heroSubtitle:
-    "Tatoueur à Gruissan, spécialiste de la ligne fine. Sur rendez-vous.",
+    "Spécialiste de la ligne fine, à Gruissan, quinze minutes de Narbonne. Sur rendez-vous.",
   aboutTitle: "Tatouage à Gruissan, face au port",
   aboutStory:
     "Barberousse, c'est d'abord un nom de Gruissan : celui de la tour qui veille sur le village depuis le Moyen Âge. J'en ai gardé l'esprit : sabres croisés au mur, ambiance soignée et paisible. J'ai choisi d'installer mon salon de tatouage face au port, quai du Ponant, rive droite, pour offrir à chacun une expérience agréable et inoubliable. Il est ouvert toute l'année, en saison comme hors saison, à quinze minutes de Narbonne.\n\nJe tatoue seul, sur rendez-vous, depuis l'ouverture en 2019. Je prends autant de plaisir à conseiller et accompagner qu'à réaliser le tatouage lui-même, et c'est une approche que mes clients apprécient : 5,0 étoiles et plus de 400 avis positifs.\n\nLe reste, c'est du soin : matériel à usage unique, hygiène irréprochable, et le temps qu'il faut pour que vous repartiez avec la bonne pièce.",
@@ -60,7 +60,7 @@ export const studio = {
   artistsIntro:
     "Tatoueur passionné et à l'écoute, je prends le temps de comprendre votre projet, de vous conseiller et de l'adapter pour obtenir le meilleur résultat possible. Après des années d'étude et de pratique, je travaille aujourd'hui des styles très différents : fine line, japonais, manga, réalisme noir et gris, polynésien, ornemental, dotwork et lettering.",
   galleryIntro:
-    "Une sélection de tatouages réalisés au salon, à Gruissan : fine line, japonais, réalisme noir et gris, polynésien, manga, traditionnel. Du petit motif fin aux compositions les plus importantes, je m'adapte à chaque projet et à chaque style, avec la même exigence de précision et de finesse.",
+    "Une sélection de tatouages réalisés au salon, à Gruissan, pour des clients venus de Narbonne et de tout le littoral audois : fine line, japonais, réalisme noir et gris, polynésien, manga, traditionnel. Du petit motif fin aux compositions les plus importantes, je m'adapte à chaque projet et à chaque style, avec la même exigence de précision et de finesse.",
   nav: [
     { label: "Le salon", href: "#about" },
     { label: "Le tatoueur", href: "#artists" },
@@ -124,7 +124,7 @@ export const studio = {
     {
       name: "Tatouage fine line, la signature du salon",
       description:
-        "Le tatouage en ligne fine est la discipline sur laquelle j'ai bâti ma réputation : un trait fin, régulier et maîtrisé, du petit motif discret aux compositions florales et ornementales les plus élaborées.\n\nJ'adapte cette précision à chaque projet, à chaque style et à chaque emplacement. L'objectif : un tatouage fin, propre et pensé pour bien évoluer dans le temps.",
+        "Le tatouage en ligne fine est la discipline sur laquelle j'ai bâti ma réputation : un trait fin, régulier et maîtrisé, du petit motif discret aux compositions florales et ornementales les plus élaborées.\n\nC'est une technique exigeante, et peu de salons du bassin de Narbonne en font leur spécialité. J'adapte cette précision à chaque projet, à chaque style et à chaque emplacement. L'objectif : un tatouage fin, propre et pensé pour bien évoluer dans le temps.",
       priceRange: "Sur devis",
     },
     {
