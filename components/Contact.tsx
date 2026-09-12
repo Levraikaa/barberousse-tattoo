@@ -19,7 +19,13 @@ import { studio } from '@/data/studio';
 const EASE = [0.22, 1, 0.36, 1] as const;
 const ACCENT = '#b8432c';
 
-const MAP_URL = `https://www.google.com/maps?q=${studio.address.coordinates.lat},${studio.address.coordinates.lng}&z=15&output=embed`;
+// La carte cherche le salon par son nom plutôt que par ses coordonnées : le
+// repère porte alors « Barberousse Tattoo » au lieu d'un point anonyme, et le
+// zoom rapproché montre le quai du Ponant, rive droite. Les libellés de Google
+// (« Port rive gauche »...) restent ceux de Google, on ne les contrôle pas.
+const MAP_URL = `https://www.google.com/maps?q=${encodeURIComponent(
+  `${studio.name}, ${studio.address.street.replace(' — ', ', ')}, ${studio.address.zip} ${studio.address.city}`,
+)}&z=17&output=embed`;
 
 const SIZES = [
   { id: 'small', label: 'Petite pièce', range: 'Moins de 10 cm', Icon: Circle },

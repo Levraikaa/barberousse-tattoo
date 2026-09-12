@@ -53,6 +53,7 @@ export const studio = {
     { src: "/images/about/05-facade.jpg", alt: "Façade du salon de tatouage Barberousse, rive droite du port de Gruissan" },
     { src: "/images/about/06-victor-en-seance.jpg", alt: "Victor en séance de tatouage dans son salon de Gruissan" },
     { src: "/images/about/07-victor-client.jpg", alt: "Victor échangeant avec un client sur son projet de tatouage" },
+    { src: "/images/about/08-vue-port.jpg", alt: "Vue sur le port de Gruissan depuis le salon Barberousse Tattoo, quai du Ponant" },
   ],
   heroImageAlt:
     "Victor, tatoueur à Gruissan, en train de tatouer une ligne fine sur un avant-bras",
@@ -159,6 +160,11 @@ export const studio = {
     "Autre",
   ],
   gallery: [
+    {
+      src: "/images/gallery/phenix-soleil.jpg",
+      alt: "Phénix aux ailes déployées devant un soleil, tatoué en ligne fine et dotwork sur le bras, à Gruissan",
+      style: "Fine line",
+    },
     {
       src: "/images/gallery/joker-harley-quinn.jpg",
       alt: "Joker et Harley Quinn en réalisme noir et gris, lettering « Why so serious ? », tatoués sur le mollet",
