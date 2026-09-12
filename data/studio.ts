@@ -36,6 +36,114 @@ export const studio = {
   // URL canonique par identifiant de lieu, insensible aux renommages.
   googleBusinessUrl: "https://maps.google.com/?cid=2973647338177337317",
   googleBusinessShortUrl: "https://maps.app.goo.gl/NnPZ6c85gzTEYJbW8",
+  // Autres présences publiques du salon, recoupées par Google et les moteurs de réponse
+  facebookUrl: "https://www.facebook.com/profile.php?id=2093223444303930",
+  planityUrl: "https://www.planity.com/barberousse-tatoo-11430-gruissan",
+  reviewCount: 443,
+  ratingValue: "5.0",
+
+  // Avis Google reproduits tels quels (prénom et initiale), tous notés 5 étoiles.
+  // Source : fiche Google Business, relevés le 12/09/2026.
+  reviews: [
+    {
+      author: "Sandii T.",
+      date: "2026-08",
+      visited: "Visité en juillet 2026",
+      text: "Un VRAI tatoueur qui a parfaitement compris mon souhait pour mon tatouage et qui s'applique énormément, un vrai pro. Le tattoo avec des courbes d'une finesse incroyable. Aucune douleur et très bon moment. Merci beaucoup et encore bravo pour ton travail et ton application",
+    },
+    {
+      author: "Candice N.",
+      date: "2026-08",
+      visited: "Visité en juillet 2026",
+      text: "Tatoueur au top, que je recommande vivement ! C'est quelqu'un de très réactif et surtout très professionnel. 2 jours après l'avoir contacté pour un tatouage commun mère/fille, nous avons pu concrétiser notre souhait. J'avais un peu d'appréhension suite à un tatouage réalisé une vingtaine d'années plus tôt et à ma grande surprise, aucune douleur. Je n'ai rien senti. Il nous a donné plein de conseils pour la phase de cicatrisation et a même pris de nos nouvelles le lendemain pour savoir comment ça allait. Ma fille et moi sommes ravies.",
+    },
+    {
+      author: "BliXouuu",
+      date: "2026-08",
+      visited: "Visité en juillet 2026",
+      text: "Une super expérience du début à la fin ! Nous sommes venues à trois, mais seulement deux à nous faire tatouer. L'ambiance était géniale, on a beaucoup rigolé, et le tatoueur a tout de suite su nous mettre à l'aise. Le travail est vraiment magnifique : des lignes fines, un tatouage propre et exactement comme on l'imaginait. On est reparties ravies de nos tatouages et avec de très bons souvenirs de cette journée.",
+    },
+    {
+      author: "Riku C.",
+      date: "2026-07",
+      visited: "Visité en juin 2026",
+      text: "Super tatoueur. Victor a de suite compris ce que je voulais, il est très doux et très professionnel. Aucun problème au niveau des normes d'hygiène. J'ai passé un super moment et aucun problème de cicatrisation par la suite, une fois que le tattoo a dégorgé, on voit bien tous les détails. Un véritable artiste, vous pouvez y aller en toute confiance !",
+    },
+    {
+      author: "Ana D.",
+      date: "2026-07",
+      visited: "Visité en juin 2026",
+      text: "Super expérience ! Nous l'avons contacté hier en fin d'après-midi et avons pu être tatouées dès aujourd'hui. Très professionnel, doux et attentif à notre confort tout au long de la séance. Le salon est impeccable, nous sommes très satisfaites du résultat de nos quatre tatouages et recommandons vivement ce tatoueur !",
+    },
+    {
+      author: "Capucine A.",
+      date: "2026-08",
+      visited: "Visité en juillet 2026",
+      text: "On est venues 2 jours avant pour prendre rendez-vous, puis nous avons pu échanger sur WhatsApp à propos des tatouages. Le salon est facilement trouvable, il fait frais et l'ambiance est paisible et adaptée. Très à l'écoute pour les emplacements et donne de très bons conseils. Super tatouage, merci beaucoup !",
+    },
+    {
+      author: "Djannys",
+      date: "2026-08",
+      visited: "Visité en août 2026",
+      text: "Tatoueur génial, qui met en confiance et qui réalise de sublimes performances, ça se voit qu'il le fait avec passion. Je suis très heureux de mon tatouage, il a été réalisé avec soin. Je recommande vivement !",
+    },
+    {
+      author: "Ana G.",
+      date: "2026-08",
+      visited: "Visité en juillet 2026",
+      text: "J'étais de passage pour les vacances, j'ai voulu me faire tatouer chez lui ! Super accueil, super sympa, s'applique, il est très doux et super agréable ! Je vous le conseille, très bonne expérience.",
+    },
+  ],
+
+  // Questions que posent les clients. Les réponses ne disent que ce qui est
+  // déjà vrai ailleurs sur le site : rien n'est promis ici qui ne le soit pas là-bas.
+  faq: [
+    {
+      question: "Faut-il prendre rendez-vous pour se faire tatouer ?",
+      answer:
+        "Oui, le salon reçoit uniquement sur rendez-vous, toute l'année, du mardi au samedi. Décrivez votre projet dans le formulaire de contact : je vous réponds sous 48h, par email ou par téléphone, et on fixe ensemble une date.",
+    },
+    {
+      question: "Où se trouve le salon ?",
+      answer:
+        "À Gruissan, quai du Ponant, rive droite, face au port de plaisance : Résidence les Rocailles, Bât. B, 11430 Gruissan. C'est à quinze minutes de Narbonne en voiture.",
+    },
+    {
+      question: "Combien coûte un tatouage ?",
+      answer:
+        "Il n'y a pas de tarif fixe : chaque pièce est unique. Le prix dépend de la taille, de la complexité et du style choisi. Après un premier échange sur votre projet, je vous envoie une estimation personnalisée. Le devis est gratuit.",
+    },
+    {
+      question: "Est-ce que vous dessinez le tatouage vous-même ?",
+      answer:
+        "Oui. Chaque projet est dessiné sur iPad et adapté à votre idée, à votre morphologie et à l'emplacement choisi. On valide le dessin ensemble au salon avant la séance : je ne tatoue rien tant que vous n'êtes pas d'accord avec chaque trait.",
+    },
+    {
+      question: "Un acompte est-il demandé ?",
+      answer:
+        "Oui, un acompte est demandé pour confirmer votre réservation, une fois le dessin validé et la date fixée.",
+    },
+    {
+      question: "Est-ce que ça fait mal ?",
+      answer:
+        "Cela dépend de l'emplacement et de la sensibilité de chacun. Je prends le temps qu'il faut et je fais en sorte que vous soyez à l'aise pendant toute la séance. Beaucoup de clients repartent surpris d'avoir si peu senti.",
+    },
+    {
+      question: "Que se passe-t-il après la séance ?",
+      answer:
+        "Je vous remets un guide de cicatrisation complet et je reste disponible pour vos questions. Si une retouche est nécessaire, elle est gratuite.",
+    },
+    {
+      question: "Quels styles de tatouage pratiquez-vous ?",
+      answer:
+        "Ma spécialité est la ligne fine. Je travaille aussi le japonais, le manga et l'anime, le réalisme noir et gris, le polynésien, le traditionnel, l'ornemental, le dotwork et le lettering. Si votre projet ne rentre dans aucune case, décrivez-le : on en parle.",
+    },
+    {
+      question: "Quels sont les horaires du salon ?",
+      answer:
+        "Le salon est ouvert du mardi au samedi, de 13h45 à 16h45, uniquement sur rendez-vous. Il est fermé le dimanche et le lundi. Il reste ouvert toute l'année, en saison comme hors saison.",
+    },
+  ],
   accentColor: "#b8432c",
   quote: {
     text: "Une ligne fine ne pardonne rien. On la pose une fois, elle reste trente ans.",
@@ -67,6 +175,7 @@ export const studio = {
     { label: "Le tatoueur", href: "/#artists" },
     { label: "Galerie", href: "/#gallery" },
     { label: "Prestations", href: "/#services" },
+    { label: "Avis", href: "/#avis" },
     { label: "Contact", href: "/#contact" },
   ],
   ctaLabel: "Prendre rendez-vous",

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack -p 6844",
+    "dev": "find .next -name '._*' -delete 2>/dev/null; next dev --turbopack -p 6844",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"

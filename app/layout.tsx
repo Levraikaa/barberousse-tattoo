@@ -96,7 +96,7 @@ const jsonLd = {
       closes: '16:45',
     },
   ],
-  sameAs: [studio.socials.instagram, studio.googleBusinessUrl],
+  sameAs: [studio.socials.instagram, studio.googleBusinessUrl, studio.facebookUrl, studio.planityUrl],
   publicAccess: false,
   availableLanguage: { '@type': 'Language', name: 'Français', alternateName: 'fr' },
   areaServed: [
@@ -143,11 +143,19 @@ const jsonLd = {
   },
   aggregateRating: {
     '@type': 'AggregateRating',
-    ratingValue: '5.0',
+    ratingValue: studio.ratingValue,
     bestRating: '5',
-    ratingCount: '400',
-    reviewCount: '400',
+    ratingCount: String(studio.reviewCount),
+    reviewCount: String(studio.reviewCount),
   },
+  // Les avis balisés sont ceux affichés sur la page, condition posée par Google
+  review: studio.reviews.map((r) => ({
+    '@type': 'Review',
+    author: { '@type': 'Person', name: r.author },
+    datePublished: r.date,
+    reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+    reviewBody: r.text,
+  })),
   makesOffer: [
     {
       '@type': 'Offer',
