@@ -135,3 +135,26 @@
   90% { background-position: -30px -6px; }
   100% { background-position: 0 0; }
 }
+
+/* Bandeau d'avis : défilement continu de droite à gauche, en boucle sur une
+   liste doublée. Le survol met en pause ; sans animation si l'utilisateur
+   a demandé moins de mouvement, la liste se fait alors défiler à la main. */
+.marquee {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+}
+.marquee-track {
+  animation: marquee 70s linear infinite;
+}
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee { overflow-x: auto; mask-image: none; -webkit-mask-image: none; }
+  .marquee-track { animation: none; }
+}

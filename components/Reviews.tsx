@@ -6,15 +6,6 @@ import { studio } from '@/data/studio';
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
-const listVariants = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.08, delayChildren: 0.1 } },
-};
-const cardVariants = {
-  hidden: { opacity: 0, y: 24 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: EASE } },
-};
-
 const BODY_FONT = { fontFamily: 'var(--font-body), sans-serif', fontWeight: 300 } as const;
 const HEADING_STYLE = { fontFamily: 'var(--font-display), sans-serif', letterSpacing: '0.05em' } as const;
 
@@ -65,40 +56,38 @@ export default function Reviews() {
           </a>
         </motion.div>
 
-        <motion.ul
-          variants={listVariants}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: '-80px' }}
-          className="mt-12 columns-1 gap-5 md:columns-2 lg:columns-3"
-        >
-          {studio.reviews.map((review) => (
-            // L'enfant direct d'une colonne CSS reste sans transform (voir Gallery)
-            <li key={review.author + review.date} className="mb-5 break-inside-avoid">
-              <motion.blockquote
-                variants={cardVariants}
-                className="flex h-full flex-col gap-4 rounded-2xl border border-white/10 bg-white/[0.02] p-6 transition-colors duration-300 hover:border-white/20 md:p-7"
+        {/* Bandeau qui défile de droite à gauche, en boucle. La liste est doublée
+            pour que le raccord soit invisible ; au survol, ça s'arrête pour lire. */}
+        <div className="marquee mt-12 -mx-6 md:-mx-8" aria-label="Avis clients, défilement automatique">
+          <ul className="marquee-track flex w-max gap-5 px-6 md:px-8">
+            {[...studio.reviews, ...studio.reviews].map((review, index) => (
+              <li
+                key={`${review.author}-${index}`}
+                aria-hidden={index >= studio.reviews.length}
+                className="w-[320px] shrink-0 md:w-[380px]"
               >
-                <div className="flex items-center gap-1" aria-label="5 étoiles sur 5">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} className="h-3.5 w-3.5 fill-gold text-gold" strokeWidth={1.5} aria-hidden="true" />
-                  ))}
-                </div>
-                <p className="text-sm leading-relaxed text-white/85" style={BODY_FONT}>
-                  {review.text}
-                </p>
-                <footer className="mt-auto flex items-baseline justify-between gap-3 border-t border-white/5 pt-4">
-                  <cite className="text-sm not-italic text-white" style={HEADING_STYLE}>
-                    {review.author}
-                  </cite>
-                  <span className="text-xs text-white/50" style={BODY_FONT}>
-                    {review.visited}
-                  </span>
-                </footer>
-              </motion.blockquote>
-            </li>
-          ))}
-        </motion.ul>
+                <blockquote className="flex h-full flex-col gap-4 rounded-2xl border border-white/10 bg-white/[0.02] p-6 transition-colors duration-300 hover:border-white/20 md:p-7">
+                  <div className="flex items-center gap-1" aria-label="5 étoiles sur 5">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <Star key={i} className="h-3.5 w-3.5 fill-gold text-gold" strokeWidth={1.5} aria-hidden="true" />
+                    ))}
+                  </div>
+                  <p className="text-sm leading-relaxed text-white/85" style={BODY_FONT}>
+                    {review.text}
+                  </p>
+                  <footer className="mt-auto flex items-baseline justify-between gap-3 border-t border-white/5 pt-4">
+                    <cite className="text-sm not-italic text-white" style={HEADING_STYLE}>
+                      {review.author}
+                    </cite>
+                    <span className="text-xs text-white/50" style={BODY_FONT}>
+                      {review.visited}
+                    </span>
+                  </footer>
+                </blockquote>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </section>
   );
