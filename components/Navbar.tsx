@@ -55,19 +55,6 @@ export default function Navbar() {
           </span>
         </a>
 
-        <ul className="hidden items-center gap-9 md:flex">
-          {studio.nav.map((item) => (
-            <li key={item.href}>
-              <a
-                href={item.href}
-                className="group relative text-sm text-white transition-colors duration-300 hover:text-gold hover:[text-shadow:0_0_20px_rgba(255,255,255,0.8)]"
-              >
-                {item.label}
-                <span className="absolute -bottom-1.5 left-0 h-px w-full origin-left scale-x-0 bg-gold transition-transform duration-300 ease-out group-hover:scale-x-100" />
-              </a>
-            </li>
-          ))}
-        </ul>
 
         <div className="flex items-center gap-3">
           <a
@@ -81,7 +68,7 @@ export default function Navbar() {
             onClick={() => setMenuOpen((open) => !open)}
             aria-label={menuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
             aria-expanded={menuOpen}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-foreground transition-colors duration-300 hover:border-gold/40 hover:text-gold md:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-foreground transition-colors duration-300 hover:border-gold/40 hover:text-gold"
           >
             {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -96,13 +83,13 @@ export default function Navbar() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.45, ease: EASE }}
-            className="overflow-hidden border-t border-white/5 bg-[#0a0a0a]/95 backdrop-blur md:hidden"
+            className="overflow-hidden border-t border-white/5 bg-[#0a0a0a]/95 backdrop-blur"
           >
             <motion.ul
               initial="hidden"
               animate="show"
               variants={{ hidden: {}, show: { transition: { staggerChildren: 0.08, delayChildren: 0.05 } } }}
-              className="mx-auto flex w-full max-w-6xl flex-col gap-1 px-6 py-6"
+              className="mx-auto flex w-full max-w-6xl flex-col gap-1 px-6 py-6 md:px-8 md:py-10"
             >
               {studio.nav.map((item) => (
                 <motion.li
@@ -115,7 +102,7 @@ export default function Navbar() {
                   <a
                     href={item.href}
                     onClick={closeMenu}
-                    className="block py-3 text-2xl font-light tracking-tight text-white transition-colors duration-300 hover:text-gold hover:[text-shadow:0_0_20px_rgba(255,255,255,0.8)]"
+                    className="block py-3 text-2xl font-light tracking-tight text-white transition-colors duration-300 hover:text-gold hover:[text-shadow:0_0_20px_rgba(255,255,255,0.8)] md:py-2 md:text-3xl"
                   >
                     {item.label}
                   </a>
@@ -131,7 +118,7 @@ export default function Navbar() {
                 <a
                   href="/#contact"
                   onClick={closeMenu}
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gold px-7 py-3 text-sm font-medium tracking-wide text-[#0a0a0a] transition-all duration-300 hover:shadow-[0_0_25px_5px_rgba(184,67,44,0.5)] hover:brightness-110"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gold px-7 py-3 text-sm font-medium tracking-wide text-[#0a0a0a] transition-all duration-300 hover:shadow-[0_0_25px_5px_rgba(184,67,44,0.5)] hover:brightness-110 md:hidden"
                 >
                   {studio.ctaLabel}
                 </a>
