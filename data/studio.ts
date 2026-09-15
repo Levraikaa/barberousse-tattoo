@@ -189,6 +189,9 @@ export const studio = {
     { label: "Le tatoueur", href: "/#artists" },
     { label: "Galerie", href: "/#gallery" },
     { label: "Prestations", href: "/#services" },
+    // Les deux spécialités ont leur page : on les met à portée de clic
+    { label: "Fine line", href: "/tatoueur-fine-line-narbonne" },
+    { label: "Japonais", href: "/tatouage-japonais-beziers" },
     { label: "Avis", href: "/#avis" },
     { label: "Contact", href: "/#contact" },
   ],

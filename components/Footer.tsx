@@ -63,22 +63,6 @@ export default function Footer() {
                   </a>
                 </li>
               ))}
-              <li>
-                <a
-                  href="/tatoueur-fine-line-narbonne"
-                  className="text-sm text-white transition-colors duration-300 hover:text-gold"
-                >
-                  Tatoueur fine line à Narbonne
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/tatouage-japonais-beziers"
-                  className="text-sm text-white transition-colors duration-300 hover:text-gold"
-                >
-                  Tatouage japonais, Béziers
-                </a>
-              </li>
             </ul>
           </nav>
 
