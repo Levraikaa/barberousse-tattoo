@@ -222,14 +222,8 @@ export default function TatoueurFineLineNarbonne() {
                 qu&apos;on gagne en douceur pendant la séance, on le doit à la concentration en amont.
               </p>
             </div>
-          </div>
-        </section>
 
-        <Divider />
-
-        <section className="py-20 md:py-24">
-          <div className={SECTION}>
-            <h2 className={H2} style={H2_STYLE}>
+            <h2 className={`${H2} mt-14`} style={H2_STYLE}>
               Pourquoi faire la route jusqu&apos;à Gruissan
             </h2>
             <p className={`mt-5 max-w-2xl ${BODY}`} style={BODY_STYLE}>
@@ -266,13 +260,27 @@ export default function TatoueurFineLineNarbonne() {
               ))}
             </ul>
 
-            <p className={`mt-6 text-sm text-white/60`} style={BODY_STYLE}>
-              Et {studio.reviewCount} avis Google, {studio.ratingValue.replace('.', ',')} de moyenne.{' '}
-              <Link href="/#avis" className={LINK}>
-                Les lire
-              </Link>
-              .
-            </p>
+            <div className="mt-8 grid max-w-xl grid-cols-2 gap-4">
+              {studio.awards
+                .filter((award) => award.event.includes('Narbonne'))
+                .map((award) => (
+                  <figure key={award.image} className="group">
+                    <div className="relative aspect-[4/5] overflow-hidden rounded-lg border border-white/10 transition-colors duration-300 group-hover:border-gold/40">
+                      <Image
+                        src={award.image}
+                        alt={`${award.rank}, ${award.category}, ${award.event}${award.year ? ` ${award.year}` : ''}`}
+                        fill
+                        sizes="(max-width:640px) 45vw, 280px"
+                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                    </div>
+                    <figcaption className={`mt-2 text-xs ${BODY}`} style={BODY_STYLE}>
+                      <span className="text-gold">{award.rank}</span> · {award.category}
+                      {award.year ? ` · ${award.year}` : ''}
+                    </figcaption>
+                  </figure>
+                ))}
+            </div>
           </div>
         </section>
 
