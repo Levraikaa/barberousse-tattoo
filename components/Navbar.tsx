@@ -68,7 +68,7 @@ export default function Navbar() {
         </a>
 
 
-        <div className="flex items-center gap-3">
+        <div className="relative flex items-center gap-3">
           <a
             href="/#contact"
             className="hidden items-center justify-center gap-2 rounded-full bg-gold px-6 py-2.5 text-sm font-medium tracking-wide text-[#0a0a0a] transition-all duration-300 hover:shadow-[0_0_25px_5px_rgba(184,67,44,0.5)] hover:brightness-110 md:inline-flex"
@@ -84,47 +84,48 @@ export default function Navbar() {
           >
             {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
+
+          <AnimatePresence>
+            {menuOpen && (
+              <motion.div
+                key="menu"
+                initial={{ opacity: 0, y: -8 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: 0.3, ease: EASE }}
+                // Petit panneau accroché sous les trois barres, aligné sur leur bord droit
+                className="absolute right-0 top-full mt-3 w-52 rounded-2xl border border-white/10 bg-[#0a0a0a]/95 p-2 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.8)] backdrop-blur"
+              >
+                <ul className="flex flex-col">
+                  {studio.nav.map((item) => (
+                    <li key={item.href}>
+                      <a
+                        href={item.href}
+                        onClick={closeMenu}
+                        className="block rounded-lg px-3 py-2 text-right text-sm text-white/85 transition-colors duration-200 hover:bg-white/5 hover:text-gold"
+                        style={{ fontFamily: "var(--font-body), sans-serif", fontWeight: 300 }}
+                      >
+                        {item.label}
+                      </a>
+                    </li>
+                  ))}
+                  <li className="mt-1 border-t border-white/10 pt-1 md:hidden">
+                    <a
+                      href="/#contact"
+                      onClick={closeMenu}
+                      className="block rounded-lg px-3 py-2 text-right text-sm text-gold transition-colors duration-200 hover:bg-white/5"
+                      style={{ fontFamily: "var(--font-body), sans-serif", fontWeight: 400 }}
+                    >
+                      {studio.ctaLabel}
+                    </a>
+                  </li>
+                </ul>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </nav>
 
-      <AnimatePresence>
-        {menuOpen && (
-          <motion.div
-            key="menu"
-            initial={{ opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.3, ease: EASE }}
-            // Petit panneau accroché sous les trois barres, à droite : fin, discret
-            className="absolute right-6 top-full mt-2 w-56 rounded-2xl border border-white/10 bg-[#0a0a0a]/95 p-2 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.8)] backdrop-blur md:right-8"
-          >
-            <ul className="flex flex-col">
-              {studio.nav.map((item) => (
-                <li key={item.href}>
-                  <a
-                    href={item.href}
-                    onClick={closeMenu}
-                    className="block rounded-lg px-3 py-2 text-right text-sm text-white/85 transition-colors duration-200 hover:bg-white/5 hover:text-gold"
-                    style={{ fontFamily: "var(--font-body), sans-serif", fontWeight: 300 }}
-                  >
-                    {item.label}
-                  </a>
-                </li>
-              ))}
-              <li className="mt-1 border-t border-white/10 pt-1 md:hidden">
-                <a
-                  href="/#contact"
-                  onClick={closeMenu}
-                  className="block rounded-lg px-3 py-2 text-right text-sm text-gold transition-colors duration-200 hover:bg-white/5"
-                  style={{ fontFamily: "var(--font-body), sans-serif", fontWeight: 400 }}
-                >
-                  {studio.ctaLabel}
-                </a>
-              </li>
-            </ul>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </motion.header>
   );
 }
