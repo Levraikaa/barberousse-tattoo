@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Bebas_Neue, Inter } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/next';
 import { SITE_URL, studio } from '@/data/studio';
 import CustomCursor from '@/components/CustomCursor';
 import SplashScreen from '@/components/SplashScreen';
@@ -234,6 +235,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <SplashScreen />
         <CustomCursor />
         {children}
+        {/* Mesure d'audience sans cookie ni identifiant : pages vues et provenance, rien de personnel */}
+        <Analytics />
       </body>
     </html>
   );

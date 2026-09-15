@@ -33,8 +33,10 @@ export default function Confidentialite() {
           recontacté : c&apos;est votre consentement qui autorise le traitement.
         </p>
         <p>
-          Le site ne crée pas de compte, ne dépose aucun cookie de suivi publicitaire et n&apos;utilise
-          aucun outil de mesure d&apos;audience qui vous identifie.
+          Le site ne crée pas de compte et ne dépose aucun cookie de suivi publicitaire. Il mesure
+          son audience avec Vercel Web Analytics, un outil sans cookie qui compte les pages vues et
+          leur provenance sans identifier les visiteurs ni suivre leur navigation d&apos;un site à
+          l&apos;autre. Aucune donnée personnelle n&apos;est collectée par ce biais.
         </p>
       </section>
 
