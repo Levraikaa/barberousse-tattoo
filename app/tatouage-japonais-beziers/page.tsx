@@ -260,17 +260,17 @@ export default function TatouageJaponaisBeziers() {
               ))}
             </ul>
 
-            <div className="mt-8 grid max-w-xl grid-cols-2 gap-4">
+            <div className="mt-8 grid grid-cols-2 gap-4 md:gap-6">
               {studio.awards
                 .filter((award) => award.event.includes('Béziers'))
                 .map((award) => (
                   <figure key={award.image} className="group">
-                    <div className="relative aspect-[4/5] overflow-hidden rounded-lg border border-white/10 transition-colors duration-300 group-hover:border-gold/40">
+                    <div className="relative aspect-[4/3] overflow-hidden rounded-lg border border-white/10 transition-colors duration-300 group-hover:border-gold/40">
                       <Image
                         src={award.image}
                         alt={`${award.rank}, ${award.category}, ${award.event}${award.year ? ` ${award.year}` : ''}`}
                         fill
-                        sizes="(max-width:640px) 45vw, 280px"
+                        sizes="(max-width:768px) 50vw, 430px"
                         className="object-cover transition-transform duration-700 group-hover:scale-105"
                       />
                     </div>
