@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { AnimatePresence, motion, useScroll, useMotionValueEvent } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { studio } from '@/data/studio';
@@ -21,6 +21,18 @@ export default function Navbar() {
   });
 
   const closeMenu = () => setMenuOpen(false);
+
+  // Un clic en dehors du panneau le referme. On écoute pointerdown, pas click :
+  // au click, l'icône du bouton a déjà été remplacée et la cible n'est plus
+  // dans le document, ce qui refermait le menu à peine ouvert.
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onPointerDown = (e: PointerEvent) => {
+      if (!(e.target as HTMLElement).closest('header')) setMenuOpen(false);
+    };
+    document.addEventListener('pointerdown', onPointerDown);
+    return () => document.removeEventListener('pointerdown', onPointerDown);
+  }, [menuOpen]);
 
   return (
     <motion.header
@@ -78,52 +90,38 @@ export default function Navbar() {
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            key="mobile-menu"
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.45, ease: EASE }}
-            className="overflow-hidden border-t border-white/5 bg-[#0a0a0a]/95 backdrop-blur"
+            key="menu"
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.3, ease: EASE }}
+            // Petit panneau accroché sous les trois barres, à droite : fin, discret
+            className="absolute right-6 top-full mt-2 w-56 rounded-2xl border border-white/10 bg-[#0a0a0a]/95 p-2 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.8)] backdrop-blur md:right-8"
           >
-            <motion.ul
-              initial="hidden"
-              animate="show"
-              variants={{ hidden: {}, show: { transition: { staggerChildren: 0.08, delayChildren: 0.05 } } }}
-              className="mx-auto flex w-full max-w-6xl flex-col gap-1 px-6 py-6 md:px-8 md:py-10"
-            >
+            <ul className="flex flex-col">
               {studio.nav.map((item) => (
-                <motion.li
-                  key={item.href}
-                  variants={{
-                    hidden: { opacity: 0, y: 16 },
-                    show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: EASE } },
-                  }}
-                >
+                <li key={item.href}>
                   <a
                     href={item.href}
                     onClick={closeMenu}
-                    className="block py-3 text-2xl font-light tracking-tight text-white transition-colors duration-300 hover:text-gold hover:[text-shadow:0_0_20px_rgba(255,255,255,0.8)] md:py-2 md:text-3xl"
+                    className="block rounded-lg px-3 py-2 text-right text-sm text-white/85 transition-colors duration-200 hover:bg-white/5 hover:text-gold"
+                    style={{ fontFamily: "var(--font-body), sans-serif", fontWeight: 300 }}
                   >
                     {item.label}
                   </a>
-                </motion.li>
+                </li>
               ))}
-              <motion.li
-                variants={{
-                  hidden: { opacity: 0, y: 16 },
-                  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: EASE } },
-                }}
-                className="pt-4"
-              >
+              <li className="mt-1 border-t border-white/10 pt-1 md:hidden">
                 <a
                   href="/#contact"
                   onClick={closeMenu}
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gold px-7 py-3 text-sm font-medium tracking-wide text-[#0a0a0a] transition-all duration-300 hover:shadow-[0_0_25px_5px_rgba(184,67,44,0.5)] hover:brightness-110 md:hidden"
+                  className="block rounded-lg px-3 py-2 text-right text-sm text-gold transition-colors duration-200 hover:bg-white/5"
+                  style={{ fontFamily: "var(--font-body), sans-serif", fontWeight: 400 }}
                 >
                   {studio.ctaLabel}
                 </a>
-              </motion.li>
-            </motion.ul>
+              </li>
+            </ul>
           </motion.div>
         )}
       </AnimatePresence>
