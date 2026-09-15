@@ -63,7 +63,7 @@ const FAQ: QA[] = [
   {
     question: 'Quels motifs se prêtent à la ligne fine ?',
     answer:
-      "Le floral et le botanique (branches, fleurs de cerisier, pivoines, rameaux), les animaux stylisés (hirondelles, papillons), le lettering manuscrit, les motifs célestes et les compositions ornementales. Regardez les pièces plus haut : c'est ce que je fais le plus au salon.",
+      "Le floral et le botanique (branches, fleurs de cerisier, pivoines), les animaux stylisés (hirondelles, papillons), le lettering manuscrit, les motifs célestes et les compositions ornementales. C'est aussi le style des petits tatouages discrets et minimalistes : un symbole, une date, un mot, posés en un trait. Regardez les pièces plus bas : c'est ce que je fais le plus au salon.",
   },
   {
     question: "Est-ce que ça fait moins mal qu'un tatouage classique ?",
@@ -78,7 +78,7 @@ const FAQ: QA[] = [
   {
     question: 'Vous recevez sans rendez-vous ?',
     answer:
-      "Non, uniquement sur rendez-vous, toute l'année, du mardi au samedi. Depuis Narbonne, comptez quinze minutes par la route de Gruissan. Le salon est quai du Ponant, rive droite, face au port de plaisance.",
+      "Non, uniquement sur rendez-vous, toute l'année, du mardi au samedi. Depuis Narbonne, Coursan ou Narbonne-Plage, comptez quinze minutes par la route de Gruissan ; depuis Sigean ou Port-la-Nouvelle, vingt-cinq ; depuis Lézignan-Corbières, quarante. Le salon est quai du Ponant, rive droite, face au port de plaisance.",
   },
 ];
 
@@ -101,6 +101,7 @@ const jsonLd = {
     { '@type': 'City', name: 'Lézignan-Corbières' },
     { '@type': 'AdministrativeArea', name: 'Aude' },
   ],
+  image: PIECES.map((piece) => `${SITE_URL}${piece.src}`),
   availableChannel: {
     '@type': 'ServiceChannel',
     serviceUrl: `${SITE_URL}/#contact`,
@@ -204,7 +205,14 @@ export default function TatoueurFineLineNarbonne() {
               </p>
             </div>
 
-            <h2 className={`${H2} mt-14`} style={H2_STYLE}>
+          </div>
+        </section>
+
+        <Divider />
+
+        <section className="py-20 md:py-24">
+          <div className={SECTION}>
+            <h2 className={H2} style={H2_STYLE}>
               Ce que ça change pour vous
             </h2>
             <div className="mt-6 flex flex-col gap-5">
@@ -223,7 +231,14 @@ export default function TatoueurFineLineNarbonne() {
               </p>
             </div>
 
-            <h2 className={`${H2} mt-14`} style={H2_STYLE}>
+          </div>
+        </section>
+
+        <Divider />
+
+        <section className="py-20 md:py-24">
+          <div className={SECTION}>
+            <h2 className={H2} style={H2_STYLE}>
               Pourquoi faire la route jusqu&apos;à Gruissan
             </h2>
             <p className={`mt-5 max-w-2xl ${BODY}`} style={BODY_STYLE}>

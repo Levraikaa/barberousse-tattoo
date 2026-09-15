@@ -86,6 +86,7 @@ const jsonLd = {
     { '@type': 'AdministrativeArea', name: 'Hérault' },
     { '@type': 'AdministrativeArea', name: 'Aude' },
   ],
+  image: JAPONAIS.map((piece) => `${SITE_URL}${piece.src}`),
   availableChannel: {
     '@type': 'ServiceChannel',
     serviceUrl: `${SITE_URL}/#contact`,
@@ -205,7 +206,14 @@ export default function TatouageJaponaisBeziers() {
               </p>
             </div>
 
-            <h2 className={`${H2} mt-14`} style={H2_STYLE}>
+          </div>
+        </section>
+
+        <Divider />
+
+        <section className="py-20 md:py-24">
+          <div className={SECTION}>
+            <h2 className={H2} style={H2_STYLE}>
               Une grande pièce, ça se planifie
             </h2>
             <div className="mt-6 flex flex-col gap-5">
@@ -223,7 +231,14 @@ export default function TatouageJaponaisBeziers() {
               </p>
             </div>
 
-            <h2 className={`${H2} mt-14`} style={H2_STYLE}>
+          </div>
+        </section>
+
+        <Divider />
+
+        <section className="py-20 md:py-24">
+          <div className={SECTION}>
+            <h2 className={H2} style={H2_STYLE}>
               Pourquoi faire la route jusqu&apos;à Gruissan
             </h2>
             <p className={`mt-5 max-w-2xl ${BODY}`} style={BODY_STYLE}>
