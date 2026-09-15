@@ -1,6 +1,6 @@
-// Domaine de production. Un nom de domaine définitif est prévu : le changer ICI
-// suffit, metadata, canonical, robots.txt, sitemap.xml et JSON-LD le lisent tous.
-export const SITE_URL = "https://barberousse-tattoo.vercel.app";
+// Domaine de production. Le changer ICI suffit : metadata, canonical,
+// robots.txt, sitemap.xml et JSON-LD le lisent tous.
+export const SITE_URL = "https://barberousse-tattoo.fr";
 
 export const studio = {
   name: "Barberousse Tattoo",

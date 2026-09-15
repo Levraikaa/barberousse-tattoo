@@ -14,7 +14,7 @@ pour mot, balisage déjà en place, informations client vérifiées, et la liste
 
 - Dépôt local : `/Volumes/KING KONG/SAAS/barberousse-tattoo`
 - GitHub : `Levraikaa/barberousse-tattoo`, branche unique `main`
-- Production : https://barberousse-tattoo.vercel.app (compte Vercel personnel « KAA's projects »,
+- Production : https://barberousse-tattoo.fr (compte Vercel personnel « KAA's projects »,
   plan Hobby). **Le dépôt est relié au projet Vercel : tout push sur `main` part en production.**
 - Dev local : `npm run dev` → http://localhost:6844
 - Stack : Next.js 16.2.10 (App Router, Turbopack), React 19, Tailwind CSS 4, framer-motion,

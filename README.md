@@ -3,7 +3,7 @@
 Site vitrine du salon de tatouage **Barberousse Tattoo**, sur le port de Gruissan.
 One-page Next.js, entièrement piloté par un seul fichier de contenu.
 
-En ligne : https://barberousse-tattoo.vercel.app
+En ligne : https://barberousse-tattoo.fr
 
 ## Stack
 

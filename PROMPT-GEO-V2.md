@@ -19,7 +19,7 @@ pas son travail, concentre-toi sur ce qui est spécifique aux IA.
 
 - Dépôt local : `/Volumes/KING KONG/SAAS/barberousse-tattoo`
 - GitHub : `Levraikaa/barberousse-tattoo`, branche unique `main`
-- Production : https://barberousse-tattoo.vercel.app — **le dépôt est relié : tout push sur `main`
+- Production : https://barberousse-tattoo.fr — **le dépôt est relié : tout push sur `main`
   part directement en production.** Le nom de domaine définitif n'est pas encore choisi.
 - Dev local : `npm run dev` → http://localhost:6844
 - Stack : Next.js 16.2.10 (App Router, Turbopack), React 19, Tailwind 4, TypeScript strict.
