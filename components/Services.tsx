@@ -104,6 +104,15 @@ export default function Services() {
                       La ligne fine, si vous venez de Narbonne
                     </a>
                   )}
+                  {index === 1 && (
+                    <a
+                      href="/tatouage-japonais-beziers"
+                      className="mt-1 inline-flex w-fit items-center gap-2 text-sm text-gold underline decoration-gold/30 underline-offset-4 transition-colors duration-300 hover:decoration-gold"
+                      style={{ fontFamily: "var(--font-body), sans-serif", fontWeight: 300 }}
+                    >
+                      Le japonais, si vous venez de Béziers
+                    </a>
+                  )}
                 </div>
               </motion.div>
             );

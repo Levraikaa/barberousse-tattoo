@@ -24,5 +24,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
         .filter((piece) => piece.style === 'Fine line')
         .map((piece) => `${SITE_URL}${piece.src}`),
     },
+    {
+      url: `${SITE_URL}/tatouage-japonais-beziers`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+      images: studio.gallery
+        .filter((piece) => piece.style === 'Japonais' || piece.style === 'Manga')
+        .map((piece) => `${SITE_URL}${piece.src}`),
+    },
   ];
 }
