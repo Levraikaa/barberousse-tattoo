@@ -428,7 +428,7 @@ export const studio = {
     },
     {
       src: "/images/gallery/branches-fine-line.jpg",
-      alt: "Rameaux tatoués en ligne fine sur la cuisse, tatouage floral discret",
+      alt: "Éclair ramifié tatoué en ligne fine sur le haut du bras, trait unique sans ombrage",
       style: "Fine line",
     },
     {

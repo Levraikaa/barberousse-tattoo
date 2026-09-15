@@ -5,7 +5,10 @@ import { ArrowRight, MapPin, Star, Trophy } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Divider from '@/components/Divider';
+import LandingFaq, { breadcrumbJsonLd, faqJsonLd, type QA } from '@/components/LandingFaq';
 import { SITE_URL, studio } from '@/data/studio';
+
+const PATH = '/tatouage-japonais-beziers';
 
 const TITLE = 'Tatouage japonais et manga, Béziers | Barberousse Tattoo';
 const DESCRIPTION =
@@ -33,10 +36,44 @@ const JAPONAIS = studio.gallery.filter((piece) => piece.style === 'Japonais' || 
 // Les deux prix décrochés à Béziers, décisifs sur cette page
 const BEZIERS_AWARDS = studio.awards.filter((award) => award.event.includes('Béziers'));
 
+// Réponses limitées à ce que le site affirme déjà, ou au métier en général.
+const FAQ: QA[] = [
+  {
+    question: 'Que signifient la carpe koï, le dragon et le masque hannya ?',
+    answer:
+      "Dans l'iconographie japonaise, la carpe koï remonte les cascades : persévérance, courage, réussite après l'effort. Le dragon protège et apporte la sagesse, souvent associé à l'eau et aux nuages. Le masque hannya représente une femme consumée par la jalousie, mais on le porte comme protection contre le mal. Chaque motif a ses règles de composition ; on en parle ensemble avant de dessiner.",
+  },
+  {
+    question: 'Combien de séances pour un tatouage japonais ?',
+    answer:
+      "Tout dépend de la taille. Un motif isolé, une carpe ou un masque sur le bras, se fait en une séance. Une composition étendue avec fond, vagues et nuages, se planifie sur plusieurs séances espacées de quelques semaines, le temps que la peau cicatrise entre deux. On établit le plan des séances au moment de valider le dessin.",
+  },
+  {
+    question: 'Faites-vous des tatouages manga et anime ?',
+    answer:
+      "Oui. Personnages, scènes, lettrages japonais, en noir ou en noir et rouge. Chaque projet est composé spécialement pour vous et pour l'emplacement : je ne décalque pas une image trouvée en ligne, je la redessine pour qu'elle tienne sur la peau et qu'elle vieillisse bien.",
+  },
+  {
+    question: 'Noir et gris ou couleur ?',
+    answer:
+      "Les deux. Le japonais traditionnel se prête à la couleur, le rouge en particulier, qui garde son contraste dans le temps. Le noir et gris donne un rendu plus sobre. C'est un choix qu'on fait ensemble selon le motif, l'emplacement et ce que vous portez déjà.",
+  },
+  {
+    question: 'Combien ça coûte ?',
+    answer:
+      "Il n'y a pas de tarif fixe : le prix dépend de la taille, du niveau de détail et du nombre de séances. Décrivez votre projet dans le formulaire, je vous envoie une estimation personnalisée sous 48h. Pour une grande pièce, on parle aussi du rythme des séances.",
+  },
+  {
+    question: 'Depuis Béziers, comment venir ?',
+    answer:
+      "Par l'A9 jusqu'à la sortie Narbonne-Est, puis la route de Gruissan : environ quarante-cinq minutes. Depuis Agde ou Pézenas, comptez une heure. Le salon est quai du Ponant, rive droite, face au port. Sur rendez-vous uniquement, toute l'année.",
+  },
+];
+
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  '@id': `${SITE_URL}/tatouage-japonais-beziers#service`,
+  '@id': `${SITE_URL}${PATH}#service`,
   name: 'Tatouage japonais, manga et anime',
   serviceType: 'Tatouage japonais',
   description:
@@ -70,6 +107,11 @@ export default function TatouageJaponaisBeziers() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(FAQ)) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd(SITE_URL, 'Tatouage japonais, Béziers', PATH)) }}
+      />
       <Navbar />
 
       <main>
@@ -133,24 +175,35 @@ export default function TatouageJaponaisBeziers() {
             <h2 className={H2} style={H2_STYLE}>
               Le japonais, ça se compose avant de se tatouer
             </h2>
-            <div className="mt-6 flex flex-col gap-4">
+            <div className="mt-6 flex flex-col gap-5">
               <p className={BODY} style={BODY_STYLE}>
-                Une carpe koï, un dragon, un masque hannya, des chrysanthèmes : le tatouage japonais
-                traditionnel repose sur un vocabulaire de motifs, et surtout sur la façon de les faire
-                tenir ensemble sur un bras, une cuisse ou un dos. C&apos;est une question de composition
-                avant d&apos;être une question de trait.
+                Le tatouage japonais traditionnel, l&apos;irezumi, ne se résume pas à un motif posé sur
+                la peau. Une carpe koï, un dragon, un masque hannya, des chrysanthèmes ou des pivoines
+                sont les sujets ; autour d&apos;eux, les vagues, les nuages, le vent et les feuilles
+                d&apos;érable forment le fond qui relie tout. C&apos;est ce fond qui fait qu&apos;une pièce
+                japonaise se lit d&apos;un seul regard, et qu&apos;elle épouse le bras, la cuisse ou le dos au
+                lieu d&apos;y être collée.
               </p>
               <p className={BODY} style={BODY_STYLE}>
-                Je peins à l&apos;aquarelle japonaise en dehors du salon. Ce n&apos;est pas un passe-temps
-                à côté : c&apos;est ce qui nourrit directement ma manière de placer les vagues, les
-                nuages et les fleurs autour du sujet principal. Chaque pièce est dessinée sur iPad,
-                pour vous, adaptée à votre morphologie et à l&apos;emplacement choisi.
+                Composer, c&apos;est décider où va le sujet par rapport aux muscles et aux articulations,
+                dans quel sens tournent les vagues, où le regard doit entrer et sortir. Un dragon qui
+                remonte l&apos;avant-bras ne se dessine pas comme un dragon qui enroule le mollet. C&apos;est un
+                travail de dessin avant d&apos;être un travail de machine, et c&apos;est là que se joue la
+                différence entre une pièce qui tient et une pièce qui encombre.
+              </p>
+              <p className={BODY} style={BODY_STYLE}>
+                Je peins à l&apos;aquarelle japonaise en dehors du salon. Ce n&apos;est pas un à-côté : c&apos;est
+                ce qui nourrit directement ma manière de placer les vagues, les nuages et les fleurs
+                autour du sujet. Chaque projet est ensuite dessiné sur iPad, à l&apos;échelle réelle, adapté
+                à votre morphologie et à l&apos;emplacement choisi, et validé ensemble au salon avant la
+                première séance.
               </p>
               <p className={BODY} style={BODY_STYLE}>
                 Le manga et l&apos;anime, c&apos;est la même exigence appliquée à des personnages : la
                 ressemblance, l&apos;expression, l&apos;encre noire et rouge qui garde son contraste en
                 vieillissant. Un projet manga chez moi est composé spécialement, jamais décalqué d&apos;une
-                image trouvée en ligne.
+                image trouvée en ligne. Un style qui m&apos;a valu un premier prix Asiatique au Béziers
+                Tattoo Show.
               </p>
             </div>
           </div>
@@ -161,10 +214,34 @@ export default function TatouageJaponaisBeziers() {
         <section className="py-20 md:py-24">
           <div className={SECTION}>
             <h2 className={H2} style={H2_STYLE}>
-              Pourquoi venir de Béziers
+              Une grande pièce, ça se planifie
+            </h2>
+            <div className="mt-6 flex flex-col gap-5">
+              <p className={BODY} style={BODY_STYLE}>
+                Un motif isolé, une carpe sur le bras ou un masque sur la cuisse, tient en une séance.
+                Une composition avec fond se répartit sur plusieurs séances, espacées de quelques
+                semaines pour laisser la peau cicatriser. On établit le plan dès la validation du
+                dessin : ce qui se fait en premier, ce qui vient ensuite, et à quel rythme.
+              </p>
+              <p className={BODY} style={BODY_STYLE}>
+                Entre chaque séance, vous repartez avec un guide de cicatrisation. Je reste disponible
+                pour vos questions, et si une retouche est nécessaire, elle est gratuite. Venir de
+                Béziers, de l&apos;Hérault ou de plus loin pour un japonais, c&apos;est un engagement sur
+                plusieurs mois : autant que tout soit clair dès le premier rendez-vous.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <Divider />
+
+        <section className="py-20 md:py-24">
+          <div className={SECTION}>
+            <h2 className={H2} style={H2_STYLE}>
+              Ce qui fait la différence, à 45 minutes de Béziers
             </h2>
 
-            <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2">
+            <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2">
               <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-7">
                 <span className="inline-flex w-fit rounded-lg bg-gold/10 p-2.5 text-gold">
                   <Trophy className="h-5 w-5" strokeWidth={1.75} aria-hidden="true" />
@@ -266,6 +343,14 @@ export default function TatouageJaponaisBeziers() {
 
         <section className="py-20 md:py-24">
           <div className={SECTION}>
+            <LandingFaq title="Questions sur le tatouage japonais" items={FAQ} />
+          </div>
+        </section>
+
+        <Divider />
+
+        <section className="py-20 md:py-24">
+          <div className={SECTION}>
             <h2 className={H2} style={H2_STYLE}>
               Parlons de votre projet japonais
             </h2>
@@ -285,6 +370,9 @@ export default function TatouageJaponaisBeziers() {
               <a href={`tel:${studio.phone.replace(/\s+/g, '')}`} className={`inline-flex items-center gap-2 text-sm text-white/80 ${LINK}`} style={BODY_STYLE}>
                 {studio.phone}
               </a>
+              <Link href="/tatoueur-fine-line-narbonne" className={`text-sm text-white/60 ${LINK}`} style={BODY_STYLE}>
+                Voir aussi : la ligne fine
+              </Link>
             </div>
           </div>
         </section>
