@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, MapPin, Star, Trophy } from 'lucide-react';
+import { ArrowRight, Star } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Divider from '@/components/Divider';
@@ -46,7 +46,6 @@ const PIECES = SHOWCASE.map((name) => studio.gallery.find((p) => p.src.includes(
   (p): p is (typeof studio.gallery)[number] => Boolean(p),
 );
 
-const NARBONNE_AWARDS = studio.awards.filter((award) => award.event.includes('Narbonne'));
 
 // Les réponses ne disent que ce que le site affirme déjà ailleurs, ou ce qui
 // relève du métier en général. Rien sur le salon qui ne soit pas vérifié.
@@ -116,8 +115,6 @@ const H2_STYLE = { fontFamily: 'var(--font-display), sans-serif', letterSpacing:
 const BODY = 'leading-relaxed text-white/85';
 const BODY_STYLE = { fontFamily: 'var(--font-body), sans-serif', fontWeight: 300 } as const;
 const LINK = 'underline decoration-white/25 underline-offset-4 transition-colors duration-300 hover:text-gold';
-const CARD = 'rounded-2xl border border-white/10 bg-white/[0.02] p-7';
-const ICON = 'inline-flex w-fit rounded-lg bg-gold/10 p-2.5 text-gold';
 
 export default function TatoueurFineLineNarbonne() {
   return (
@@ -233,91 +230,49 @@ export default function TatoueurFineLineNarbonne() {
         <section className="py-20 md:py-24">
           <div className={SECTION}>
             <h2 className={H2} style={H2_STYLE}>
-              Pourquoi faire la route jusqu'à Gruissan
+              Pourquoi faire la route jusqu&apos;à Gruissan
             </h2>
+            <p className={`mt-5 max-w-2xl ${BODY}`} style={BODY_STYLE}>
+              Parce que la ligne fine se juge au résultat, et que le résultat a été jugé. Voici ce que des jurys de conventions ont retenu de mon travail.
+            </p>
 
-            <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2">
-              <div className={CARD}>
-                <span className={ICON}>
-                  <Trophy className="h-5 w-5" strokeWidth={1.75} aria-hidden="true" />
-                </span>
-                <h3 className="mt-5 text-lg text-white" style={H2_STYLE}>
-                  Primé au Narbonne Tattoo Show
-                </h3>
-                <ul className="mt-5 grid grid-cols-2 gap-3">
-                  {NARBONNE_AWARDS.map((award) => (
-                    <li key={award.image} className="group">
-                      <div className="relative aspect-[4/5] overflow-hidden rounded-lg border border-white/10 transition-colors duration-300 group-hover:border-gold/40">
-                        <Image
-                          src={award.image}
-                          alt={`${award.rank}, ${award.category}, ${award.event}${award.year ? ` ${award.year}` : ''}`}
-                          fill
-                          sizes="(max-width:640px) 45vw, 200px"
-                          className="object-cover transition-transform duration-700 group-hover:scale-105"
-                        />
-                      </div>
-                      <p className={`mt-2 text-xs ${BODY}`} style={BODY_STYLE}>
-                        <span className="text-gold">{award.rank}</span> · {award.category}
-                        {award.year ? ` · ${award.year}` : ''}
-                      </p>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            <ul className="mt-8 divide-y divide-white/10 border-y border-white/10">
+              {studio.awards.map((award) => (
+                <li key={award.image} className="flex flex-wrap items-baseline gap-x-4 gap-y-1 py-4">
+                  <span className="w-24 shrink-0 text-lg text-gold" style={H2_STYLE}>
+                    {award.rank}
+                  </span>
+                  <span className={`flex-1 ${BODY}`} style={BODY_STYLE}>
+                    {award.category}
+                  </span>
+                  <span className="text-sm text-white/50" style={BODY_STYLE}>
+                    {award.event}
+                    {award.year ? ` · ${award.year}` : ''}
+                  </span>
+                </li>
+              ))}
+              {studio.certifications.map((c) => (
+                <li key={c.image} className="flex flex-wrap items-baseline gap-x-4 gap-y-1 py-4">
+                  <span className="w-24 shrink-0 text-lg text-gold" style={H2_STYLE}>
+                    Certificat
+                  </span>
+                  <span className={`flex-1 ${BODY}`} style={BODY_STYLE}>
+                    {c.title}, {c.detail.charAt(0).toLowerCase() + c.detail.slice(1)}
+                  </span>
+                  <span className="text-sm text-white/50" style={BODY_STYLE}>
+                    {c.issuer} · {c.year}
+                  </span>
+                </li>
+              ))}
+            </ul>
 
-              <div className={CARD}>
-                <span className={ICON}>
-                  <Star className="h-5 w-5" strokeWidth={1.75} aria-hidden="true" />
-                </span>
-                <h3 className="mt-5 text-lg text-white" style={H2_STYLE}>
-                  Plus de {studio.reviewCount} avis, {studio.ratingValue.replace('.', ',')} de moyenne
-                </h3>
-                <p className={`mt-4 text-sm ${BODY}`} style={BODY_STYLE}>
-                  Je tatoue seul et je prends le temps qu&apos;il faut. Les avis parlent autant de
-                  l&apos;accompagnement que du résultat.{' '}
-                  <Link href="/#avis" className={LINK}>
-                    Les lire sur le site
-                  </Link>{' '}
-                  ou{' '}
-                  <a href={studio.googleBusinessUrl} target="_blank" rel="noopener noreferrer" className={LINK}>
-                    sur Google
-                  </a>
-                  .
-                </p>
-              </div>
-
-              <div className={CARD}>
-                <span className={ICON}>
-                  <MapPin className="h-5 w-5" strokeWidth={1.75} aria-hidden="true" />
-                </span>
-                <h3 className="mt-5 text-lg text-white" style={H2_STYLE}>
-                  Quinze minutes, et on se gare
-                </h3>
-                <p className={`mt-4 text-sm ${BODY}`} style={BODY_STYLE}>
-                  Depuis Narbonne, Coursan ou Narbonne-Plage, la route de Gruissan mène au port.
-                  Sigean et Port-la-Nouvelle sont à vingt-cinq minutes, Lézignan-Corbières à
-                  quarante. Le salon est quai du Ponant, rive droite, ouvert toute l&apos;année.{' '}
-                  <a href={studio.address.googleMapsUrl} target="_blank" rel="noopener noreferrer" className={LINK}>
-                    Itinéraire
-                  </a>
-                  .
-                </p>
-              </div>
-
-              <div className={CARD}>
-                <span className={ICON}>
-                  <ArrowRight className="h-5 w-5" strokeWidth={1.75} aria-hidden="true" />
-                </span>
-                <h3 className="mt-5 text-lg text-white" style={H2_STYLE}>
-                  Un seul interlocuteur
-                </h3>
-                <p className={`mt-4 text-sm ${BODY}`} style={BODY_STYLE}>
-                  Vous décrivez votre projet, je réponds sous 48h. On valide le dessin ensemble au
-                  salon avant de tatouer. Guide de cicatrisation à la fin, retouche gratuite si
-                  nécessaire.
-                </p>
-              </div>
-            </div>
+            <p className={`mt-6 text-sm text-white/60`} style={BODY_STYLE}>
+              Et {studio.reviewCount} avis Google, {studio.ratingValue.replace('.', ',')} de moyenne.{' '}
+              <Link href="/#avis" className={LINK}>
+                Les lire
+              </Link>
+              .
+            </p>
           </div>
         </section>
 

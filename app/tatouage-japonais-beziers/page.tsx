@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, MapPin, Star, Trophy } from 'lucide-react';
+import { ArrowRight, Star } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Divider from '@/components/Divider';
@@ -33,8 +33,6 @@ export const metadata: Metadata = {
 // Les pièces japonaises et manga, seules concernées par cette page
 const JAPONAIS = studio.gallery.filter((piece) => piece.style === 'Japonais' || piece.style === 'Manga');
 
-// Les deux prix décrochés à Béziers, décisifs sur cette page
-const BEZIERS_AWARDS = studio.awards.filter((award) => award.event.includes('Béziers'));
 
 // Réponses limitées à ce que le site affirme déjà, ou au métier en général.
 const FAQ: QA[] = [
@@ -232,89 +230,49 @@ export default function TatouageJaponaisBeziers() {
         <section className="py-20 md:py-24">
           <div className={SECTION}>
             <h2 className={H2} style={H2_STYLE}>
-              Pourquoi faire la route jusqu'à Gruissan
+              Pourquoi faire la route jusqu&apos;à Gruissan
             </h2>
+            <p className={`mt-5 max-w-2xl ${BODY}`} style={BODY_STYLE}>
+              Parce que le japonais se juge à la pièce finie, et que des jurys de conventions l&apos;ont fait. Voici ce qu&apos;ils ont retenu de mon travail.
+            </p>
 
-            <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2">
-              <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-7">
-                <span className="inline-flex w-fit rounded-lg bg-gold/10 p-2.5 text-gold">
-                  <Trophy className="h-5 w-5" strokeWidth={1.75} aria-hidden="true" />
-                </span>
-                <h3 className="mt-5 text-lg text-white" style={H2_STYLE}>
-                  Deux prix décrochés à Béziers
-                </h3>
-                <ul className="mt-5 grid grid-cols-2 gap-3">
-                  {BEZIERS_AWARDS.map((award) => (
-                    <li key={award.image} className="group">
-                      <div className="relative aspect-[4/5] overflow-hidden rounded-lg border border-white/10 transition-colors duration-300 group-hover:border-gold/40">
-                        <Image
-                          src={award.image}
-                          alt={`${award.rank}, ${award.category}, ${award.event}${award.year ? ` ${award.year}` : ''}`}
-                          fill
-                          sizes="(max-width:640px) 45vw, 200px"
-                          className="object-cover transition-transform duration-700 group-hover:scale-105"
-                        />
-                      </div>
-                      <p className={`mt-2 text-xs ${BODY}`} style={BODY_STYLE}>
-                        <span className="text-gold">{award.rank}</span> · {award.category}
-                        {award.year ? ` · ${award.year}` : ''}
-                      </p>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            <ul className="mt-8 divide-y divide-white/10 border-y border-white/10">
+              {studio.awards.map((award) => (
+                <li key={award.image} className="flex flex-wrap items-baseline gap-x-4 gap-y-1 py-4">
+                  <span className="w-24 shrink-0 text-lg text-gold" style={H2_STYLE}>
+                    {award.rank}
+                  </span>
+                  <span className={`flex-1 ${BODY}`} style={BODY_STYLE}>
+                    {award.category}
+                  </span>
+                  <span className="text-sm text-white/50" style={BODY_STYLE}>
+                    {award.event}
+                    {award.year ? ` · ${award.year}` : ''}
+                  </span>
+                </li>
+              ))}
+              {studio.certifications.map((c) => (
+                <li key={c.image} className="flex flex-wrap items-baseline gap-x-4 gap-y-1 py-4">
+                  <span className="w-24 shrink-0 text-lg text-gold" style={H2_STYLE}>
+                    Certificat
+                  </span>
+                  <span className={`flex-1 ${BODY}`} style={BODY_STYLE}>
+                    {c.title}, {c.detail.charAt(0).toLowerCase() + c.detail.slice(1)}
+                  </span>
+                  <span className="text-sm text-white/50" style={BODY_STYLE}>
+                    {c.issuer} · {c.year}
+                  </span>
+                </li>
+              ))}
+            </ul>
 
-              <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-7">
-                <span className="inline-flex w-fit rounded-lg bg-gold/10 p-2.5 text-gold">
-                  <Star className="h-5 w-5" strokeWidth={1.75} aria-hidden="true" />
-                </span>
-                <h3 className="mt-5 text-lg text-white" style={H2_STYLE}>
-                  Plus de {studio.reviewCount} avis, {studio.ratingValue.replace('.', ',')} de moyenne
-                </h3>
-                <p className={`mt-4 text-sm ${BODY}`} style={BODY_STYLE}>
-                  Les avis parlent autant de l&apos;accompagnement que du résultat.{' '}
-                  <Link href="/#avis" className={LINK}>
-                    Les lire sur le site
-                  </Link>{' '}
-                  ou{' '}
-                  <a href={studio.googleBusinessUrl} target="_blank" rel="noopener noreferrer" className={LINK}>
-                    sur Google
-                  </a>
-                  .
-                </p>
-              </div>
-
-              <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-7">
-                <span className="inline-flex w-fit rounded-lg bg-gold/10 p-2.5 text-gold">
-                  <MapPin className="h-5 w-5" strokeWidth={1.75} aria-hidden="true" />
-                </span>
-                <h3 className="mt-5 text-lg text-white" style={H2_STYLE}>
-                  45 minutes par l&apos;A9, et le port au bout
-                </h3>
-                <p className={`mt-4 text-sm ${BODY}`} style={BODY_STYLE}>
-                  Sortie Narbonne-Est, puis la route de Gruissan. Le salon est quai du Ponant, rive
-                  droite, face au port de plaisance. Ouvert toute l&apos;année, sur rendez-vous.{' '}
-                  <a href={studio.address.googleMapsUrl} target="_blank" rel="noopener noreferrer" className={LINK}>
-                    Itinéraire depuis Béziers
-                  </a>
-                  .
-                </p>
-              </div>
-
-              <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-7">
-                <span className="inline-flex w-fit rounded-lg bg-gold/10 p-2.5 text-gold">
-                  <ArrowRight className="h-5 w-5" strokeWidth={1.75} aria-hidden="true" />
-                </span>
-                <h3 className="mt-5 text-lg text-white" style={H2_STYLE}>
-                  Une grande pièce se prépare
-                </h3>
-                <p className={`mt-4 text-sm ${BODY}`} style={BODY_STYLE}>
-                  Un japonais, c&apos;est souvent plusieurs séances. Vous décrivez le projet, je réponds
-                  sous 48h, on valide le dessin ensemble au salon, puis on planifie. Guide de
-                  cicatrisation entre chaque séance, retouche gratuite si nécessaire.
-                </p>
-              </div>
-            </div>
+            <p className={`mt-6 text-sm text-white/60`} style={BODY_STYLE}>
+              Et {studio.reviewCount} avis Google, {studio.ratingValue.replace('.', ',')} de moyenne.{' '}
+              <Link href="/#avis" className={LINK}>
+                Les lire
+              </Link>
+              .
+            </p>
           </div>
         </section>
 
