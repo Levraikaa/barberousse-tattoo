@@ -33,5 +33,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         .filter((piece) => piece.style === 'Japonais' || piece.style === 'Manga')
         .map((piece) => `${SITE_URL}${piece.src}`),
     },
+    { url: `${SITE_URL}/mentions-legales`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.2 },
+    { url: `${SITE_URL}/confidentialite`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.2 },
   ];
 }

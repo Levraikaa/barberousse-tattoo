@@ -39,6 +39,20 @@ export const studio = {
   // Autres présences publiques du salon, recoupées par Google et les moteurs de réponse
   facebookUrl: "https://www.facebook.com/profile.php?id=2093223444303930",
   planityUrl: "https://www.planity.com/barberousse-tatoo-11430-gruissan",
+  // Mentions légales. Source : annuaire officiel des entreprises (INSEE), relevé le 15/09/2026.
+  legal: {
+    owner: "Victor Contrepois",
+    legalForm: "Entrepreneur individuel",
+    siren: "848 894 986",
+    siret: "848 894 986 00019",
+    activity: "Tatouage (code APE 47.75Z)",
+    since: "4 avril 2019",
+    host: {
+      name: "Vercel Inc.",
+      address: "440 N Barranca Ave #4133, Covina, CA 91723, États-Unis",
+      url: "https://vercel.com",
+    },
+  },
   reviewCount: 443,
   ratingValue: "5.0",
 

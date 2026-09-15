@@ -163,10 +163,10 @@ export default function Footer() {
             © {studio.establishedYear}–{currentYear} {studio.name}. Tous droits réservés.
           </p>
           <div className="flex items-center gap-6">
-            <a href="#" className="transition-colors duration-300 hover:text-gold">
+            <a href="/mentions-legales" className="transition-colors duration-300 hover:text-gold">
               Mentions légales
             </a>
-            <a href="#" className="transition-colors duration-300 hover:text-gold">
+            <a href="/confidentialite" className="transition-colors duration-300 hover:text-gold">
               Confidentialité
             </a>
           </div>
