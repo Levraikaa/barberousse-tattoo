@@ -206,14 +206,8 @@ export default function TatoueurFineLineNarbonne() {
                 l&apos;à-peu-près.
               </p>
             </div>
-          </div>
-        </section>
 
-        <Divider />
-
-        <section className="py-20 md:py-24">
-          <div className={SECTION}>
-            <h2 className={H2} style={H2_STYLE}>
+            <h2 className={`${H2} mt-14`} style={H2_STYLE}>
               Ce que ça change pour vous
             </h2>
             <div className="mt-6 flex flex-col gap-5">
@@ -239,7 +233,7 @@ export default function TatoueurFineLineNarbonne() {
         <section className="py-20 md:py-24">
           <div className={SECTION}>
             <h2 className={H2} style={H2_STYLE}>
-              Ce qui fait la différence, à quinze minutes de Narbonne
+              Pourquoi faire la route jusqu'à Gruissan
             </h2>
 
             <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2">

@@ -206,14 +206,8 @@ export default function TatouageJaponaisBeziers() {
                 Tattoo Show.
               </p>
             </div>
-          </div>
-        </section>
 
-        <Divider />
-
-        <section className="py-20 md:py-24">
-          <div className={SECTION}>
-            <h2 className={H2} style={H2_STYLE}>
+            <h2 className={`${H2} mt-14`} style={H2_STYLE}>
               Une grande pièce, ça se planifie
             </h2>
             <div className="mt-6 flex flex-col gap-5">
@@ -238,7 +232,7 @@ export default function TatouageJaponaisBeziers() {
         <section className="py-20 md:py-24">
           <div className={SECTION}>
             <h2 className={H2} style={H2_STYLE}>
-              Ce qui fait la différence, à 45 minutes de Béziers
+              Pourquoi faire la route jusqu'à Gruissan
             </h2>
 
             <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2">
