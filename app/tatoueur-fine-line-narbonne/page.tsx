@@ -244,11 +244,22 @@ export default function TatoueurFineLineNarbonne() {
                 <h3 className="mt-5 text-lg text-white" style={H2_STYLE}>
                   Primé au Narbonne Tattoo Show
                 </h3>
-                <ul className="mt-4 flex flex-col gap-2">
+                <ul className="mt-5 grid grid-cols-2 gap-3">
                   {NARBONNE_AWARDS.map((award) => (
-                    <li key={award.image} className={`text-sm ${BODY}`} style={BODY_STYLE}>
-                      {award.rank} · {award.category}
-                      {award.year ? ` · ${award.year}` : ''}
+                    <li key={award.image} className="group">
+                      <div className="relative aspect-[4/5] overflow-hidden rounded-lg border border-white/10 transition-colors duration-300 group-hover:border-gold/40">
+                        <Image
+                          src={award.image}
+                          alt={`${award.rank}, ${award.category}, ${award.event}${award.year ? ` ${award.year}` : ''}`}
+                          fill
+                          sizes="(max-width:640px) 45vw, 200px"
+                          className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        />
+                      </div>
+                      <p className={`mt-2 text-xs ${BODY}`} style={BODY_STYLE}>
+                        <span className="text-gold">{award.rank}</span> · {award.category}
+                        {award.year ? ` · ${award.year}` : ''}
+                      </p>
                     </li>
                   ))}
                 </ul>
@@ -328,8 +339,8 @@ export default function TatoueurFineLineNarbonne() {
 
             <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-4">
               {PIECES.map((piece) => (
-                <div key={piece.src} className="relative aspect-[3/4] overflow-hidden rounded-lg border border-white/10">
-                  <Image src={piece.src} alt={piece.alt} fill sizes="(max-width:768px) 50vw, 25vw" className="object-cover" />
+                <div key={piece.src} className="group relative aspect-[3/4] overflow-hidden rounded-lg border border-white/10 transition-colors duration-300 hover:border-gold/40">
+                  <Image src={piece.src} alt={piece.alt} fill sizes="(max-width:768px) 50vw, 25vw" className="object-cover transition-transform duration-700 group-hover:scale-105" />
                 </div>
               ))}
             </div>
