@@ -45,7 +45,6 @@ const SHOWCASE = [
 const PIECES = SHOWCASE.map((name) => studio.gallery.find((p) => p.src.includes(`/${name}.jpg`))).filter(
   (p): p is (typeof studio.gallery)[number] => Boolean(p),
 );
-const HERO = PIECES[0];
 
 const NARBONNE_AWARDS = studio.awards.filter((award) => award.event.includes('Narbonne'));
 
@@ -134,7 +133,7 @@ export default function TatoueurFineLineNarbonne() {
       <main>
         <section className="relative isolate flex min-h-[70vh] w-full flex-col justify-end overflow-hidden pb-16 pt-32">
           <div className="absolute inset-0 -z-10">
-            <Image src={HERO.src} alt={HERO.alt} fill priority sizes="100vw" className="object-cover" />
+            <Image src={studio.heroImage} alt={studio.heroImageAlt} fill priority sizes="100vw" className="object-cover" />
           </div>
           <div className="absolute inset-0 -z-10 bg-black/70" />
 
