@@ -7,6 +7,7 @@ import Services from '@/components/Services';
 import Process from '@/components/Process';
 import Contact from '@/components/Contact';
 import Reviews from '@/components/Reviews';
+import Specialties from '@/components/Specialties';
 import Faq from '@/components/Faq';
 import Footer from '@/components/Footer';
 import Divider from '@/components/Divider';
@@ -37,6 +38,8 @@ export default function Home() {
         <Gallery />
         <Divider />
         <Services />
+        <Divider />
+        <Specialties />
         <Divider />
         <Reviews />
         <Divider />
