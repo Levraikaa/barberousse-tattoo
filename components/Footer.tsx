@@ -16,7 +16,7 @@ const HEADING = 'font-sans text-xs uppercase tracking-wider text-white/80';
 const HEADING_STYLE = { fontFamily: "var(--font-display), sans-serif", letterSpacing: '0.05em' } as const;
 const BODY_FONT = { fontFamily: "var(--font-body), sans-serif", fontWeight: 300 } as const;
 const SOCIAL_LINK =
-  'inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-white transition-all duration-300 hover:scale-110 hover:border-gold/40 hover:text-gold hover:shadow-[0_0_15px_3px_rgba(184,67,44,0.5)]';
+  'inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-white transition-all duration-300 hover:scale-110 hover:border-gold/40 hover:text-gold-text hover:shadow-[0_0_15px_3px_rgba(184,67,44,0.5)]';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -58,7 +58,7 @@ export default function Footer() {
             <ul className="mt-5 space-y-3">
               {studio.nav.map((item) => (
                 <li key={item.href}>
-                  <a href={item.href} className="text-sm text-white transition-colors duration-300 hover:text-gold">
+                  <a href={item.href} className="text-sm text-white transition-colors duration-300 hover:text-gold-text">
                     {item.label}
                   </a>
                 </li>
@@ -74,18 +74,18 @@ export default function Footer() {
               <li>
                 <a
                   href={`tel:${studio.phone.replace(/\s+/g, '')}`}
-                  className="group inline-flex items-center gap-2.5 transition-colors duration-300 hover:text-gold"
+                  className="group inline-flex items-center gap-2.5 transition-colors duration-300 hover:text-gold-text"
                 >
-                  <Phone className="h-4 w-4 text-gold/70 transition-colors duration-300 group-hover:text-gold" />
+                  <Phone className="h-4 w-4 text-gold-text/70 transition-colors duration-300 group-hover:text-gold-text" />
                   {studio.phone}
                 </a>
               </li>
               <li>
                 <a
                   href={`mailto:${studio.email}`}
-                  className="group inline-flex items-center gap-2.5 transition-colors duration-300 hover:text-gold"
+                  className="group inline-flex items-center gap-2.5 transition-colors duration-300 hover:text-gold-text"
                 >
-                  <Mail className="h-4 w-4 text-gold/70 transition-colors duration-300 group-hover:text-gold" />
+                  <Mail className="h-4 w-4 text-gold-text/70 transition-colors duration-300 group-hover:text-gold-text" />
                   {studio.email}
                 </a>
               </li>
@@ -94,9 +94,9 @@ export default function Footer() {
                   href={studio.address.googleMapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-start gap-2.5 transition-colors duration-300 hover:text-gold"
+                  className="group inline-flex items-start gap-2.5 transition-colors duration-300 hover:text-gold-text"
                 >
-                  <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold/70 transition-colors duration-300 group-hover:text-gold" />
+                  <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold-text/70 transition-colors duration-300 group-hover:text-gold-text" />
                   <span className="not-italic">
                     {studio.address.street}
                     <br />
@@ -135,7 +135,7 @@ export default function Footer() {
             </div>
             <a
               href="/#contact"
-              className="mt-6 inline-flex items-center justify-center gap-2 rounded-full border border-white/15 px-7 py-3 text-sm font-medium tracking-wide text-foreground transition-all duration-300 hover:border-gold/50 hover:text-gold"
+              className="mt-6 inline-flex items-center justify-center gap-2 rounded-full border border-white/15 px-7 py-3 text-sm font-medium tracking-wide text-foreground transition-all duration-300 hover:border-gold/50 hover:text-gold-text"
             >
               {studio.ctaLabel}
             </a>
@@ -147,11 +147,17 @@ export default function Footer() {
             © {studio.establishedYear}–{currentYear} {studio.name}. Tous droits réservés.
           </p>
           <div className="flex items-center gap-6">
-            <a href="/mentions-legales" className="transition-colors duration-300 hover:text-gold">
+            <a href="/mentions-legales" className="transition-colors duration-300 hover:text-gold-text">
               Mentions légales
             </a>
-            <a href="/confidentialite" className="transition-colors duration-300 hover:text-gold">
+            <a href="/confidentialite" className="transition-colors duration-300 hover:text-gold-text">
               Confidentialité
+            </a>
+            <a href="/cookies" className="transition-colors duration-300 hover:text-gold-text">
+              Cookies
+            </a>
+            <a href="/conditions-utilisation" className="transition-colors duration-300 hover:text-gold-text">
+              Conditions d&apos;utilisation
             </a>
           </div>
         </div>

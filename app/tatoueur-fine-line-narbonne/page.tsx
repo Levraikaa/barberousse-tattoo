@@ -115,7 +115,7 @@ const H2 = 'font-sans text-3xl font-light tracking-tight text-foreground md:text
 const H2_STYLE = { fontFamily: 'var(--font-display), sans-serif', letterSpacing: '0.05em' } as const;
 const BODY = 'leading-relaxed text-white/85';
 const BODY_STYLE = { fontFamily: 'var(--font-body), sans-serif', fontWeight: 300 } as const;
-const LINK = 'underline decoration-white/25 underline-offset-4 transition-colors duration-300 hover:text-gold';
+const LINK = 'underline decoration-white/25 underline-offset-4 transition-colors duration-300 hover:text-gold-text';
 
 export default function TatoueurFineLineNarbonne() {
   return (
@@ -128,7 +128,7 @@ export default function TatoueurFineLineNarbonne() {
       />
       <Navbar />
 
-      <main>
+      <main id="contenu">
         <section className="relative isolate flex min-h-[70vh] w-full flex-col justify-end overflow-hidden pb-16 pt-32">
           <div className="absolute inset-0 -z-10">
             <Image src={studio.heroImage} alt={studio.heroImageAlt} fill priority sizes="100vw" className="object-cover" />
@@ -138,7 +138,7 @@ export default function TatoueurFineLineNarbonne() {
           <div className={SECTION}>
             <div className="mb-5 flex items-center gap-3">
               <span className="h-px w-10 bg-gold/60" aria-hidden="true" />
-              <span className="text-xs uppercase tracking-[0.25em] text-gold">Ligne fine · Narbonne et l&apos;Aude</span>
+              <span className="text-xs uppercase tracking-[0.25em] text-gold-text">Ligne fine · Narbonne et l&apos;Aude</span>
             </div>
             <h1 className="max-w-3xl font-sans text-4xl uppercase leading-[0.95] text-white md:text-6xl" style={H2_STYLE}>
               Tatoueur fine line à Narbonne
@@ -157,7 +157,7 @@ export default function TatoueurFineLineNarbonne() {
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </a>
               <a href={studio.googleBusinessUrl} target="_blank" rel="noopener noreferrer" className={`inline-flex items-center gap-2 text-sm text-white/80 ${LINK}`} style={BODY_STYLE}>
-                <Star className="h-4 w-4 text-gold" aria-hidden="true" />
+                <Star className="h-4 w-4 text-gold-text" aria-hidden="true" />
                 {studio.ratingValue.replace('.', ',')} sur plus de {studio.reviewCount} avis Google
               </a>
             </div>
@@ -248,7 +248,7 @@ export default function TatoueurFineLineNarbonne() {
             <ul className="mt-8 divide-y divide-white/10 border-y border-white/10">
               {studio.awards.map((award) => (
                 <li key={award.image} className="flex flex-wrap items-baseline gap-x-4 gap-y-1 py-4">
-                  <span className="w-24 shrink-0 text-lg text-gold" style={H2_STYLE}>
+                  <span className="w-24 shrink-0 text-lg text-gold-text" style={H2_STYLE}>
                     {award.rank}
                   </span>
                   <span className={`flex-1 ${BODY}`} style={BODY_STYLE}>
@@ -262,7 +262,7 @@ export default function TatoueurFineLineNarbonne() {
               ))}
               {studio.certifications.map((c) => (
                 <li key={c.image} className="flex flex-wrap items-baseline gap-x-4 gap-y-1 py-4">
-                  <span className="w-24 shrink-0 text-lg text-gold" style={H2_STYLE}>
+                  <span className="w-24 shrink-0 text-lg text-gold-text" style={H2_STYLE}>
                     Certificat
                   </span>
                   <span className={`flex-1 ${BODY}`} style={BODY_STYLE}>
@@ -290,7 +290,7 @@ export default function TatoueurFineLineNarbonne() {
                       />
                     </div>
                     <figcaption className={`mt-2 text-xs ${BODY}`} style={BODY_STYLE}>
-                      <span className="text-gold">{award.rank}</span> · {award.category}
+                      <span className="text-gold-text">{award.rank}</span> · {award.category}
                       {award.year ? ` · ${award.year}` : ''}
                     </figcaption>
                   </figure>

@@ -13,6 +13,10 @@
   --font-serif: var(--font-display), 'Impact', sans-serif;
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
+  /* Accent de marque éclairci pour le texte : #b8432c ne donne que 3,66:1 sur
+     le fond sombre, sous le minimum de 4,5:1. Réservé au texte, les aplats
+     gardent la couleur d'origine. */
+  --color-gold-text: #d4614a;
 }
 
 :root {
@@ -157,4 +161,39 @@
 @media (prefers-reduced-motion: reduce) {
   .marquee { overflow-x: auto; mask-image: none; -webkit-mask-image: none; }
   .marquee-track { animation: none; }
+}
+
+/* Accessibilité : le focus doit se voir au clavier, partout. */
+:focus-visible {
+  outline: 2px solid var(--color-gold-text, #d4614a);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Lien d'évitement : caché jusqu'à ce qu'on l'atteigne au clavier. */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -100%;
+  z-index: 100;
+  border-radius: 9999px;
+  background: var(--background);
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  color: var(--foreground);
+  border: 1px solid rgb(255 255 255 / 0.2);
+  transition: top 0.2s ease;
+}
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* Le curseur personnalisé masque le curseur système : on ne le fait que sur
+   une souris fine, et jamais si l'utilisateur demande moins d'animations. */
+@media (pointer: coarse), (prefers-reduced-motion: reduce) {
+  html.cursor-none,
+  body.cursor-none,
+  .cursor-none * {
+    cursor: auto !important;
+  }
 }

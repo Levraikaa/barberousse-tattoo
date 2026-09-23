@@ -7,6 +7,8 @@ import { studio } from '@/data/studio';
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 const ACCENT = '#b8432c';
+// Même accent, éclairci pour le texte : #b8432c ne donne que 3,66:1 sur fond sombre.
+const ACCENT_TEXT = '#d4614a';
 
 const STEPS = [
   {
@@ -85,7 +87,7 @@ export default function Process() {
           style={{ fontFamily: "var(--font-display), sans-serif", letterSpacing: '0.03em' }}
         >
           <span className="block text-white">Votre tatouage</span>
-          <span className="block" style={{ color: ACCENT }}>
+          <span className="block" style={{ color: ACCENT_TEXT }}>
             Étape par étape
           </span>
         </motion.h2>
@@ -122,7 +124,7 @@ export default function Process() {
                     index % 2 === 0 ? 'md:col-start-1 md:pr-16 md:text-right' : 'md:col-start-2 md:pl-16'
                   }`}
                 >
-                  <span className="text-xs font-medium uppercase tracking-[0.3em]" style={{ color: ACCENT }}>
+                  <span className="text-xs font-medium uppercase tracking-[0.3em]" style={{ color: ACCENT_TEXT }}>
                     Étape {String(index + 1).padStart(2, '0')}
                   </span>
                   <h3

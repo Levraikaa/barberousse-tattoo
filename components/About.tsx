@@ -38,7 +38,7 @@ export default function About() {
           >
             <div className="mb-5 flex items-center gap-3">
               <span className="h-px w-10 bg-gold/50" aria-hidden="true" />
-              <span className="text-xs uppercase tracking-[0.25em] text-gold">Le salon, à Gruissan</span>
+              <span className="text-xs uppercase tracking-[0.25em] text-gold-text">Le salon, à Gruissan</span>
             </div>
 
             <h2
@@ -69,7 +69,7 @@ export default function About() {
             >
               {studio.stats.map((stat) => (
                 <motion.div key={stat.label} variants={itemVariants}>
-                  <div className="font-serif text-4xl font-light tracking-tight text-gold md:text-5xl">
+                  <div className="font-serif text-4xl font-light tracking-tight text-gold-text md:text-5xl">
                     {stat.value}
                   </div>
                   <div className="mt-2 text-[0.7rem] uppercase tracking-[0.18em] text-white/80">{stat.label}</div>
@@ -81,7 +81,7 @@ export default function About() {
               href={studio.googleBusinessUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-6 inline-flex items-center gap-2 text-sm text-white/70 underline decoration-white/25 underline-offset-4 transition-colors duration-300 hover:text-gold hover:decoration-gold/50"
+              className="mt-6 inline-flex items-center gap-2 text-sm text-white/70 underline decoration-white/25 underline-offset-4 transition-colors duration-300 hover:text-gold-text hover:decoration-gold/50"
               style={{ fontFamily: 'var(--font-body), sans-serif', fontWeight: 300 }}
             >
               Lire les avis sur Google
@@ -91,7 +91,7 @@ export default function About() {
             <div className="mt-10">
               <a
                 href="#services"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 px-7 py-3 text-sm font-medium tracking-wide text-foreground transition-all duration-300 hover:border-gold/50 hover:text-gold"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 px-7 py-3 text-sm font-medium tracking-wide text-foreground transition-all duration-300 hover:border-gold/50 hover:text-gold-text"
               >
                 Mes prestations de tatouage
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -144,7 +144,7 @@ export default function About() {
                     type="button"
                     onClick={() => setIndex((i) => (i - 1 + IMAGES.length) % IMAGES.length)}
                     aria-label="Photo précédente du salon"
-                    className="absolute left-5 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-black/45 text-white opacity-80 backdrop-blur-sm transition-all duration-300 hover:border-gold/60 hover:text-gold hover:opacity-100"
+                    className="absolute left-5 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-black/45 text-white opacity-80 backdrop-blur-sm transition-all duration-300 hover:border-gold/60 hover:text-gold-text hover:opacity-100"
                   >
                     <ChevronLeft className="h-5 w-5" aria-hidden="true" />
                   </button>
@@ -152,7 +152,7 @@ export default function About() {
                     type="button"
                     onClick={() => setIndex((i) => (i + 1) % IMAGES.length)}
                     aria-label="Photo suivante du salon"
-                    className="absolute right-5 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-black/45 text-white opacity-80 backdrop-blur-sm transition-all duration-300 hover:border-gold/60 hover:text-gold hover:opacity-100"
+                    className="absolute right-5 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-black/45 text-white opacity-80 backdrop-blur-sm transition-all duration-300 hover:border-gold/60 hover:text-gold-text hover:opacity-100"
                   >
                     <ChevronRight className="h-5 w-5" aria-hidden="true" />
                   </button>
@@ -176,7 +176,7 @@ export default function About() {
             </div>
 
             <div className="absolute -bottom-5 -right-2 rounded-full border border-gold/30 bg-[#111111] px-5 py-2 lg:right-6">
-              <span className="font-serif text-sm tracking-wide text-gold">Depuis {studio.establishedYear}</span>
+              <span className="font-serif text-sm tracking-wide text-gold-text">Depuis {studio.establishedYear}</span>
             </div>
           </motion.div>
         </div>

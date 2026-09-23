@@ -36,7 +36,7 @@ export default function Faq() {
         >
           <div className="mb-5 flex items-center gap-3">
             <span className="h-px w-10 bg-gold/60" aria-hidden="true" />
-            <span className="text-xs uppercase tracking-[0.25em] text-gold">Questions fréquentes</span>
+            <span className="text-xs uppercase tracking-[0.25em] text-gold-text">Questions fréquentes</span>
           </div>
           <h2
             className="font-sans text-4xl font-light tracking-tight text-foreground md:text-6xl"
@@ -64,7 +64,7 @@ export default function Faq() {
                   {item.question}
                 </h3>
                 <Plus
-                  className="h-5 w-5 shrink-0 text-gold transition-transform duration-300 group-open:rotate-45"
+                  className="h-5 w-5 shrink-0 text-gold-text transition-transform duration-300 group-open:rotate-45"
                   strokeWidth={1.75}
                   aria-hidden="true"
                 />

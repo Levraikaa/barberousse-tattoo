@@ -50,7 +50,7 @@ export default function Gallery() {
         >
           <div className="mb-5 flex items-center gap-3">
             <span className="h-px w-10 bg-gold/60" />
-            <span className="text-xs uppercase tracking-[0.25em] text-gold">
+            <span className="text-xs uppercase tracking-[0.25em] text-gold-text">
               Galerie de tatouages
             </span>
           </div>
@@ -88,8 +88,8 @@ export default function Gallery() {
                 aria-pressed={active}
                 className={`rounded-full px-5 py-2 text-sm font-medium tracking-wide transition-all duration-300 ${
                   active
-                    ? "bg-gold text-[#0a0a0a]"
-                    : "border border-white/15 text-white hover:border-gold/50 hover:text-gold"
+                    ? "bg-gold text-white"
+                    : "border border-white/15 text-white hover:border-gold/50 hover:text-gold-text"
                 }`}
               >
                 {filter}
@@ -131,7 +131,7 @@ export default function Gallery() {
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-                  <span className="p-4 text-xs font-medium uppercase tracking-[0.2em] text-gold">
+                  <span className="p-4 text-xs font-medium uppercase tracking-[0.2em] text-gold-text">
                     {piece.style}
                   </span>
                 </div>
@@ -145,7 +145,7 @@ export default function Gallery() {
             <button
               type="button"
               onClick={() => setToutAfficher(true)}
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 px-7 py-3 text-sm font-medium tracking-wide text-foreground transition-all duration-300 hover:border-gold/50 hover:text-gold"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 px-7 py-3 text-sm font-medium tracking-wide text-foreground transition-all duration-300 hover:border-gold/50 hover:text-gold-text"
             >
               Voir les {pieces.length} réalisations
             </button>

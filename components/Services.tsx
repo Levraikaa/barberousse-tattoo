@@ -30,7 +30,7 @@ export default function Services() {
         >
           <div className="mb-5 flex items-center gap-3">
             <span className="h-px w-10 bg-gold/60" aria-hidden="true" />
-            <span className="text-xs uppercase tracking-[0.25em] text-gold">Prestations, à Gruissan</span>
+            <span className="text-xs uppercase tracking-[0.25em] text-gold-text">Prestations, à Gruissan</span>
           </div>
           <h2
             className="font-sans text-4xl font-light tracking-tight text-foreground md:text-6xl"
@@ -70,7 +70,7 @@ export default function Services() {
                   {number}
                 </span>
 
-                <span className="inline-flex w-fit rounded-lg bg-gold/10 p-2.5 text-gold">
+                <span className="inline-flex w-fit rounded-lg bg-gold/10 p-2.5 text-gold-text">
                   <Icon className="h-5 w-5" strokeWidth={1.75} />
                 </span>
 
@@ -98,7 +98,7 @@ export default function Services() {
                   {index === 0 && (
                     <a
                       href="/tatoueur-fine-line-narbonne"
-                      className="mt-1 inline-flex w-fit items-center gap-2 text-sm text-gold underline decoration-gold/30 underline-offset-4 transition-colors duration-300 hover:decoration-gold"
+                      className="mt-1 inline-flex w-fit items-center gap-2 text-sm text-gold-text underline decoration-gold/30 underline-offset-4 transition-colors duration-300 hover:decoration-gold"
                       style={{ fontFamily: "var(--font-body), sans-serif", fontWeight: 300 }}
                     >
                       La ligne fine, si vous venez de Narbonne
@@ -107,7 +107,7 @@ export default function Services() {
                   {index === 1 && (
                     <a
                       href="/tatouage-japonais-beziers"
-                      className="mt-1 inline-flex w-fit items-center gap-2 text-sm text-gold underline decoration-gold/30 underline-offset-4 transition-colors duration-300 hover:decoration-gold"
+                      className="mt-1 inline-flex w-fit items-center gap-2 text-sm text-gold-text underline decoration-gold/30 underline-offset-4 transition-colors duration-300 hover:decoration-gold"
                       style={{ fontFamily: "var(--font-body), sans-serif", fontWeight: 300 }}
                     >
                       Le japonais, si vous venez de Béziers

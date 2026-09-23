@@ -55,7 +55,7 @@ export default function Specialties() {
         >
           <div className="mb-5 flex items-center gap-3">
             <span className="h-px w-10 bg-gold/60" aria-hidden="true" />
-            <span className="text-xs uppercase tracking-[0.25em] text-gold">Deux spécialités</span>
+            <span className="text-xs uppercase tracking-[0.25em] text-gold-text">Deux spécialités</span>
           </div>
           <h2
             className="font-sans text-4xl font-light tracking-tight text-foreground md:text-6xl"
@@ -90,14 +90,14 @@ export default function Specialties() {
               )}
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10" />
               <div className="absolute inset-x-0 bottom-0 p-7 md:p-8">
-                <span className="text-xs uppercase tracking-[0.25em] text-gold">{s.eyebrow}</span>
+                <span className="text-xs uppercase tracking-[0.25em] text-gold-text">{s.eyebrow}</span>
                 <h3 className="mt-2 text-3xl text-white md:text-4xl" style={HEADING_STYLE}>
                   {s.title}
                 </h3>
                 <p className="mt-3 max-w-md text-sm leading-relaxed text-white/85" style={BODY_FONT}>
                   {s.text}
                 </p>
-                <span className="mt-5 inline-flex items-center gap-2 text-sm text-gold" style={BODY_FONT}>
+                <span className="mt-5 inline-flex items-center gap-2 text-sm text-gold-text" style={BODY_FONT}>
                   {s.cta}
                   <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
                 </span>

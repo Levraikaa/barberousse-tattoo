@@ -71,7 +71,7 @@ export default function Navbar() {
         <div className="relative flex items-center gap-3">
           <a
             href="/#contact"
-            className="hidden items-center justify-center gap-2 rounded-full bg-gold px-6 py-2.5 text-sm font-medium tracking-wide text-[#0a0a0a] transition-all duration-300 hover:shadow-[0_0_25px_5px_rgba(184,67,44,0.5)] hover:brightness-110 md:inline-flex"
+            className="hidden items-center justify-center gap-2 rounded-full bg-gold px-6 py-2.5 text-sm font-medium tracking-wide text-white transition-all duration-300 hover:shadow-[0_0_25px_5px_rgba(184,67,44,0.5)] hover:brightness-110 md:inline-flex"
           >
             {studio.ctaLabel}
           </a>
@@ -80,7 +80,7 @@ export default function Navbar() {
             onClick={() => setMenuOpen((open) => !open)}
             aria-label={menuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
             aria-expanded={menuOpen}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-foreground transition-colors duration-300 hover:border-gold/40 hover:text-gold"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-foreground transition-colors duration-300 hover:border-gold/40 hover:text-gold-text"
           >
             {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -102,7 +102,7 @@ export default function Navbar() {
                       <a
                         href={item.href}
                         onClick={closeMenu}
-                        className="block rounded-lg px-3 py-2 text-right text-sm text-white/85 transition-colors duration-200 hover:bg-white/5 hover:text-gold"
+                        className="block rounded-lg px-3 py-2 text-right text-sm text-white/85 transition-colors duration-200 hover:bg-white/5 hover:text-gold-text"
                         style={{ fontFamily: "var(--font-body), sans-serif", fontWeight: 300 }}
                       >
                         {item.label}
@@ -113,7 +113,7 @@ export default function Navbar() {
                     <a
                       href="/#contact"
                       onClick={closeMenu}
-                      className="block rounded-lg px-3 py-2 text-right text-sm text-gold transition-colors duration-200 hover:bg-white/5"
+                      className="block rounded-lg px-3 py-2 text-right text-sm text-gold-text transition-colors duration-200 hover:bg-white/5"
                       style={{ fontFamily: "var(--font-body), sans-serif", fontWeight: 400 }}
                     >
                       {studio.ctaLabel}

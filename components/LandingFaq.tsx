@@ -24,7 +24,7 @@ export default function LandingFaq({ title, items }: { title: string; items: QA[
                 {item.question}
               </h3>
               <Plus
-                className="h-5 w-5 shrink-0 text-gold transition-transform duration-300 group-open:rotate-45"
+                className="h-5 w-5 shrink-0 text-gold-text transition-transform duration-300 group-open:rotate-45"
                 strokeWidth={1.75}
                 aria-hidden="true"
               />

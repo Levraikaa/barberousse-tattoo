@@ -232,6 +232,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         className="cursor-none bg-background text-foreground font-sans"
         style={{ '--gold': studio.accentColor } as React.CSSProperties}
       >
+        <a href="#contenu" className="skip-link">
+          Aller au contenu
+        </a>
         <SplashScreen />
         <CustomCursor />
         {children}

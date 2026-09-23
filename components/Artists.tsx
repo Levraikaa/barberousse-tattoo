@@ -26,7 +26,7 @@ const HAS_AWARDS = AWARDS.length > 0;
 const CERTIFICATIONS = studio.certifications ?? [];
 
 const PILL =
-  'inline-flex w-fit items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-2 text-xs font-medium tracking-wide text-gold transition-all duration-300 hover:border-gold/60 hover:bg-gold/20';
+  'inline-flex w-fit items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-2 text-xs font-medium tracking-wide text-gold-text transition-all duration-300 hover:border-gold/60 hover:bg-gold/20';
 
 export default function Artists() {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -59,7 +59,7 @@ export default function Artists() {
         >
           <div className="mb-4 flex items-center gap-3">
             <span className="h-px w-10 bg-gold/60" />
-            <span className="text-xs uppercase tracking-[0.25em] text-gold">
+            <span className="text-xs uppercase tracking-[0.25em] text-gold-text">
               {SOLO ? 'Derrière la machine' : "L'équipe"}
             </span>
           </div>
@@ -118,7 +118,7 @@ export default function Artists() {
                       setDrawerOpen(true);
                     }}
                     aria-label={`Voir le palmarès : ${AWARDS.length} prix en convention`}
-                    className={`absolute left-4 top-4 z-10 inline-flex items-center gap-1.5 rounded-full border border-gold/40 bg-black/60 px-3 py-1.5 text-xs font-medium text-gold backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-0 ${
+                    className={`absolute left-4 top-4 z-10 inline-flex items-center gap-1.5 rounded-full border border-gold/40 bg-black/60 px-3 py-1.5 text-xs font-medium text-gold-text backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-0 ${
                       open ? 'opacity-0' : ''
                     }`}
                   >
@@ -139,7 +139,7 @@ export default function Artists() {
                     {artist.name}
                   </h3>
                   <p
-                    className="mt-1 text-xs uppercase tracking-wider text-gold"
+                    className="mt-1 text-xs uppercase tracking-wider text-gold-text"
                     style={{ fontFamily: "var(--font-body), sans-serif", fontWeight: 300 }}
                   >
                     {artist.specialty}
@@ -159,7 +159,7 @@ export default function Artists() {
                       {artist.name}
                     </h3>
                     <p
-                      className="mt-1 text-xs uppercase tracking-wider text-gold"
+                      className="mt-1 text-xs uppercase tracking-wider text-gold-text"
                       style={{ fontFamily: "var(--font-body), sans-serif", fontWeight: 300 }}
                     >
                       {artist.specialty}
@@ -196,7 +196,7 @@ export default function Artists() {
                       >
                         <Trophy className="h-4 w-4" aria-hidden="true" />
                         Palmarès
-                        <span className="rounded-full bg-gold/25 px-1.5 py-px text-[0.65rem] leading-tight">
+                        <span className="rounded-full bg-gold/25 px-1.5 py-px text-[0.65rem] leading-tight text-white">
                           {AWARDS.length}
                         </span>
                       </button>
@@ -236,8 +236,8 @@ export default function Artists() {
               <div className="flex items-start justify-between gap-6 border-b border-white/10 px-6 pb-6 pt-[max(2rem,env(safe-area-inset-top))] md:px-8">
                 <div>
                   <div className="mb-2 flex items-center gap-3">
-                    <Trophy className="h-4 w-4 text-gold" aria-hidden="true" />
-                    <span className="text-xs uppercase tracking-[0.25em] text-gold">Palmarès</span>
+                    <Trophy className="h-4 w-4 text-gold-text" aria-hidden="true" />
+                    <span className="text-xs uppercase tracking-[0.25em] text-gold-text">Palmarès</span>
                   </div>
                   <h3
                     className="font-sans text-3xl text-foreground"
@@ -250,7 +250,7 @@ export default function Artists() {
                   type="button"
                   onClick={() => setDrawerOpen(false)}
                   aria-label="Fermer le palmarès"
-                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/15 text-white transition-all duration-300 hover:border-gold/60 hover:text-gold"
+                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/15 text-white transition-all duration-300 hover:border-gold/60 hover:text-gold-text"
                 >
                   <X className="h-5 w-5" aria-hidden="true" />
                 </button>
@@ -270,7 +270,7 @@ export default function Artists() {
                         />
                       </div>
                       <p
-                        className="mt-4 font-sans text-2xl leading-none text-gold"
+                        className="mt-4 font-sans text-2xl leading-none text-gold-text"
                         style={{ fontFamily: "var(--font-display), sans-serif", letterSpacing: '0.05em' }}
                       >
                         {award.rank}
@@ -289,8 +289,8 @@ export default function Artists() {
                 {CERTIFICATIONS.length > 0 && (
                   <div className="mt-10 border-t border-white/10 pt-8">
                     <div className="mb-5 flex items-center gap-3">
-                      <GraduationCap className="h-4 w-4 text-gold" aria-hidden="true" />
-                      <span className="text-xs uppercase tracking-[0.25em] text-gold">Formation</span>
+                      <GraduationCap className="h-4 w-4 text-gold-text" aria-hidden="true" />
+                      <span className="text-xs uppercase tracking-[0.25em] text-gold-text">Formation</span>
                     </div>
                     <ul className="flex flex-col gap-8">
                       {CERTIFICATIONS.map((certification) => (
@@ -305,7 +305,7 @@ export default function Artists() {
                             />
                           </div>
                           <p
-                            className="mt-4 font-sans text-2xl leading-none text-gold"
+                            className="mt-4 font-sans text-2xl leading-none text-gold-text"
                             style={{ fontFamily: "var(--font-display), sans-serif", letterSpacing: '0.05em' }}
                           >
                             {certification.title}

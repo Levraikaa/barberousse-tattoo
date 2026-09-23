@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import {
   ArrowRight,
@@ -18,14 +19,9 @@ import { studio } from '@/data/studio';
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 const ACCENT = '#b8432c';
+// Même accent, éclairci pour le texte : #b8432c ne donne que 3,66:1 sur fond sombre.
+const ACCENT_TEXT = '#d4614a';
 
-// La carte cherche le salon par son nom plutôt que par ses coordonnées : le
-// repère porte alors « Barberousse Tattoo » au lieu d'un point anonyme, et le
-// zoom rapproché montre le quai du Ponant, rive droite. Les libellés de Google
-// (« Port rive gauche »...) restent ceux de Google, on ne les contrôle pas.
-const MAP_URL = `https://www.google.com/maps?q=${encodeURIComponent(
-  `${studio.name}, ${studio.address.street.replace(' — ', ', ')}, ${studio.address.zip} ${studio.address.city}`,
-)}&z=17&output=embed`;
 
 const SIZES = [
   { id: 'small', label: 'Petite pièce', range: 'Moins de 10 cm', Icon: Circle },
@@ -144,13 +140,13 @@ export default function Contact() {
             <a href={`tel:${studio.phone.replace(/\s+/g, '')}`} className="group flex items-start gap-4">
               <span
                 className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg"
-                style={{ backgroundColor: `${ACCENT}1a`, color: ACCENT }}
+                style={{ backgroundColor: `${ACCENT}1a`, color: ACCENT_TEXT }}
               >
                 <Phone className="h-5 w-5" aria-hidden="true" />
               </span>
               <span className="flex flex-col">
                 <span className="text-xs uppercase tracking-[0.2em] text-white/50">Téléphone</span>
-                <span className="mt-1 text-lg text-white transition-colors duration-300 group-hover:text-gold">
+                <span className="mt-1 text-lg text-white transition-colors duration-300 group-hover:text-gold-text">
                   {studio.phone}
                 </span>
               </span>
@@ -159,13 +155,13 @@ export default function Contact() {
             <a href={`mailto:${studio.email}`} className="group flex items-start gap-4">
               <span
                 className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg"
-                style={{ backgroundColor: `${ACCENT}1a`, color: ACCENT }}
+                style={{ backgroundColor: `${ACCENT}1a`, color: ACCENT_TEXT }}
               >
                 <Mail className="h-5 w-5" aria-hidden="true" />
               </span>
               <span className="flex flex-col">
                 <span className="text-xs uppercase tracking-[0.2em] text-white/50">Email</span>
-                <span className="mt-1 text-lg text-white transition-colors duration-300 group-hover:text-gold">
+                <span className="mt-1 text-lg text-white transition-colors duration-300 group-hover:text-gold-text">
                   {studio.email}
                 </span>
               </span>
@@ -174,7 +170,7 @@ export default function Contact() {
             <div className="flex items-start gap-4">
               <span
                 className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg"
-                style={{ backgroundColor: `${ACCENT}1a`, color: ACCENT }}
+                style={{ backgroundColor: `${ACCENT}1a`, color: ACCENT_TEXT }}
               >
                 <MapPin className="h-5 w-5" aria-hidden="true" />
               </span>
@@ -188,7 +184,7 @@ export default function Contact() {
                   href={studio.address.googleMapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-2 inline-flex w-fit items-center gap-1 text-sm font-medium text-gold transition-colors duration-300 hover:text-gold/80"
+                  className="mt-2 inline-flex w-fit items-center gap-1 text-sm font-medium text-gold-text transition-colors duration-300 hover:text-gold-text/80"
                 >
                   Itinéraire vers le salon
                   <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
@@ -207,7 +203,7 @@ export default function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-white transition-all duration-300 hover:border-gold/40 hover:text-gold"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-white transition-all duration-300 hover:border-gold/40 hover:text-gold-text"
               >
                 <Instagram className="h-5 w-5" aria-hidden="true" />
               </a>
@@ -217,7 +213,7 @@ export default function Contact() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="TikTok"
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-white transition-all duration-300 hover:border-gold/40 hover:text-gold"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-white transition-all duration-300 hover:border-gold/40 hover:text-gold-text"
                 >
                   <TikTok className="h-5 w-5" aria-hidden="true" />
                 </a>
@@ -225,23 +221,46 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className="overflow-hidden rounded-xl border border-white/10">
-            <iframe
-              title="Carte"
-              src={MAP_URL}
-              loading="lazy"
-              width="100%"
-              height={280}
-              className="block w-full border-0"
-              style={{ filter: 'invert(0.92) hue-rotate(180deg) brightness(0.9) contrast(0.9) grayscale(0.2)' }}
-            />
-          </div>
+          {/* Un aperçu maison plutôt que la carte Google en iframe : celle-ci
+              déposait des cookies tiers dès l'affichage, ce qui aurait imposé
+              un bandeau de consentement. Le lien ouvre Google Maps sur demande. */}
+          <a
+            href={studio.googleBusinessUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative block overflow-hidden rounded-xl border border-white/10 transition-colors duration-300 hover:border-gold/40"
+          >
+            <div className="relative h-[280px] w-full">
+              <Image
+                src="/images/about/05-facade.jpg"
+                alt="Façade du salon Barberousse Tattoo, quai du Ponant à Gruissan"
+                fill
+                sizes="(max-width:1024px) 100vw, 420px"
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20" />
+              <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-6">
+                <div>
+                  <p className="text-sm text-white" style={BODY_FONT}>
+                    {studio.address.street.replace(' — ', ', ')}
+                  </p>
+                  <p className="text-sm text-white" style={BODY_FONT}>
+                    {studio.address.zip} {studio.address.city}
+                  </p>
+                </div>
+                <span className="inline-flex shrink-0 items-center gap-2 text-sm text-gold-text" style={BODY_FONT}>
+                  Ouvrir dans Maps
+                  <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" aria-hidden="true" />
+                </span>
+              </div>
+            </div>
+          </a>
         </motion.div>
 
         <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-6 md:p-10">
           {sent ? (
             <div className="flex h-full min-h-[28rem] flex-col items-center justify-center gap-5 text-center">
-              <CircleCheckBig className="h-14 w-14 text-gold" aria-hidden="true" />
+              <CircleCheckBig className="h-14 w-14 text-gold-text" aria-hidden="true" />
               <h3
                 className="text-3xl uppercase text-white"
                 style={{ fontFamily: "var(--font-display), sans-serif", letterSpacing: '0.04em' }}
@@ -254,7 +273,7 @@ export default function Contact() {
               <button
                 type="button"
                 onClick={reset}
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 px-7 py-3 text-sm font-medium tracking-wide text-white transition-all duration-300 hover:border-gold/50 hover:text-gold"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 px-7 py-3 text-sm font-medium tracking-wide text-white transition-all duration-300 hover:border-gold/50 hover:text-gold-text"
               >
                 Envoyer une autre demande
               </button>
@@ -361,7 +380,7 @@ export default function Contact() {
                           backgroundColor: active ? `${ACCENT}1a` : '#1a1a1a',
                         }}
                       >
-                        <Icon className="h-5 w-5" style={{ color: active ? ACCENT : '#ffffff' }} aria-hidden="true" />
+                        <Icon className="h-5 w-5" style={{ color: active ? ACCENT_TEXT : '#ffffff' }} aria-hidden="true" />
                         <span className="text-sm font-medium text-white" style={BODY_FONT}>
                           {label}
                         </span>
@@ -421,11 +440,25 @@ export default function Contact() {
               {error && (
                 <p className="rounded-lg border border-[#b8432c]/40 bg-[#b8432c]/10 px-4 py-3 text-sm text-white" role="alert">
                   {error}{' '}
-                  <a href={`mailto:${studio.email}`} className="underline hover:text-gold">
+                  <a href={`mailto:${studio.email}`} className="underline hover:text-gold-text">
                     {studio.email}
                   </a>
                 </p>
               )}
+
+              <motion.p
+                variants={fieldVariants}
+                className="text-xs leading-relaxed text-white/60"
+                style={BODY_FONT}
+              >
+                Vos coordonnées servent uniquement à répondre à votre demande et ne sont
+                transmises à personne d&apos;autre. Vous pouvez demander leur suppression à tout
+                moment en écrivant à {studio.email}.{' '}
+                <a href="/confidentialite" className="underline decoration-white/25 underline-offset-4 transition-colors duration-300 hover:text-gold-text">
+                  Politique de confidentialité
+                </a>
+                .
+              </motion.p>
 
               <motion.button
                 variants={fieldVariants}

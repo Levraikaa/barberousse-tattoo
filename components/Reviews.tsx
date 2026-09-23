@@ -26,7 +26,7 @@ export default function Reviews() {
           <div className="max-w-2xl">
             <div className="mb-5 flex items-center gap-3">
               <span className="h-px w-10 bg-gold/60" aria-hidden="true" />
-              <span className="text-xs uppercase tracking-[0.25em] text-gold">Avis Google</span>
+              <span className="text-xs uppercase tracking-[0.25em] text-gold-text">Avis Google</span>
             </div>
             <h2
               className="font-sans text-4xl font-light tracking-tight text-foreground md:text-6xl"
@@ -44,11 +44,11 @@ export default function Reviews() {
             href={studio.googleBusinessUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex w-fit items-center gap-3 rounded-full border border-white/15 px-6 py-3 text-sm font-medium tracking-wide text-foreground transition-all duration-300 hover:border-gold/50 hover:text-gold"
+            className="inline-flex w-fit items-center gap-3 rounded-full border border-white/15 px-6 py-3 text-sm font-medium tracking-wide text-foreground transition-all duration-300 hover:border-gold/50 hover:text-gold-text"
           >
             <span className="inline-flex items-center gap-1" aria-label={`${note} étoiles sur 5`}>
               {Array.from({ length: 5 }).map((_, i) => (
-                <Star key={i} className="h-4 w-4 fill-gold text-gold" strokeWidth={1.5} aria-hidden="true" />
+                <Star key={i} className="h-4 w-4 fill-gold text-gold-text" strokeWidth={1.5} aria-hidden="true" />
               ))}
             </span>
             Voir les {studio.reviewCount} avis sur Google
@@ -69,7 +69,7 @@ export default function Reviews() {
                 <blockquote className="flex h-full flex-col gap-4 rounded-2xl border border-white/10 bg-white/[0.02] p-6 transition-colors duration-300 hover:border-white/20 md:p-7">
                   <div className="flex items-center gap-1" aria-label="5 étoiles sur 5">
                     {Array.from({ length: 5 }).map((_, i) => (
-                      <Star key={i} className="h-3.5 w-3.5 fill-gold text-gold" strokeWidth={1.5} aria-hidden="true" />
+                      <Star key={i} className="h-3.5 w-3.5 fill-gold text-gold-text" strokeWidth={1.5} aria-hidden="true" />
                     ))}
                   </div>
                   <p className="text-sm leading-relaxed text-white/85" style={BODY_FONT}>
