@@ -53,6 +53,8 @@ export default function Contact() {
   const [consent, setConsent] = useState(false);
   const [sent, setSent] = useState(false);
   const [sending, setSending] = useState(false);
+  // Vrai quand l'envoi direct n'est pas configuré et qu'on est passé par la messagerie
+  const [viaMessagerie, setViaMessagerie] = useState(false);
   const [error, setError] = useState('');
   // Champ leurre, invisible : rempli, c'est un robot.
   const [website, setWebsite] = useState('');
@@ -67,12 +69,13 @@ export default function Contact() {
     setConsent(false);
     setSent(false);
     setError('');
+    setViaMessagerie(false);
   };
 
   // Repli tant que le service d'envoi n'a pas de clé : on ouvre le mail
   // du visiteur, déjà rempli. Aucune demande ne se perd en silence.
-  const ouvrirMail = () => {
-    const corps = [
+  const corpsDuMessage = () =>
+    [
       `Nom : ${name}`,
       `Email : ${email}`,
       `Téléphone : ${phone || 'non renseigné'}`,
@@ -81,10 +84,17 @@ export default function Contact() {
       '',
       message,
     ].join('\n');
+
+  const ouvrirMail = () => {
     window.location.href = `mailto:${studio.email}?subject=${encodeURIComponent(
       `Demande de tatouage — ${name}`,
-    )}&body=${encodeURIComponent(corps)}`;
+    )}&body=${encodeURIComponent(corpsDuMessage())}`;
   };
+
+  // WhatsApp : le salon y échange déjà avec ses clients, et le message part
+  // vraiment, sans dépendre d'une messagerie configurée sur l'appareil.
+  const lienWhatsApp = () =>
+    `https://wa.me/${studio.phone.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(corpsDuMessage())}`;
 
   const envoyer = async () => {
     setSending(true);
@@ -102,6 +112,7 @@ export default function Contact() {
       const data = (await res.json()) as { error?: string; configured?: boolean };
       if (data.configured === false) {
         ouvrirMail();
+        setViaMessagerie(true);
         setSent(true);
         return;
       }
@@ -267,9 +278,32 @@ export default function Contact() {
               >
                 Demande envoyée
               </h3>
-              <p className="max-w-sm text-white/70" style={BODY_FONT}>
-                Merci ! Je reviens vers vous sous 48h pour échanger sur votre projet.
-              </p>
+              {viaMessagerie ? (
+                <>
+                  <p className="max-w-sm text-white/70" style={BODY_FONT}>
+                    Votre messagerie s&apos;est ouverte avec le message prêt à partir. Il ne reste
+                    qu&apos;à l&apos;envoyer.
+                  </p>
+                  <p className="max-w-sm text-sm text-white/60" style={BODY_FONT}>
+                    Rien ne s&apos;est ouvert ? Écrivez-moi directement sur WhatsApp, le message est
+                    déjà rempli.
+                  </p>
+                  <a
+                    href={lienWhatsApp()}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 rounded-full px-7 py-3 text-sm font-medium tracking-wide text-white transition-all duration-300 hover:brightness-110"
+                    style={{ backgroundColor: ACCENT }}
+                  >
+                    Envoyer sur WhatsApp
+                    <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+                  </a>
+                </>
+              ) : (
+                <p className="max-w-sm text-white/70" style={BODY_FONT}>
+                  Merci ! Je reviens vers vous sous 48h pour échanger sur votre projet.
+                </p>
+              )}
               <button
                 type="button"
                 onClick={reset}
