@@ -287,6 +287,11 @@ export const studio = {
   ],
   gallery: [
     {
+      src: "/images/gallery/femme-etoile-lys.jpg",
+      alt: "Femme de profil tournée vers une étoile, lys et rameaux tatoués en ligne fine sur l'avant-bras",
+      style: "Fine line",
+    },
+    {
       src: "/images/gallery/phenix-soleil.jpg",
       alt: "Phénix aux ailes déployées devant un soleil, tatoué en ligne fine et dotwork sur le bras, à Gruissan",
       style: "Fine line",

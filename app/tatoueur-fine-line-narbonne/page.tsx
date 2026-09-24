@@ -33,6 +33,7 @@ export const metadata: Metadata = {
 // Les autres « fine line » de la galerie (phénix, montagne, cerisier rose) restent
 // dans la galerie complète.
 const SHOWCASE = [
+  'femme-etoile-lys',
   'papillon-fine-line',
   'deux-hirondelles',
   'creation-adam',
