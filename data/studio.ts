@@ -287,6 +287,16 @@ export const studio = {
   ],
   gallery: [
     {
+      src: "/images/gallery/escalier-pere-enfants.jpg",
+      alt: "Père portant sa fille sur les épaules au pied d'un escalier vers le ciel, maillots numérotés, oiseau et soleil levant, tatoué en noir et gris sur l'avant-bras",
+      style: "Réalisme",
+    },
+    {
+      src: "/images/gallery/hannya-graphique.jpg",
+      alt: "Masque hannya japonais aux cornes, tatoué en noir graphique sur l'épaule",
+      style: "Japonais",
+    },
+    {
       src: "/images/gallery/femme-etoile-lys.jpg",
       alt: "Femme de profil tournée vers une étoile, lys et rameaux tatoués en ligne fine sur l'avant-bras",
       style: "Fine line",
