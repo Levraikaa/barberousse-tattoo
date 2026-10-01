@@ -287,6 +287,11 @@ export const studio = {
   ],
   gallery: [
     {
+      src: "/images/gallery/vache-highland-vegan.jpg",
+      alt: "Vache Highland tatouée en micro réalisme dans un cercle ornemental, lettering « vegan », sur l'avant-bras",
+      style: "Réalisme",
+    },
+    {
       src: "/images/gallery/escalier-pere-enfants.jpg",
       alt: "Père portant sa fille sur les épaules au pied d'un escalier vers le ciel, maillots numérotés, oiseau et soleil levant, tatoué en noir et gris sur l'avant-bras",
       style: "Réalisme",
