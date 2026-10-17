@@ -287,6 +287,11 @@ export const studio = {
   ],
   gallery: [
     {
+      src: "/images/gallery/bouvier-bernois-pivoines.jpg",
+      alt: "Portrait de bouvier bernois entouré de pivoines et d'épis de blé, tatoué en noir et gris sur la cuisse",
+      style: "Réalisme",
+    },
+    {
       src: "/images/gallery/chat-mimine.jpg",
       alt: "Portrait de chat tigré tatoué en micro réalisme sur la cheville, avec le prénom Mimine en lettering fin",
       style: "Réalisme",
