@@ -287,6 +287,11 @@ export const studio = {
   ],
   gallery: [
     {
+      src: "/images/gallery/chat-mimine.jpg",
+      alt: "Portrait de chat tigré tatoué en micro réalisme sur la cheville, avec le prénom Mimine en lettering fin",
+      style: "Réalisme",
+    },
+    {
       src: "/images/gallery/vache-highland-vegan.jpg",
       alt: "Vache Highland tatouée en micro réalisme dans un cercle ornemental, lettering « vegan », sur l'avant-bras",
       style: "Réalisme",
