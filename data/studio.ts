@@ -287,6 +287,11 @@ export const studio = {
   ],
   gallery: [
     {
+      src: "/images/gallery/trefle-coccinelle.jpg",
+      alt: "Trèfle à quatre feuilles et coccinelle tatoués en ligne fine et couleur aquarelle sur l'avant-bras, volutes et étincelles",
+      style: "Fine line",
+    },
+    {
       src: "/images/gallery/bouvier-bernois-pivoines.jpg",
       alt: "Portrait de bouvier bernois entouré de pivoines et d'épis de blé, tatoué en noir et gris sur la cuisse",
       style: "Réalisme",
