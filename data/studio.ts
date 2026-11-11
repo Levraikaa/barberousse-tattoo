@@ -287,6 +287,46 @@ export const studio = {
   ],
   gallery: [
     {
+      src: "/images/gallery/soleil-visage.jpg",
+      alt: "Soleil au visage endormi, rayons ondulants et croissant de lune, tatoué en ligne fine sur l'épaule",
+      style: "Fine line",
+    },
+    {
+      src: "/images/gallery/fer-a-cheval-fleurs.jpg",
+      alt: "Fer à cheval orné de fleurs de cerisier et d'initiales calligraphiées, tatoué en ligne fine sur l'avant-bras",
+      style: "Fine line",
+    },
+    {
+      src: "/images/gallery/tortue-marine.jpg",
+      alt: "Tortue marine tatouée en ligne fine et dotwork sur le bras, carapace détaillée au pointillé",
+      style: "Fine line",
+    },
+    {
+      src: "/images/gallery/couronne-laurier-16.jpg",
+      alt: "Couronne de laurier encadrant le nombre 16, tatouée en ligne fine et dotwork sur le mollet",
+      style: "Fine line",
+    },
+    {
+      src: "/images/gallery/carpe-koi-coeur.jpg",
+      alt: "Carpe koï aux nageoires ombrées et petit cœur, tatouée en ligne fine sur le mollet",
+      style: "Fine line",
+    },
+    {
+      src: "/images/gallery/requin-baleine.jpg",
+      alt: "Requin-baleine tatoué en ligne fine et dotwork sur les côtes",
+      style: "Fine line",
+    },
+    {
+      src: "/images/gallery/rose-oreille.jpg",
+      alt: "Rose et sa tige tatouées en ligne fine derrière l'oreille",
+      style: "Fine line",
+    },
+    {
+      src: "/images/gallery/cle-de-sol.jpg",
+      alt: "Clé de sol tatouée en ligne fine sur le poignet",
+      style: "Fine line",
+    },
+    {
       src: "/images/gallery/trefle-coccinelle.jpg",
       alt: "Trèfle à quatre feuilles et coccinelle tatoués en ligne fine et couleur aquarelle sur l'avant-bras, volutes et étincelles",
       style: "Fine line",
