@@ -15,14 +15,36 @@ const PETIT = "Petit tatouage";
 // Sans filtre, on ne montre qu'un aperçu : le reste passe par les catégories
 const APERCU = 18;
 
+type Piece = (typeof studio.gallery)[number];
+
+// Vue d'ensemble : on alterne les styles au lieu de laisser les derniers ajouts,
+// souvent du même style, occuper tout l'aperçu. L'ordre reste le même d'une
+// visite à l'autre — un tirage au sort casserait le rendu serveur.
+function entrelacer(liste: readonly Piece[]): Piece[] {
+  const parStyle = new Map<string, Piece[]>();
+  for (const piece of liste) {
+    const groupe = parStyle.get(piece.style);
+    if (groupe) groupe.push(piece);
+    else parStyle.set(piece.style, [piece]);
+  }
+  const groupes = [...parStyle.values()];
+  const melange: Piece[] = [];
+  for (let rang = 0; melange.length < liste.length; rang++) {
+    for (const groupe of groupes) {
+      const piece = groupe[rang];
+      if (piece) melange.push(piece);
+    }
+  }
+  return melange;
+}
+
 export default function Gallery() {
   const [activeStyle, setActiveStyle] = useState<string>(ALL);
   const [toutAfficher, setToutAfficher] = useState(false);
 
   // On n'affiche que les styles qui ont au moins une réalisation : un filtre
   // qui ouvre sur une grille vide est pire que pas de filtre du tout.
-  const estPetit = (piece: (typeof studio.gallery)[number]) =>
-    "petit" in piece && piece.petit;
+  const estPetit = (piece: Piece) => "petit" in piece && piece.petit;
 
   const filters = [
     ALL,
@@ -33,7 +55,7 @@ export default function Gallery() {
   ];
   const pieces =
     activeStyle === ALL
-      ? studio.gallery
+      ? entrelacer(studio.gallery)
       : activeStyle === PETIT
         ? studio.gallery.filter(estPetit)
         : studio.gallery.filter((piece) => piece.style === activeStyle);
