@@ -287,6 +287,70 @@ export const studio = {
   ],
   gallery: [
     {
+      src: "/images/gallery/serpent-lune.jpg",
+      alt: "Serpent ondulant sous un croissant de lune et une étoile, tatoué en ligne fine sur l'avant-bras",
+      style: "Fine line",
+      petit: true,
+    },
+    {
+      src: "/images/gallery/soleil-vague.jpg",
+      alt: "Soleil levant sur une vague, rayons en pointillés, tatoué en ligne fine sur l'épaule",
+      style: "Fine line",
+    },
+    {
+      src: "/images/gallery/escargot.jpg",
+      alt: "Escargot tatoué en ligne fine et dotwork sur le bras",
+      style: "Fine line",
+      petit: true,
+    },
+    {
+      src: "/images/gallery/tortue-hibiscus.jpg",
+      alt: "Tortue aux nageoires ornées de volutes polynésiennes, fleur d'hibiscus au centre, tatouée sur la cheville",
+      style: "Fine line",
+      petit: true,
+    },
+    {
+      src: "/images/gallery/ananas-cocktail.jpg",
+      alt: "Ananas cocktail avec paille, hibiscus et feuille de palmier, tatoué en ligne fine sur le bras",
+      style: "Fine line",
+      petit: true,
+    },
+    {
+      src: "/images/gallery/palmier.jpg",
+      alt: "Palmier tatoué en ligne fine sur le bras",
+      style: "Fine line",
+      petit: true,
+    },
+    {
+      src: "/images/gallery/jeton-casino-19.jpg",
+      alt: "Jeton de casino à la couronne et au nombre 19, tatoué en ligne fine sur le bras",
+      style: "Fine line",
+      petit: true,
+    },
+    {
+      src: "/images/gallery/crabe.jpg",
+      alt: "Crabe tatoué en ligne fine sur le bras",
+      style: "Fine line",
+      petit: true,
+    },
+    {
+      src: "/images/gallery/ornement-poignet.jpg",
+      alt: "Ornement géométrique en volutes et pointillés, tatoué en ligne fine sur l'avant-bras",
+      style: "Fine line",
+      petit: true,
+    },
+    {
+      src: "/images/gallery/fleche-together.jpg",
+      alt: "Flèche dont la hampe forme le mot « together » en lettering fin, tatouée sur l'avant-bras",
+      style: "Fine line",
+    },
+    {
+      src: "/images/gallery/soleil-ornemental.jpg",
+      alt: "Soleil aux rayons ondulants tatoué en ligne fine à l'arrière du bras",
+      style: "Fine line",
+      petit: true,
+    },
+    {
       src: "/images/gallery/soleil-visage.jpg",
       alt: "Soleil au visage endormi, rayons ondulants et croissant de lune, tatoué en ligne fine sur l'épaule",
       style: "Fine line",
@@ -315,16 +379,19 @@ export const studio = {
       src: "/images/gallery/requin-baleine.jpg",
       alt: "Requin-baleine tatoué en ligne fine et dotwork sur les côtes",
       style: "Fine line",
+      petit: true,
     },
     {
       src: "/images/gallery/rose-oreille.jpg",
       alt: "Rose et sa tige tatouées en ligne fine derrière l'oreille",
       style: "Fine line",
+      petit: true,
     },
     {
       src: "/images/gallery/cle-de-sol.jpg",
       alt: "Clé de sol tatouée en ligne fine sur le poignet",
       style: "Fine line",
+      petit: true,
     },
     {
       src: "/images/gallery/trefle-coccinelle.jpg",
@@ -340,6 +407,7 @@ export const studio = {
       src: "/images/gallery/chat-mimine.jpg",
       alt: "Portrait de chat tigré tatoué en micro réalisme sur la cheville, avec le prénom Mimine en lettering fin",
       style: "Réalisme",
+      petit: true,
     },
     {
       src: "/images/gallery/vache-highland-vegan.jpg",

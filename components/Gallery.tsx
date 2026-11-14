@@ -9,6 +9,9 @@ const EASE = [0.22, 1, 0.36, 1] as const;
 // Les vignettes alternent trois formats pour casser la grille
 const RATIOS = ["aspect-[3/4]", "aspect-square", "aspect-[4/5]"];
 const ALL = "Tout";
+// Filtre transverse : une pièce garde son style et peut en plus être petite,
+// parce que « petit tatouage » est une demande en soi, pas un style de plus.
+const PETIT = "Petit tatouage";
 // Sans filtre, on ne montre qu'un aperçu : le reste passe par les catégories
 const APERCU = 18;
 
@@ -18,16 +21,22 @@ export default function Gallery() {
 
   // On n'affiche que les styles qui ont au moins une réalisation : un filtre
   // qui ouvre sur une grille vide est pire que pas de filtre du tout.
+  const estPetit = (piece: (typeof studio.gallery)[number]) =>
+    "petit" in piece && piece.petit;
+
   const filters = [
     ALL,
     ...studio.galleryStyles.filter((style) =>
       studio.gallery.some((piece) => piece.style === style),
     ),
+    ...(studio.gallery.some(estPetit) ? [PETIT] : []),
   ];
   const pieces =
     activeStyle === ALL
       ? studio.gallery
-      : studio.gallery.filter((piece) => piece.style === activeStyle);
+      : activeStyle === PETIT
+        ? studio.gallery.filter(estPetit)
+        : studio.gallery.filter((piece) => piece.style === activeStyle);
 
   // L'aperçu ne s'applique qu'à la vue d'ensemble ; une catégorie s'affiche en entier
   const limite = activeStyle === ALL && !toutAfficher;
