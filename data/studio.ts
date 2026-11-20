@@ -287,6 +287,11 @@ export const studio = {
   ],
   gallery: [
     {
+      src: "/images/gallery/fee-papillon.jpg",
+      alt: "Fée aux ailes de papillon tenant une fleur rouge, croissant de lune et étoiles, tatouée en ligne fine sur l'épaule",
+      style: "Fine line",
+    },
+    {
       src: "/images/gallery/serpent-lune.jpg",
       alt: "Serpent ondulant sous un croissant de lune et une étoile, tatoué en ligne fine sur l'avant-bras",
       style: "Fine line",
