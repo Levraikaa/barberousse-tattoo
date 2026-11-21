@@ -287,6 +287,11 @@ export const studio = {
   ],
   gallery: [
     {
+      src: "/images/gallery/chapelet-isabel.jpg",
+      alt: "Chapelet aux perles ombrées descendant sur l'avant-bras, croix et prénom Isabel en lettering, entouré d'étoiles scintillantes, tatoué en noir et gris",
+      style: "Noir et gris",
+    },
+    {
       src: "/images/gallery/fee-papillon.jpg",
       alt: "Fée aux ailes de papillon tenant une fleur rouge, croissant de lune et étoiles, tatouée en ligne fine sur l'épaule",
       style: "Fine line",
