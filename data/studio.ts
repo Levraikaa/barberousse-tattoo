@@ -287,6 +287,11 @@ export const studio = {
   ],
   gallery: [
     {
+      src: "/images/gallery/lettering-burua.jpg",
+      alt: "Phrase « Burua galtzeraino maitatzea » tatouée en lettering cursif très fin le long de l\u2019avant-bras",
+      style: "Fine line",
+    },
+    {
       src: "/images/gallery/chapelet-isabel.jpg",
       alt: "Chapelet aux perles ombrées descendant sur l'avant-bras, croix et prénom Isabel en lettering, entouré d'étoiles scintillantes, tatoué en noir et gris",
       style: "Noir et gris",
